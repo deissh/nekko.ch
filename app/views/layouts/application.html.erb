@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Website</title>
+    <meta name="HandheldFriendly" content="true">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha384-wxqG4glGB3nlqX0bi23nmgwCSjWIW13BdLUEYC4VIMehfbcro/ATkyDsF/AbIOVe" crossorigin="anonymous">
+  </head>
+
+  <body>
+<!--    <div id="p_prldr">-->
+<!--      <div class="contpre"><span class="svg_anm"></span><br>Подождите...<br><small>идет загрузка</small></div>-->
+<!--    </div>-->
+
+    <div class="wrap">
+      <%= render 'shared/header' %>
+
+      <div class="main center container">
+        <div class="cols clearfix">
+          <div class="cont">
+            <%= yield %>
+          </div>
+          <!-- end cont -->
+          <aside class="side" id="side">
+            <div class="side-b">
+              <div class="side-bt">Последние обновления</div>
+              <div class="side-bc">
+
+                <div class="ser">
+                  <a class="ser-t nowrap" href="{full-link}">Психо-паспорт 2</a>
+                  <div class="ser-s">
+                    2 сезон
+                    1 серия
+                  </div>
+                  <div class="ser-d">20 июля</div>
+                  <div class="ser-i img-box ps-link" data-link="{full-link}">
+                                    <span class="topicImage"
+                                          style="background-image: url(https://st.kp.yandex.net/images/film_iphone/iphone360_707090.jpg);"></span>
+                    <span class="fa fa-play-circle"></span>
+                  </div>
+                </div>
+                <div class="ser">
+                  <a class="ser-t nowrap" href="{full-link}">One punchmen</a>
+                  <div class="ser-s">
+                    2 сезон
+                    1 серия
+                  </div>
+                  <div class="ser-d">20 июля</div>
+                  <div class="ser-i img-box ps-link" data-link="{full-link}">
+                                    <span class="topicImage"
+                                          style="background-image: url(https://cdn.anibe.ru/manga/One_Punch_Man/cover/cover.jpg);"></span>
+                    <span class="fa fa-play-circle"></span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="side-b">
+              <div class="side-bt">Наивысший рейтинг</div>
+              <div class="side-bc">
+
+                <div class="ser">
+                  <a class="ser-t nowrap" href="{full-link}">Психо-паспорт 2</a>
+                  <div class="ser-s">
+                    2 сезон
+                    1 серия
+                  </div>
+                  <div class="ser-d">20 июля</div>
+                  <div class="ser-i img-box ps-link" data-link="{full-link}">
+                                    <span class="topicImage"
+                                          style="background-image: url(https://st.kp.yandex.net/images/film_iphone/iphone360_707090.jpg);"></span>
+                    <span class="fa fa-play-circle"></span>
+                  </div>
+                </div>
+                <div class="ser">
+                  <a class="ser-t nowrap" href="{full-link}">One punchmen</a>
+                  <div class="ser-s">
+                    2 сезон
+                    1 серия
+                  </div>
+                  <div class="ser-d">20 июля</div>
+                  <div class="ser-i img-box ps-link" data-link="{full-link}">
+                                    <span class="topicImage"
+                                          style="background-image: url(https://cdn.anibe.ru/manga/One_Punch_Man/cover/cover.jpg);"></span>
+                    <span class="fa fa-play-circle"></span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="side-b">
+              <div class="side-bt">Случайные новости за месяц</div>
+              <div class="side-bc">
+
+                <div class="ser">
+                  <a class="ser-t nowrap" href="{full-link}">Психо-паспорт 2</a>
+                  <div class="ser-s">
+                    2 сезон
+                    1 серия
+                  </div>
+                  <div class="ser-d">20 июля</div>
+                  <div class="ser-i img-box ps-link" data-link="{full-link}">
+                                    <span class="topicImage"
+                                          style="background-image: url(https://st.kp.yandex.net/images/film_iphone/iphone360_707090.jpg);"></span>
+                    <span class="fa fa-play-circle"></span>
+                  </div>
+                </div>
+                <div class="ser">
+                  <a class="ser-t nowrap" href="{full-link}">One punchmen</a>
+                  <div class="ser-s">
+                    2 сезон
+                    1 серия
+                  </div>
+                  <div class="ser-d">20 июля</div>
+                  <div class="ser-i img-box ps-link" data-link="{full-link}">
+                                    <span class="topicImage"
+                                          style="background-image: url(https://cdn.anibe.ru/manga/One_Punch_Man/cover/cover.jpg);"></span>
+                    <span class="fa fa-play-circle"></span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </aside>
+          <!-- end side -->
+        </div>
+        <!-- end cols -->
+      </div>
+
+      <%= render 'shared/footer' %>
+    </div>
+
+
+
+  </body>
+</html>
