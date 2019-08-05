@@ -898,14 +898,14 @@ svg:not(:root).svg-inline--fa {
 /* HEADER AND MENUS ----------------------------------------------- */
  .logotype {
      display:block;
-     width:200px;
+     width:150px;
      height:75px;
      text-indent:-8888px;
      overflow:hidden;
      position:absolute;
      left:0;
      top:0;
-     background:url(https://301222.selcdn.ru/cdn/nekko/icon.png) left center no-repeat;
+     background:url(https://301222.selcdn.ru/nekko-ch-cdn1/assets/icon/1.5x/%D0%A0%D0%B5%D1%81%D1%83%D1%80%D1%81%206%401.5x.png) left center no-repeat;
      background-size:contain;
 }
  .head-menu {
