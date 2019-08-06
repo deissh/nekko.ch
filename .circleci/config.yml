@@ -5,7 +5,6 @@ jobs:
     docker:
       - image: circleci/ruby:2.6.3-node-browsers
         environment:
-          PGHOST: postgres
           PGUSER: postgres
           PGHOST: 127.0.0.1
           RAILS_ENV: test
@@ -13,7 +12,6 @@ jobs:
         environment:
           POSTGRES_USER: postgres
           POSTGRES_DB: website_test
-          POSTGRES_PASSWORD: postgres
     steps:
       - checkout
 
