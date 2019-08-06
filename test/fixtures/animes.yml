@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  title_en: MyString
+  title_or: MyString
+  annotation: MyString
+  description: MyText
+  posters: MyString
+  type: 
+  genres: MyString
+  status: MyString
+  year: 1
+  rating: 
+  blocked_ru: false
+  blocked_ua: false
+  world_art_id: MyString
+  kinopoisk_id: MyString
+  countries: MyString
+  actors: MyString
+  directors: MyString
+  studios: MyString
+
+two:
+  title: MyString
+  title_en: MyString
+  title_or: MyString
+  annotation: MyString
+  description: MyText
+  posters: MyString
+  type: 
+  genres: MyString
+  status: MyString
+  year: 1
+  rating: 
+  blocked_ru: false
+  blocked_ua: false
+  world_art_id: MyString
+  kinopoisk_id: MyString
+  countries: MyString
+  actors: MyString
+  directors: MyString
+  studios: MyString
