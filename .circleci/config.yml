@@ -60,6 +60,7 @@ jobs:
 
   deploy:
     docker:
+      - image: circleci/ruby:2.6.3
       - image: buildpack-deps:trusty
     steps:
       - checkout
