@@ -82,12 +82,12 @@ workflows:
   version: 2
   tagged-build:
     - build
-      - deploy:
-          requires:
-            - build
-          filters:
-            tags:
-              only: /^v.*/
+    - deploy:
+        requires:
+         - build
+        filters:
+          tags:
+          only: /^v.*/
   untagged-build:
     jobs:
       - build
