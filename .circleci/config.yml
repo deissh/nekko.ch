@@ -58,7 +58,7 @@ jobs:
           path: /tmp/test-results
           destination: test-results
 
-  deploy:
+  deploy_to_development:
     docker:
       - image: circleci/ruby:2.6.3
       - image: buildpack-deps:trusty
@@ -80,13 +80,15 @@ jobs:
   
 workflows:
   version: 2
-  tagged-build:
+  build_and_test:
     jobs:
-      - build
-      - deploy:
+      - build:
+          filters:
+            branches:
+              only: master
+      - deploy_to_development:
+          requires:
+            - build
           filters:
             tags:
-              only: /^v.*/
-  untagged-build:
-    jobs:
-      - build
+              only: /.*/
