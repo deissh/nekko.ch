@@ -1,9 +1,9 @@
 version: 2
 jobs:
-  build:
+  test:
     working_dirictory: ~/repo
     docker:
-      - image: circleci/ruby:2.4.1
+      - image: circleci/ruby:2.4.1-node-browsers
         environment:
           PGHOST: postgres
           PGUSER: postgres
@@ -16,32 +16,48 @@ jobs:
     steps:
       - checkout
 
-      # Restore Cached Dependencies
-      - type: cache-restore
-        name: Restore bundle cache
-        key: v1-nekko-{{ checksum "Gemfile.lock" }}
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
 
-      # Bundle install dependencies
-      - run: bundle install --path vendor/bundle
+      - run:
+          name: install dependencies
+          command: |
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
 
-      # Cache Dependencies
-      - type: cache-save
-        name: Store bundle cache
-        key: v1-nekko-{{ checksum "Gemfile.lock" }}
-        paths:
-          - vendor/bundle
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
 
-      # Wait for DB
-      - run: dockerize -wait tcp://localhost:5432 -timeout 1m
+      # Database setup
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
 
-      # Setup the environment
-      # - run: cp .sample.env .env
+      # run tests!
+      - run:
+          name: run tests
+          command: |
+            mkdir /tmp/test-results
+            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | \
+              circleci tests split --split-by=timings)"
 
-      # Setup the database
-      - run: bundle exec rake db:setup
+            bundle exec rspec \
+              --format progress \
+              --format RspecJunitFormatter \
+              --out /tmp/test-results/rspec.xml \
+              --format progress \
+              $TEST_FILES
 
-      # Run the tests
-      - run: bundle exec rake
+      # collect reports
+      - store_test_results:
+          path: /tmp/test-results
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: test-results
 
   deploy:
     docker:
@@ -55,7 +71,7 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - build
+      - test
       - deploy:
           requires:
             - build
