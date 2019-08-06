@@ -61,6 +61,7 @@ jobs:
 
   deploy:
     docker:
+      - image: circleci/ruby:2.4.1-node-browsers
     working_dirictory: ~/repo
 
     steps:
