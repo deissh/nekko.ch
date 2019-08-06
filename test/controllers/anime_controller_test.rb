@@ -5,5 +5,4 @@ class AnimeControllerTest < ActionDispatch::IntegrationTest
     get anime_full_url
     assert_response :success
   end
-
 end
