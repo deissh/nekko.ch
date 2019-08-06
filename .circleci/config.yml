@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  test:
+  build:
     working_dirictory: ~/repo
     docker:
       - image: circleci/ruby:2.4.1-node-browsers
@@ -71,7 +71,7 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - test
+      - build
       - deploy:
           requires:
             - build
