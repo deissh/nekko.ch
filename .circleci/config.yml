@@ -63,6 +63,14 @@ jobs:
       - image: buildpack-deps:trusty
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            - v1-dependencies-
+      - run:
+          name: install dependencies
+          command: |
+            bundle install --jobs=4 --retry=3
       - run:
           name: Deploy Master to Heroku
           command: |
