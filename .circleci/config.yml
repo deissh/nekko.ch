@@ -80,12 +80,14 @@ jobs:
   
 workflows:
   version: 2
-  build_and_test:
-    jobs:
-      - build
+  tagged-build:
+    - build
       - deploy:
           requires:
             - build
           filters:
             tags:
               only: /^v.*/
+  untagged-build:
+    jobs:
+      - build
