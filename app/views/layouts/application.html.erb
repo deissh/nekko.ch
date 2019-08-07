@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Website</title>
+    <title>Nekko.ch | <%= @title || 'Смотреть аниме' %></title>
     <meta name="HandheldFriendly" content="true">
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="user-scalable=0, initial-scale=1.0, maximum-scale=1.0, width=device-width">
@@ -35,32 +35,26 @@
               <div class="side-bt">Последние обновления</div>
               <div class="side-bc">
 
-                <div class="ser">
-                  <a class="ser-t nowrap" href="{full-link}">Психо-паспорт 2</a>
-                  <div class="ser-s">
-                    2 сезон
-                    1 серия
+                <% Anime.order(updated_at: :desc).limit(5).each do |anime| %>
+                  <div class="ser">
+                    <%= link_to anime.title, anime_path(anime.id), class: "ser-t nowrap" %>
+                    <div class="ser-s">
+                      <%= anime.genres.join(', ') %>
+                    </div>
+                    <div class="ser-d">
+                      Обновлено
+                      <% if anime.updated_at.today? %>
+                        сегодня <%= anime.updated_at.strftime("%H:%M") %>
+                      <% else %>
+                        <%= anime.updated_at.strftime("%d.%m %H:%M") %>
+                      <% end %>
+                    </div>
+                    <div class="ser-i img-box ps-link" data-link="<%= anime_path(anime.id) %>">
+                      <span class="topicImage" style="background-image: url(<%= anime.posters[0] %>);"></span>
+                      <span class="fa fa-play-circle"></span>
+                    </div>
                   </div>
-                  <div class="ser-d">20 июля</div>
-                  <div class="ser-i img-box ps-link" data-link="{full-link}">
-                                    <span class="topicImage"
-                                          style="background-image: url(https://st.kp.yandex.net/images/film_iphone/iphone360_707090.jpg);"></span>
-                    <span class="fa fa-play-circle"></span>
-                  </div>
-                </div>
-                <div class="ser">
-                  <a class="ser-t nowrap" href="{full-link}">One punchmen</a>
-                  <div class="ser-s">
-                    2 сезон
-                    1 серия
-                  </div>
-                  <div class="ser-d">20 июля</div>
-                  <div class="ser-i img-box ps-link" data-link="{full-link}">
-                                    <span class="topicImage"
-                                          style="background-image: url(https://cdn.anibe.ru/manga/One_Punch_Man/cover/cover.jpg);"></span>
-                    <span class="fa fa-play-circle"></span>
-                  </div>
-                </div>
+                 <% end %>
 
               </div>
             </div>
@@ -68,65 +62,43 @@
               <div class="side-bt">Наивысший рейтинг</div>
               <div class="side-bc">
 
-                <div class="ser">
-                  <a class="ser-t nowrap" href="{full-link}">Психо-паспорт 2</a>
-                  <div class="ser-s">
-                    2 сезон
-                    1 серия
+                <% Anime.order(rating: :desc).limit(5).each do |anime| %>
+                  <div class="ser">
+                    <%= link_to anime.title, anime_path(anime.id), class: "ser-t nowrap" %>
+                    <div class="ser-s">
+                      <%= anime.genres.join(', ') %>
+                    </div>
+                    <div class="ser-d">
+                      Рейтинг <%= anime.rating.round(1) %> из 10
+                    </div>
+                    <div class="ser-i img-box ps-link" data-link="<%= anime_path(anime.id) %>">
+                      <span class="topicImage" style="background-image: url(<%= anime.posters[0] %>);"></span>
+                      <span class="fa fa-play-circle"></span>
+                    </div>
                   </div>
-                  <div class="ser-d">20 июля</div>
-                  <div class="ser-i img-box ps-link" data-link="{full-link}">
-                                    <span class="topicImage"
-                                          style="background-image: url(https://st.kp.yandex.net/images/film_iphone/iphone360_707090.jpg);"></span>
-                    <span class="fa fa-play-circle"></span>
-                  </div>
-                </div>
-                <div class="ser">
-                  <a class="ser-t nowrap" href="{full-link}">One punchmen</a>
-                  <div class="ser-s">
-                    2 сезон
-                    1 серия
-                  </div>
-                  <div class="ser-d">20 июля</div>
-                  <div class="ser-i img-box ps-link" data-link="{full-link}">
-                                    <span class="topicImage"
-                                          style="background-image: url(https://cdn.anibe.ru/manga/One_Punch_Man/cover/cover.jpg);"></span>
-                    <span class="fa fa-play-circle"></span>
-                  </div>
-                </div>
+                <% end %>
 
               </div>
             </div>
             <div class="side-b">
-              <div class="side-bt">Случайные новости за месяц</div>
+              <div class="side-bt">Случайные аниме</div>
               <div class="side-bc">
 
-                <div class="ser">
-                  <a class="ser-t nowrap" href="{full-link}">Психо-паспорт 2</a>
-                  <div class="ser-s">
-                    2 сезон
-                    1 серия
+                <% Anime.order("RANDOM()").limit(5).each do |anime| %>
+                  <div class="ser">
+                    <%= link_to anime.title, anime_path(anime.id), class: "ser-t nowrap" %>
+                    <div class="ser-s">
+                      <%= anime.genres.join(', ') %>
+                    </div>
+                    <div class="ser-d">
+                      Рейтинг <%= anime.rating.round(1) %> из 10
+                    </div>
+                    <div class="ser-i img-box ps-link" data-link="<%= anime_path(anime.id) %>">
+                      <span class="topicImage" style="background-image: url(<%= anime.posters[0] %>);"></span>
+                      <span class="fa fa-play-circle"></span>
+                    </div>
                   </div>
-                  <div class="ser-d">20 июля</div>
-                  <div class="ser-i img-box ps-link" data-link="{full-link}">
-                                    <span class="topicImage"
-                                          style="background-image: url(https://st.kp.yandex.net/images/film_iphone/iphone360_707090.jpg);"></span>
-                    <span class="fa fa-play-circle"></span>
-                  </div>
-                </div>
-                <div class="ser">
-                  <a class="ser-t nowrap" href="{full-link}">One punchmen</a>
-                  <div class="ser-s">
-                    2 сезон
-                    1 серия
-                  </div>
-                  <div class="ser-d">20 июля</div>
-                  <div class="ser-i img-box ps-link" data-link="{full-link}">
-                                    <span class="topicImage"
-                                          style="background-image: url(https://cdn.anibe.ru/manga/One_Punch_Man/cover/cover.jpg);"></span>
-                    <span class="fa fa-play-circle"></span>
-                  </div>
-                </div>
+                <% end %>
 
               </div>
             </div>
