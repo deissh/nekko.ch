@@ -61,22 +61,49 @@
       <%= @anime["genres"].join(', ') %>
     </div>
   </div>
-  <div class="info-btns ic-l ignore-select flex-row">
-    <div><span class="fa fa-play"></span>Просмотр онлайн</div>
-    <i class="fas fa-bookmark"></i>Добавить в закладки
-    <i class="fas fa-heart"></i>Мне нравится
-    <i class="fas fa-bug"></i>Сообщить об ошибке
+
+  <div class="accordion" id="translators">
+    <% (1..5).each do |tr| %>
+      <div class="card">
+        <div class="card-header" id="translator-title-<%= tr %>" style="background-color: #333a4c;">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#translator-btn-<%= tr %>" aria-expanded="false" aria-controls="translator-btn-<%= tr %>">
+              <%= tr %>
+            </button>
+          </h5>
+        </div>
+
+        <div id="translator-btn-<%= tr %>" class="collapse" aria-labelledby="translator-title-<%= tr %>" data-parent="#translators">
+          <div class="card-body">
+
+            <ul class="list-group list-group-flush" style="max-height: 250px;overflow-y: auto;">
+              <% (1..50).each do |episode| %>
+                <li class="list-group-item">Cras justo odio</li>
+              <% end %>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
+
+<!--  <div class="info-btns ic-l ignore-select flex-row">-->
+<!--    <div><span class="fa fa-play"></span>Просмотр онлайн</div>-->
+<!--    <i class="fas fa-bookmark"></i>Добавить в закладки-->
+<!--    <i class="fas fa-heart"></i>Мне нравится-->
+<!--    <i class="fas fa-bug"></i>Сообщить об ошибке-->
+<!--  </div>-->
   <div class="tabs-box ignore-select">
     <iframe src="http://moonwalk.cc/serial/05637d0c8b3e7e2f23caaa4ab6ce0ee2/iframe?season=01&episode=02&nocontrols=1" width="100%" frameborder="0" allowfullscreen></iframe>
-    <div class="tabs-sel">
-      <span>Смотреть онлайн</span>
-    </div>
-    <div class="frate ignore-select" id="frate-{news-id}">
-      <div class="rate-plus" id="pluss-1" onclick="doRateLD('plus', '1');"><span class="fa fap fa-thumbs-up"></span><span class="rcount">{views}</span></div>
-      <div class="rate-minus" id="minuss-1" onclick="doRateLD('minus', '1');"><span class="rcount">{comments-num}</span><span class="fa fam fa-thumbs-down"></span></div>
-      <div class="rate-data">{rating}{vote-num}</div>
-    </div>
+<!--    <div class="tabs-sel">-->
+<!--      <span>Смотреть онлайн</span>-->
+<!--    </div>-->
+<!--    <div class="frate ignore-select" id="frate-{news-id}">-->
+<!--      <div class="rate-plus" id="pluss-1" onclick="doRateLD('plus', '1');"><span class="fa fap fa-thumbs-up"></span><span class="rcount">{views}</span></div>-->
+<!--      <div class="rate-minus" id="minuss-1" onclick="doRateLD('minus', '1');"><span class="rcount">{comments-num}</span><span class="fa fam fa-thumbs-down"></span></div>-->
+<!--      <div class="rate-data">{rating}{vote-num}</div>-->
+<!--    </div>-->
   </div>
 <!--  <div class="rels">-->
 <!--    <div class="rel-t">Похожее смотрите:</div>-->

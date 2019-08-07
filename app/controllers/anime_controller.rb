@@ -7,5 +7,6 @@ class AnimeController < ApplicationController
     @anime = Anime.find(params[:id])
 
     @title = @anime.title
+    @desc = @anime.description
   end
 end

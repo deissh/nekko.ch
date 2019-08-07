@@ -1,9 +1,7 @@
 /*скролбар*/
- body::-webkit-scrollbar {
-     width: 5px;
-}
  ::-webkit-scrollbar {
      height: 5px;
+     width: 5px;
 }
  ::-webkit-scrollbar-track {
      background:#333a4c;
