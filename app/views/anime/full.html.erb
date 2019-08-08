@@ -65,7 +65,7 @@
   <div class="accordion" id="translators">
     <% (1..5).each do |tr| %>
       <div class="card">
-        <div class="card-header" id="translator-title-<%= tr %>" style="background-color: #333a4c;">
+        <div class="card-header translator-header" id="translator-title-<%= tr %>">
           <h5 class="mb-0">
             <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#translator-btn-<%= tr %>" aria-expanded="false" aria-controls="translator-btn-<%= tr %>">
               <%= tr %>
@@ -73,14 +73,16 @@
           </h5>
         </div>
 
-        <div id="translator-btn-<%= tr %>" class="collapse" aria-labelledby="translator-title-<%= tr %>" data-parent="#translators">
+        <div id="translator-btn-<%= tr %>" class="collapse translator-body" aria-labelledby="translator-title-<%= tr %>" data-parent="#translators">
           <div class="card-body">
 
-            <ul class="list-group list-group-flush" style="max-height: 250px;overflow-y: auto;">
-              <% (1..50).each do |episode| %>
-                <li class="list-group-item">Cras justo odio</li>
+            <div class="episodes">
+              <% (1..50).each_with_index do |episode, index| %>
+                <div data-id="11" class="video-button " data-href="https://streamguard.cc/serial/dab35e8fbf3790e2309ac9ba17759de2/iframe?season=1&amp;nocontrols=1&amp;episode=1?origin=yummyanime.com">
+                  <%= index + 1 %>
+                </div>
               <% end %>
-            </ul>
+            </div>
 
           </div>
         </div>
