@@ -1,7 +1,5 @@
 <article class="full">
-  <div class="full-title ignore-select">
-<!--    [not-group=5][edit]<span class="fa fa-bars" title="Редактировать"></span>[/edit][/not-group]-->
-  </div>
+  <%= hidden_field_tag 'page_id', @anime.id %>
   <header class="full_header">
     <div class="full_header-bg" id="full_header-bg">
       <div class="full_header__bg-img" style="background-image: url(<%= @anime["posters"][0] %>);"></div>
@@ -25,11 +23,9 @@
           </svg>
            <span class="fas fa-play"></span> Смотреть онлайн!
         </a>
-<!--        [not-catlist=14,15][xfgiven_season][xfgiven_serija]-->
-<!--        <a href="#tabs_box" class="scrolla ic-l to_trailer action-header__btn button" data-target="trailer" title="{title}">-->
-<!--           <span class="fab fa-youtube"></span>[xfvalue_season] ([xfvalue_serija])-->
+<!--        <a href="#" class="scrolla ic-l to_trailer action-header__btn button" data-target="trailer" title="{title}">-->
+<!--           <span class="fab fa-youtube"></span>Трейлер-->
 <!--        </a>-->
-<!--        [xfgiven_season][xfgiven_serija][/not-catlist]-->
       </div>
     </div>
   </header>
@@ -49,7 +45,6 @@
           <div class="fi-col-item"><span>Тип:</span> <%= @anime["type"] %></div>
           <div class="fi-col-item"><span>Жанры:</span> <%= @anime["genres"].join(', ') %></div>
           <div class="fi-col-item"><span>Страны:</span> <%= @anime["countries"].join(', ') %></div>
-<!--          <div class="fi-col-item"><span>Количество эпизодов:</span> [xfvalue_kolvo-serii]</div>-->
           <div class="fi-col-item"><span>Режиссер:</span> <%= @anime["directors"][0] %></div>
           <div class="fi-col-item"><span>Студия:</span> <%= @anime["studios"][0] %></div>
         </div>
@@ -78,9 +73,7 @@
 
             <div class="episodes">
               <% (1..50).each_with_index do |episode, index| %>
-                <div data-id="11" class="video-button " data-href="https://streamguard.cc/serial/dab35e8fbf3790e2309ac9ba17759de2/iframe?season=1&amp;nocontrols=1&amp;episode=1?origin=yummyanime.com">
-                  <%= index + 1 %>
-                </div>
+                <%= content_tag(:div, index + 1, 'data-id': index, 'data-href': "http://moonwalk.cc/serial/05637d0c8b3e7e2f23caaa4ab6ce0ee2/iframe?season=01&episode=02&nocontrols=1", class: "video-button") %>
               <% end %>
             </div>
 
@@ -90,40 +83,9 @@
     <% end %>
   </div>
 
-<!--  <div class="info-btns ic-l ignore-select flex-row">-->
-<!--    <div><span class="fa fa-play"></span>Просмотр онлайн</div>-->
-<!--    <i class="fas fa-bookmark"></i>Добавить в закладки-->
-<!--    <i class="fas fa-heart"></i>Мне нравится-->
-<!--    <i class="fas fa-bug"></i>Сообщить об ошибке-->
-<!--  </div>-->
   <div class="tabs-box ignore-select">
-    <iframe src="http://moonwalk.cc/serial/05637d0c8b3e7e2f23caaa4ab6ce0ee2/iframe?season=01&episode=02&nocontrols=1" width="100%" frameborder="0" allowfullscreen></iframe>
-<!--    <div class="tabs-sel">-->
-<!--      <span>Смотреть онлайн</span>-->
-<!--    </div>-->
-<!--    <div class="frate ignore-select" id="frate-{news-id}">-->
-<!--      <div class="rate-plus" id="pluss-1" onclick="doRateLD('plus', '1');"><span class="fa fap fa-thumbs-up"></span><span class="rcount">{views}</span></div>-->
-<!--      <div class="rate-minus" id="minuss-1" onclick="doRateLD('minus', '1');"><span class="rcount">{comments-num}</span><span class="fa fam fa-thumbs-down"></span></div>-->
-<!--      <div class="rate-data">{rating}{vote-num}</div>-->
-<!--    </div>-->
+    <div id="player">
+      <iframe src="" width="100%" frameborder="0" allowfullscreen></iframe>
+    </div>
   </div>
-<!--  <div class="rels">-->
-<!--    <div class="rel-t">Похожее смотрите:</div>-->
-<!--    <div class="rel-c">-->
-<!--      {related-news}-->
-<!--    </div>-->
-<!--  </div>-->
 </article>
-<!--<div class="full-comms ignore-select" id="full-comms">-->
-<!--  <div class="comms-head clearfix">-->
-<!--    <div class="comms-title">Комментарии <sup>{comments-num}</sup></div>-->
-<!--    <div class="add-commbtn button ic-l" id="add-commbtn"><span class="fa fa-plus"></span>Комментировать</div>-->
-<!--  </div>-->
-<!--  {addcomments}-->
-<!--  [comments]-->
-<!--  <div class="comments-items">-->
-<!--    {comments}-->
-<!--    {navigation}-->
-<!--  </div>-->
-<!--  [/comments]-->
-<!--</div>-->
