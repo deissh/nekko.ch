@@ -38,7 +38,7 @@
               <div class="side-bt">Последние обновления</div>
               <div class="side-bc">
 
-                <% Anime.order(updated_at: :desc).limit(5).each do |anime| %>
+                <% Anime.order(updated_at: :desc).limit(6).each do |anime| %>
                   <div class="ser">
                     <%= link_to anime.title, anime_path(anime.id), class: "ser-t nowrap" %>
                     <div class="ser-s">
@@ -65,7 +65,7 @@
               <div class="side-bt">Наивысший рейтинг</div>
               <div class="side-bc">
 
-                <% Anime.order(rating: :desc).limit(5).each do |anime| %>
+                <% Anime.order(rating: :desc).limit(6).each do |anime| %>
                   <div class="ser">
                     <%= link_to anime.title, anime_path(anime.id), class: "ser-t nowrap" %>
                     <div class="ser-s">
@@ -87,7 +87,7 @@
               <div class="side-bt">Случайные аниме</div>
               <div class="side-bc">
 
-                <% Anime.order("RANDOM()").limit(5).each do |anime| %>
+                <% Anime.order("RANDOM()").limit(6).each do |anime| %>
                   <div class="ser">
                     <%= link_to anime.title, anime_path(anime.id), class: "ser-t nowrap" %>
                     <div class="ser-s">
