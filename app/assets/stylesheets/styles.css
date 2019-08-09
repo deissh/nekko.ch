@@ -720,18 +720,6 @@ svg:not(:root).svg-inline--fa {
      padding: 0px 10px;
      border-radius:3px;
 }
- input[type="text"], input[type="password"] {
-     display:block;
-     width:100%;
-     height:40px;
-     line-height:40px;
-     padding:0 15px;
-     color:#000000;
-     background-color:#f5f5f5;
-     border-radius:0px;
-     -webkit-appearance: none;
-     box-shadow:0 0 0 1px #EDEDED;
-}
  input[type="text"]:focus {
 }
  input:focus::-webkit-input-placeholder {
@@ -991,7 +979,8 @@ svg:not(:root).svg-inline--fa {
      border-radius:50%;
      line-height:normal;
      position:relative;
-     top:12px;
+     top: 0px;
+     right: 0px;
      display:inline-block;
 }
  .menus li {
@@ -1764,11 +1753,6 @@ svg:not(:root).svg-inline--fa {
      transition:width 1s linear;
 }
 /* FULL STATIC ----------------------------------------------- */
- .video-box embed, .video-box object, .video-box video, .video-box iframe, .video-box frame {
-     width: 100%;
-     max-width:100% !important;
-     height:400px;
-}
  .mejs-container {
      max-width:100% !important;
 }
@@ -2579,10 +2563,6 @@ svg:not(:root).svg-inline--fa {
     }
 }
  @media screen and (max-width: 590px) {
-     iframe {
-         height: 200px !important;
-        ;
-    }
      .full-desc .full-poster {
          margin-top: -65px;
     }
@@ -2797,9 +2777,5 @@ svg:not(:root).svg-inline--fa {
     }
      .short__item-imagenews {
          height: 195px;
-    }
-     iframe {
-         height: 700px !important;
-        ;
     }
 }

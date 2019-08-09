@@ -10,7 +10,7 @@ require 'yaml'
 
 SEED_DIR = 'db/seeds'
 
-animes_file = Rails.root.join("#{SEED_DIR}/animes.yml")
+animes_file = Rails.root.join("#{SEED_DIR}/anime.yml")
 value = YAML.load_file(animes_file)
 puts "==> Seeding: Anime"
 puts Anime.create(value)
