@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).on("turbolinks:load", function(){
     $('.video-button').click(function(e) {
         var that = $(this);
         var href = that.data('href');

@@ -13,6 +13,11 @@
      cursor: pointer;
 }
 
+.turbolinks-progress-bar {
+    height: 5px;
+    background-color: #fe023d;
+}
+
 .full_header {
     position: relative;
     margin-left: -18px;
