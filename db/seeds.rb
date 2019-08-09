@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'yaml'
+
+SEED_DIR = 'db/seeds'
+
+animes_file = Rails.root.join("#{SEED_DIR}/animes.yml")
+value = YAML.load_file(animes_file)
+puts "==> Seeding: Anime"
+puts Anime.create(value)

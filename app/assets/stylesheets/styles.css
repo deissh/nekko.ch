@@ -1,9 +1,7 @@
 /*скролбар*/
- body::-webkit-scrollbar {
-     width: 5px;
-}
  ::-webkit-scrollbar {
      height: 5px;
+     width: 5px;
 }
  ::-webkit-scrollbar-track {
      background:#333a4c;
@@ -13,6 +11,11 @@
  ::-webkit-scrollbar-thumb {
      background: #fe023d;
      cursor: pointer;
+}
+
+.turbolinks-progress-bar {
+    height: 5px;
+    background-color: #fe023d;
 }
 
 .full_header {

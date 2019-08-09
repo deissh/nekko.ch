@@ -10,7 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_08_06_191426) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "anime_translators", force: :cascade do |t|
+    t.string "name"
+    t.integer "translator_id"
+    t.bigint "anime_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["anime_id"], name: "index_anime_translators_on_anime_id"
+  end
+
+  create_table "animes", force: :cascade do |t|
+    t.string "title"
+    t.string "title_en"
+    t.string "title_or"
+    t.string "annotation"
+    t.text "description"
+    t.string "posters", array: true
+    t.string "genres", array: true
+    t.string "status"
+    t.integer "year"
+    t.decimal "rating"
+    t.boolean "blocked_ru"
+    t.boolean "blocked_ua"
+    t.string "world_art_id"
+    t.string "kinopoisk_id"
+    t.string "countries", array: true
+    t.string "actors", array: true
+    t.string "directors", array: true
+    t.string "studios", array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "episodes", force: :cascade do |t|
+    t.string "name"
+    t.string "stream_url"
+    t.bigint "anime_translator_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["anime_translator_id"], name: "index_episodes_on_anime_translator_id"
+  end
+
+  add_foreign_key "anime_translators", "animes"
+  add_foreign_key "episodes", "anime_translators"
 end
