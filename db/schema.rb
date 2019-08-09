@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2019_08_09_155713) do
     t.index ["anime_id"], name: "index_anime_translators_on_anime_id"
   end
 
-  create_table "anime", force: :cascade do |t|
+  create_table "animes", force: :cascade do |t|
     t.string "title"
     t.string "title_en"
     t.string "title_or"
@@ -70,6 +70,6 @@ ActiveRecord::Schema.define(version: 2019_08_09_155713) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "anime_translators", "anime"
+  add_foreign_key "anime_translators", "animes"
   add_foreign_key "episodes", "anime_translators"
 end

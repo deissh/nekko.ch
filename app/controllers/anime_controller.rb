@@ -7,7 +7,11 @@ class AnimeController < ApplicationController
   # GET /anime
   # GET /anime.json
   def index
-    @animes = Anime.all.limit(5)
+    @animes = Anime.all.limit(params[:limit] || 50)
+    respond_to do |format|
+      format.html { render :index }
+      format.json { render json: @animes }
+    end
   end
 
   # GET /anime/1
