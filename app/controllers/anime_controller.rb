@@ -2,7 +2,7 @@
 
 class AnimeController < ApplicationController
   before_action :anime_load, only: %i[show edit update destroy]
-  before_action :authorize_admin, only: %i[edit update destroy]
+  before_action :authorize_admin, only: %i[new edit create update destroy]
 
   # GET /anime
   # GET /anime.json
@@ -19,6 +19,11 @@ class AnimeController < ApplicationController
   def show
     @title = @anime.title
     @desc = @anime.description
+
+    respond_to do |format|
+      format.html { render :show }
+      format.json { render json: @anime }
+    end
   end
 
   # GET /anime/new
