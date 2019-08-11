@@ -1,16 +1,64 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 require 'yaml'
+require 'zlib'
 
 SEED_DIR = 'db/seeds'
 
-animes_file = Rails.root.join("#{SEED_DIR}/animes.yml")
-value = YAML.load_file(animes_file)
-puts "==> Seeding: Anime"
-puts Anime.create(value)
+class SeedFile
+  MAX_ID = 2_147_483_647 # Yoinked from Postgres docs
+
+  attr_reader :model, :file
+
+  def initialize(file, model: nil)
+    @file = file
+    @model = model || File.basename(file, '.*').classify.constantize
+  end
+
+  def import!
+    data.map do |label, row_data|
+      # rubocop:disable Style/ParallelAssignment
+      row_data, label = label, nil unless row_data
+      # rubocop:enable Style/ParallelAssignment
+      row = Row.new(row_data, model, label).import!
+      yield (label || row.try(:title) || row[row.id])
+    end
+  end
+
+  private
+
+  def data
+    @data ||= YAML.load_file(file)
+  end
+
+  class Row
+    attr_reader :data, :model, :label
+
+    def initialize(data, model, label = nil)
+      @data = data
+      @model = model
+      @label = label
+    end
+
+    def import!
+      instance = model.where(id: id).first_or_initialize
+      instance.assign_attributes(data)
+      instance.save!
+      instance
+    end
+
+    def id
+      data[model.primary_key] || generated_id
+    end
+
+    def generated_id
+      Zlib.crc32(label.to_s) % MAX_ID
+    end
+  end
+end
+
+Dir[Rails.root.join("#{SEED_DIR}/*.yml")].each do |f|
+  seed = SeedFile.new(f)
+  puts "==> Seeding: #{seed.model.name}"
+  print "  "
+  seed.import! { |key| print "#{key} | " }
+  print "\n"
+end

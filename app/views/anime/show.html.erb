@@ -21,11 +21,11 @@
           <svg class="svg-inline--fa fa-play fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="play" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="">
             <path fill="currentColor" d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
           </svg>
-           <span class="fas fa-play"></span> Смотреть онлайн!
+          <span class="fas fa-play"></span> Смотреть онлайн!
         </a>
-<!--        <a href="#" class="scrolla ic-l to_trailer action-header__btn button" data-target="trailer" title="{title}">-->
-<!--           <span class="fab fa-youtube"></span>Трейлер-->
-<!--        </a>-->
+        <!--        <a href="#" class="scrolla ic-l to_trailer action-header__btn button" data-target="trailer" title="{title}">-->
+        <!--           <span class="fab fa-youtube"></span>Трейлер-->
+        <!--        </a>-->
       </div>
     </div>
   </header>
@@ -58,22 +58,22 @@
   </div>
 
   <div class="accordion" id="translators">
-    <% (1..5).each do |tr| %>
+    <% @anime.translators.each_with_index do |tr, tr_idx| %>
       <div class="card">
-        <div class="card-header translator-header" id="translator-title-<%= tr %>">
+        <div class="card-header translator-header" id="translator-title-<%= tr_idx %>">
           <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#translator-btn-<%= tr %>" aria-expanded="false" aria-controls="translator-btn-<%= tr %>">
-              <%= tr %>
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#translator-btn-<%= tr_idx %>" aria-expanded="false" aria-controls="translator-btn-<%= tr_idx %>">
+              <%= tr.name %>
             </button>
           </h5>
         </div>
 
-        <div id="translator-btn-<%= tr %>" class="collapse translator-body" aria-labelledby="translator-title-<%= tr %>" data-parent="#translators">
+        <div id="translator-btn-<%= tr_idx %>" class="collapse translator-body" aria-labelledby="translator-title-<%= tr_idx %>" data-parent="#translators">
           <div class="card-body">
 
             <div class="episodes">
-              <% (1..50).each_with_index do |episode, index| %>
-                <%= content_tag(:div, index + 1, 'data-id': index, 'data-href': "http://moonwalk.cc/serial/05637d0c8b3e7e2f23caaa4ab6ce0ee2/iframe?season=01&episode=02&nocontrols=1", class: "video-button") %>
+              <% tr.episodes.each_with_index do |episode, index| %>
+                <%= content_tag(:div, index + 1, 'data-id': index, 'data-href': episode.stream_url, class: "video-button") %>
               <% end %>
             </div>
 
@@ -84,8 +84,8 @@
   </div>
 
   <div class="tabs-box ignore-select">
-    <div id="player">
-      <iframe src="" width="100%" frameborder="0" allowfullscreen></iframe>
+    <div class="embed-responsive embed-responsive-16by9" id="player">
+      <iframe src="" class="embed-responsive-item" allowfullscreen></iframe>
     </div>
   </div>
 </article>
