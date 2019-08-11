@@ -72,7 +72,7 @@
                       <%= anime.genres.join(', ') %>
                     </div>
                     <div class="ser-d">
-                      Рейтинг <%= anime.rating.round(1) %> из 10
+                      Рейтинг <%= anime.rating.to_f.round(1) %> из 10
                     </div>
                     <div class="ser-i img-box ps-link" data-link="<%= anime_path(anime.id) %>">
                       <span class="topicImage" style="background-image: url(<%= anime.posters[0] %>);"></span>

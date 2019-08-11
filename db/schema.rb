@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_09_155713) do
+ActiveRecord::Schema.define(version: 2019_08_11_080221) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2019_08_09_155713) do
     t.string "genres", array: true
     t.string "status"
     t.integer "year"
-    t.decimal "rating"
+    t.decimal "rating", default: "5.0"
     t.boolean "blocked_ru"
     t.boolean "blocked_ua"
     t.string "world_art_id"
