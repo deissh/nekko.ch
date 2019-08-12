@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :admins, path: 'adm'
   devise_for :users, path: 'users'
 
   resources :anime, as: 'anime'
-  # get 'anime/:id' => 'anime#show', as: 'anime'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  scope '/admin' do
+    mount RailsAdmin::Engine => '/panel', as: 'rails_admin'
+  end
 end
