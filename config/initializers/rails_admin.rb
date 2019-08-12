@@ -39,4 +39,15 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.model 'Anime' do
+    include_all_fields
+    field(:posters, :serialized) { html_attributes rows: '3', cols: '70' }
+    field(:genres, :serialized) { html_attributes rows: '5', cols: '70' }
+    field(:countries, :serialized) { html_attributes rows: '5', cols: '70' }
+    field(:actors, :serialized) { html_attributes rows: '5', cols: '70' }
+    field(:directors, :serialized) { html_attributes rows: '5', cols: '70' }
+    field(:studios, :serialized) { html_attributes rows: '5', cols: '70' }
+
+  end
 end
