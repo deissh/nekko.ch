@@ -71,3 +71,5 @@ gem 'jquery-rails'
 gem 'devise'
 
 gem 'rails_admin', '~> 2.0.0.rc'
+
+gem 'pg_search'
