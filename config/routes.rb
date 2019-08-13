@@ -1,4 +1,12 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  get 'anime/:id' => 'anime#full'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :admins, path: 'adm'
+  devise_for :users, path: 'users'
+
+  resources :anime, as: 'anime', only: %i[show index]
+
+  scope '/admin' do
+    mount RailsAdmin::Engine => '/panel', as: 'rails_admin'
+  end
 end

@@ -13,16 +13,46 @@
           </ul>
         </li>
         <li>
-          <a href="#">Обратная связь</a>
+          <a href="https://vk.com/aniberu">Обратная связь</a>
         </li>
 
         <li class="head-ic">
           <a href="#">
-            <span class="fa fa-user"></span>
-            <!--          <div class="loginbtn img-box" id="loginbtn"></div>-->
+            <% if (user_signed_in?) %>
+              <div class="loginbtn img-box align-middle" id="loginbtn">
+                <%= image_tag current_user.picture || "https://via.placeholder.com/150" %>
+              </div>
+            <% else %>
+              <span class="fa fa-user"></span>
+            <% end %>
           </a>
           <ul class="hidden-menu login-box">
-            <li>{login}</li>
+            <% if (user_signed_in?) %>
+              <li>
+                <div class="login-avatar">
+                  <div class="avatar-box" id="avatar-box">
+                    <%= image_tag current_user.picture || "https://via.placeholder.com/150" %>
+                  </div>
+                  <% if (current_user.role != 'user') %>
+                    <a href="{admin-link}" target="_blank">Админпанель</a>
+                  <% end %>
+                </div>
+                <ul class="login-menu">
+                  <li><a href="#">Мой профиль</a></li>
+                  <li><a href="#">Сообщения</a></li>
+                  <li><a href="#">Мои закладки</a></li>
+                  <li><a href="#">Последние комментарии</a></li>
+                  <li><%= link_to "Выйти", destroy_user_session_path, method: :delete %></li>
+                </ul>
+              </li>
+            <% else %>
+              <li>
+                <ul class="login-menu">
+                  <li><%= link_to "Регистрация", new_user_registration_path %></li>
+                  <li><%= link_to "Войти", new_user_session_path %></li>
+                </ul>
+              </li>
+            <% end %>
           </ul>
         </li>
         <li class="head-ic">

@@ -4,3 +4,37 @@
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+.translator-header {
+  background-color: #333a4c !important;
+}
+
+.translator-body {
+  .episodes {
+    max-height: 250px;
+    overflow-y: auto;
+
+    .video-button {
+      cursor: pointer;
+      display: inline-block;
+      text-align: center;
+      font-size: 16px;
+      padding: 9px 5px 0;
+      margin: 0 2px 6px 0;
+      // todo: вынести как параметры
+      background: #333a4c;
+      color: #fff;
+      min-width: 41px;
+      height: 41px;
+      transition: .3s;
+    }
+    .video-button.active {
+      background: #fe023d;
+    }
+  }
+}
+
+#player {
+  display: none;
+  margin: auto;
+}
