@@ -1,0 +1,52 @@
+version: '3.1'
+
+volumes:
+  redis-production:
+  postgres-data-production:
+
+services:
+  db:
+    image: postgres:10
+    expose:
+      - 5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: nekko_production
+    ports:
+      - 127.0.0.1:5432:5432
+    volumes:
+      - postgres-data-production:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+
+  in_memory_store:
+    image: redis:4-alpine
+    expose:
+      - 6379
+    volumes:
+      - redis-production:/var/lib/redis/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "-h", "localhost", "ping"]
+
+  server_app: &server_app
+    image: nekkoru/webserver:${WEBSERVER_TAG:-latest}
+    build: .
+    command: bundle exec rails server -b 0.0.0.0
+    entrypoint: "./docker-entrypoint.sh"
+    tty: true
+    stdin_open: true
+    restart: on-failure
+    environment:
+      RAILS_ENV: production
+      DATABASE_URL: 'postgres://postgres:postgres@db/nekko_production'
+      REDIS_DB: "redis://in_memory_store:6379"
+      SECRET_KEY_BASE: STUB
+      DEVISE_SECRET_KEY: STUB
+    depends_on:
+      - db
+      - in_memory_store
+    ports:
+      - 3000:3000
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
