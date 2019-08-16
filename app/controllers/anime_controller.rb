@@ -44,7 +44,7 @@ class AnimeController < ApplicationController
   end
 
   def page
-    params[:page] || 0 * limit
+    (params[:page].to_i || 0) * limit.to_i
   end
 
   def genres
