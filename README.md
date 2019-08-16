@@ -20,8 +20,8 @@
 
 <br />
 
-* [Setup]()
-* [Screenshots]()
+* [Setup](https://github.com/nekko-ru/website/blob/master/README.md#setup)
+* [Screenshots](https://github.com/nekko-ru/website/blob/master/README.md#screenshots)
 
 
 ## Setup
