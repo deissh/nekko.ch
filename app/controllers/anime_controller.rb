@@ -12,6 +12,7 @@ class AnimeController < ApplicationController
     list = list.where(year: year) if year
     list = list.order(sort_by) if sort_by
 
+    @title = 'Поиск'
     @animes = list
     respond_to do |format|
       format.html { render :index }
@@ -22,6 +23,7 @@ class AnimeController < ApplicationController
   # GET /anime/1
   # GET /anime/1.json
   def show
+    @anime = Anime.find(params[:id])
     @title = @anime.title
     @desc = @anime.description
 
@@ -33,20 +35,16 @@ class AnimeController < ApplicationController
 
   private
 
-  def anime_load
-    @anime = Anime.find(params[:id])
-  end
-
   def search
     params[:q]
   end
 
-  def page
-    params[:page] || 0 * limit
-  end
-
   def limit
     params[:limit] || 25
+  end
+
+  def page
+    params[:page] || 0 * limit
   end
 
   def genres
