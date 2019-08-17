@@ -10,7 +10,7 @@
           </div>
 
           <% if anime.rating %>
-            <div class="label label__rate"><%= anime.rating %></div>
+            <div class="label label__rate"><%= anime.rating.round(1) %></div>
           <% end %>
 
           <div class="label label__play">
