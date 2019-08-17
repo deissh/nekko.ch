@@ -14,6 +14,11 @@ class AnimeController < ApplicationController
 
     @title = 'Поиск'
     @animes = list
+    @query = {
+      q: search,
+      year: year,
+      sort_by: sort_by
+    }
     respond_to do |format|
       format.html { render :index }
       format.json { render json: @animes }

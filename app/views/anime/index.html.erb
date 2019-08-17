@@ -7,7 +7,7 @@
             <div class="icon-wrap">
               <i class="fas fa-search"></i>
             </div>
-            <input id="search" name="q" type="text" value="" placeholder="Поиск...">
+            <input id="search" name="q" type="text" value="<%= @query[:q] %>" placeholder="Поиск...">
           </div>
         </div>
         <div class="advance-search">
@@ -15,23 +15,20 @@
           <div class="row">
             <div class="col">
               <label for="year">Год выхода</label>
-              <select class="form-control" id="year" name="year">
-                <option value="">Не указано</option>
-                <% (1978..2019).each do |year| %>
-                  <option><%= year %></option>
-                <% end %> %>
-              </select>
+              <%= select_tag 'year', options_for_select((1978..2019)), include_blank: "Не указано", class: "form-control" %>
             </div>
             <div class="col">
               <label for="sort_by">Сортировать по</label>
-              <select class="form-control" id="sort_by" name="sort_by">
-                <option value="">Не указано</option>
-                <option value="rating_desc">Рейтингу</option>
-                <option value="title_desc">Алфавиту (А-Я)</option>
-                <option value="title_asc">Алфавиту (Я-А)</option>
-                <option value="year_desc">Дате выхода (сначала новые)</option>
-                <option value="year_asc">Дате выхода (сначала старые)</option>
-              </select>
+              <%= select_tag 'sort_by',
+                             options_for_select([
+                                ['Рейтингу', 'rating_desc'],
+                                ['Алфавиту (А-Я)', 'title_desc'],
+                                ['Алфавиту (Я-А)', 'title_asc'],
+                                ['Дате выхода (сначала новые)', 'year_desc'],
+                                ['Дате выхода (сначала старые)', 'year_asc'],
+                             ]),
+                             include_blank: "Не указано",
+                             class: "form-control" %>
             </div>
           </div>
           <div class="row third">
