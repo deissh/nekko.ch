@@ -17,6 +17,13 @@
 //= require jquery_ujs
 //= require_tree .
 
+/*
+==========
+Components
+==========
+ */
+//= require './_shared/search.js'
+
 // top navbar
 $(document).on("turbolinks:load", function(){
     $('.head-menu li:has(ul) > a').click(function() {

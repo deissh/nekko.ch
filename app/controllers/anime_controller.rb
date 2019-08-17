@@ -5,11 +5,11 @@ class AnimeController < ApplicationController
   # GET /anime.json
   def index
     list = Anime
-    list = list.search_by_title(search) if search
+    list = list.search_by_title(search) unless search.empty?
     list = list.limit(limit)
     list = list.offset(page)
     list = list.where('genres @> ?', "{#{genres}}") if genres
-    list = list.where(year: year) if year
+    list = list.where(year: year) unless year.empty?
     list = list.order(sort_by) if sort_by
 
     @title = 'Поиск'
@@ -36,7 +36,7 @@ class AnimeController < ApplicationController
   private
 
   def search
-    params[:q]
+    params[:q] || ''
   end
 
   def limit
@@ -52,30 +52,34 @@ class AnimeController < ApplicationController
   end
 
   def year
-    params[:year]
+    params[:year] || ''
   end
 
   def sort_by
     case params[:sort_by]
+    when 'title_desc'
+      'title DESC'
+    when 'title_asc'
+      'title ASC'
     when 'rating_desc'
-      return 'rating DESC'
+      'rating DESC'
     when 'rating_asc'
-      return 'rating ASC'
+      'rating ASC'
     when 'year_desc'
-      return 'year DESC'
+      'year DESC'
     when 'year_asc'
-      return 'year ASC'
+      'year ASC'
     when 'created_at_desc'
-      return 'created_at DESC'
+      'created_at DESC'
     when 'created_at_asc'
-      return 'created_at ASC'
+      'created_at ASC'
     when 'updated_at_desc'
-      return 'updated_at DESC'
+      'updated_at DESC'
     when 'updated_at_asc'
-      return 'updated_at ASC'
+      'updated_at ASC'
     else
       # default sort
-      return 'rating DESC'
+      'rating DESC'
     end
   end
 end
