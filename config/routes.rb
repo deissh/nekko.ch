@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   devise_for :admins, path: 'adm'
   devise_for :users, path: 'users'
 
+  root 'anime#index'
+
   resources :anime, as: 'anime', only: %i[show index]
 
   scope '/admin' do
