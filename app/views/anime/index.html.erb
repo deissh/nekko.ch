@@ -1,4 +1,32 @@
 <div>
+  <div class="search-form pb-3">
+    <form method="get">
+      <div class="inner-form">
+        <div class="basic-search">
+          <div class="input-field">
+            <div class="icon-wrap">
+              <i class="fas fa-search"></i>
+            </div>
+            <input id="search" name="q" type="text" placeholder="Поиск...">
+          </div>
+        </div>
+        <div class="advance-search">
+          <span class="desc">Расширенный поиск</span>
+          <div class="row">
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="customCheck1">
+              <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+            </div>
+          </div>
+          <div class="row third">
+            <div class="input-field">
+              <button class="btn-search">Найти</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
   <% @animes.each do |anime| %>
     <article class="short__item">
       <a title="<%= anime.title %>" href="<%= anime_path(anime.id) %>">
