@@ -8,7 +8,9 @@
         <li>
           <a href="#">Поиск</a>
           <ul class="hidden-menu">
-            <li><a href="#">Аниме</a></li>
+            <li>
+              <%= link_to 'Аниме', anime_index_path %>
+            </li>
             <li><a href="#">Манга</a></li>
           </ul>
         </li>
@@ -65,11 +67,9 @@
           <ul class="hidden-menu search-box">
             <li>
               <div>
-                <form id="quicksearch" method="post">
-                  <input type="hidden" name="do" value="search" />
-                  <input type="hidden" name="subaction" value="search" />
+                <form method="get" action="<%= anime_index_path %>">
                   <div class="search-inner">
-                    <input id="story" name="story" placeholder="Поиск..." type="text" />
+                    <input id="story" name="q" placeholder="Поиск..." type="text" />
                     <button type="submit" title="Найти">поиск</button>
                   </div>
                 </form>
