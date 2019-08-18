@@ -1,25 +1,100 @@
-<p id="notice"><%= notice %></p>
+<div>
+  <div class="pb-3">
+    <form method="get" id="search-form">
+      <div class="inner-form">
+        <div class="basic-search">
+          <div class="input-field">
+            <div class="icon-wrap">
+              <i class="fas fa-search"></i>
+            </div>
+            <input id="search" name="q" type="text" value="<%= @query[:q] %>" placeholder="Поиск...">
+          </div>
+        </div>
+        <div class="advance-search">
+          <span class="desc">Расширенный поиск</span>
+          <div class="row">
+            <div class="col">
+              <label for="year">Год выхода</label>
+              <%= select_tag 'year', options_for_select((1978..2019)), include_blank: "Не указано", class: "form-control" %>
+            </div>
+            <div class="col">
+              <label for="sort_by">Сортировать по</label>
+              <%= select_tag 'sort_by',
+                             options_for_select([
+                                ['Рейтингу', 'rating_desc'],
+                                ['Алфавиту (А-Я)', 'title_desc'],
+                                ['Алфавиту (Я-А)', 'title_asc'],
+                                ['Дате выхода (сначала новые)', 'year_desc'],
+                                ['Дате выхода (сначала старые)', 'year_asc'],
+                                ['Недавно обновлено', 'updated_at_desc'],
+                                ['Недавно добавлены', 'created_at_desc'],
+                             ]),
+                             include_blank: "Не указано",
+                             class: "form-control" %>
+            </div>
+          </div>
+          <div class="row third">
+            <div class="input-field">
+              <button class="btn-search">Найти</button>
+              <button type="button" class="btn-delete" id="reset-form">Сбросить</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
 
-<h1>Animes</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <div class="flex-row">
     <% @animes.each do |anime| %>
-      <tr>
-        <td><%= link_to 'Show', anime %></td>
-        <td><%= link_to 'Edit', edit_anime_path(anime) %></td>
-        <td><%= link_to 'Destroy', anime, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <article class="short__item">
+        <a title="<%= anime.title %>" href="<%= anime_path(anime.id) %>">
+          <header class="carousel__item-header">
+            <div class="short__item-image">
+              <figure>
+                <img itemprop="image" class="b-lazy" src="<%= anime.posters[0] %>" data-src="<%= anime.posters[0] %>" alt="{title}">
+              </figure>
+            </div>
+
+            <% if anime.rating %>
+              <div class="label label__rate"><%= anime.rating.round(1) %></div>
+            <% end %>
+
+            <div class="label label__play">
+              <%= image_tag 'play.png', alt: 'Смотреть' %>
+            </div>
+
+            <div class="label label__rating">
+              <div class="short-rate-perc">{rating}{vote-num}</div>
+            </div>
+
+            <% if anime.year != 0 %>
+              <div class="label label__pg"><%= anime.year %></div>
+            <% end %>
+
+          </header>
+          <footer class="short__item-bottom">
+            <div class="c__item-title">
+              <%= anime.title %>
+            </div>
+            <span class="card__rate">
+            <div class="card__short-rate ci__rate">
+               <div class="card__short-rate--num"><%= anime.title_en %></div>
+              <div class="card__short-rate--num"><%= anime.genres.join(', ') %></div>
+            </div>
+         </span>
+          </footer>
+        </a>
+      </article>
     <% end %>
-  </tbody>
-</table>
 
-<br>
+    <% if @animes.length == 0 %>
+      Ничего не найдено
+    <% else %>
 
-<%= link_to 'New Anime', new_anime_path %>
+      <div class="col-12">
+        <%= paginate @animes, window: 2 %>
+      </div>
+
+    <% end %>
+  </div>
+</div>
