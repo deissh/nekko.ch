@@ -6,3 +6,7 @@ $(document).on("turbolinks:load", function() {
             .prop('selected', false);
     })
 });
+
+function openPage(page = 1) {
+
+}

@@ -4,10 +4,8 @@ class AnimeController < ApplicationController
   # GET /anime
   # GET /anime.json
   def index
-    list = Anime
+    list = Anime.page(page).per(limit)
     list = list.search_by_title(search) unless search.empty?
-    list = list.limit(limit)
-    list = list.offset(page)
     list = list.where('genres @> ?', "{#{genres}}") if genres
     list = list.where(year: year) unless year.empty?
     list = list.order(sort_by) if sort_by
@@ -49,7 +47,7 @@ class AnimeController < ApplicationController
   end
 
   def page
-    (params[:page].to_i || 0) * limit.to_i
+    params[:page] || 1
   end
 
   def genres

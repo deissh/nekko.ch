@@ -43,49 +43,58 @@
       </div>
     </form>
   </div>
-  <% @animes.each do |anime| %>
-    <article class="short__item">
-      <a title="<%= anime.title %>" href="<%= anime_path(anime.id) %>">
-        <header class="carousel__item-header">
-          <div class="short__item-image">
-            <figure>
-              <img itemprop="image" class="b-lazy" src="<%= anime.posters[0] %>" data-src="<%= anime.posters[0] %>" alt="{title}">
-            </figure>
-          </div>
 
-          <% if anime.rating %>
-            <div class="label label__rate"><%= anime.rating.round(1) %></div>
-          <% end %>
+  <div class="flex-row">
+    <% @animes.each do |anime| %>
+      <article class="short__item">
+        <a title="<%= anime.title %>" href="<%= anime_path(anime.id) %>">
+          <header class="carousel__item-header">
+            <div class="short__item-image">
+              <figure>
+                <img itemprop="image" class="b-lazy" src="<%= anime.posters[0] %>" data-src="<%= anime.posters[0] %>" alt="{title}">
+              </figure>
+            </div>
 
-          <div class="label label__play">
-            <%= image_tag 'play.png', alt: 'Смотреть' %>
-          </div>
+            <% if anime.rating %>
+              <div class="label label__rate"><%= anime.rating.round(1) %></div>
+            <% end %>
 
-          <div class="label label__rating">
-            <div class="short-rate-perc">{rating}{vote-num}</div>
-          </div>
+            <div class="label label__play">
+              <%= image_tag 'play.png', alt: 'Смотреть' %>
+            </div>
 
-          <% if anime.year != 0 %>
-            <div class="label label__pg"><%= anime.year %></div>
-          <% end %>
+            <div class="label label__rating">
+              <div class="short-rate-perc">{rating}{vote-num}</div>
+            </div>
 
-        </header>
-        <footer class="short__item-bottom">
-          <div class="c__item-title">
-            <%= anime.title %>
-          </div>
-          <span class="card__rate">
+            <% if anime.year != 0 %>
+              <div class="label label__pg"><%= anime.year %></div>
+            <% end %>
+
+          </header>
+          <footer class="short__item-bottom">
+            <div class="c__item-title">
+              <%= anime.title %>
+            </div>
+            <span class="card__rate">
             <div class="card__short-rate ci__rate">
                <div class="card__short-rate--num"><%= anime.title_en %></div>
               <div class="card__short-rate--num"><%= anime.genres.join(', ') %></div>
             </div>
          </span>
-        </footer>
-      </a>
-    </article>
-  <% end %>
+          </footer>
+        </a>
+      </article>
+    <% end %>
 
-  <% if @animes.length == 0 %>
-    Ничего не найдено
-  <% end %>
+    <% if @animes.length == 0 %>
+      Ничего не найдено
+    <% else %>
+
+      <div class="col-12">
+        <%= paginate @animes, window: 2 %>
+      </div>
+
+    <% end %>
+  </div>
 </div>
