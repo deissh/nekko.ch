@@ -4,7 +4,9 @@ $(document).on("turbolinks:load", function(){
     // загрузка если мы уже смотрели это
     // todo: load in all translators
     var selected = JSON.parse(localStorage.getItem('anime_' + anime_id) || '{}');
-    $('#translator-btn-' + selected.translator).collapse().find("[data-id='" + selected.episode + "']").addClass('active');
+    var ep = $('#translator-btn-' + selected.translator).collapse().find("[data-id='" + selected.episode + "']")
+    ep.addClass('active');
+    $('#player').find('iframe').attr('src', ep.data('href')).parent().show();
 
     $('.video-button').click(function(e) {
         var that = $(this);
