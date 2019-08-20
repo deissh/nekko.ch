@@ -14,109 +14,21 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.1/css/all.css" integrity="sha384-wxqG4glGB3nlqX0bi23nmgwCSjWIW13BdLUEYC4VIMehfbcro/ATkyDsF/AbIOVe" crossorigin="anonymous">
-
     <%= render 'shared/external' %>
   </head>
 
   <body>
-<!--    <div id="p_prldr">-->
-<!--      <div class="contpre"><span class="svg_anm"></span><br>Подождите...<br><small>идет загрузка</small></div>-->
-<!--    </div>-->
-
     <div class="wrap">
       <%= render 'shared/header' %>
 
       <div class="main center container">
-        <div class="cols clearfix">
+        <div class="clearfix">
           <div class="cont">
             <div class="floaters clearfix grid-thumb" id="grid">
               <%= yield %>
             </div>
           </div>
           <!-- end cont -->
-          <aside class="side" id="side">
-            <div class="side-b">
-              <div class="side-bt">
-                <a href="/anime?sort_by=updated_at_desc" class="text-white">
-                  Последние обновления
-                </a>
-              </div>
-              <div class="side-bc">
-
-                <% Anime.order(updated_at: :desc).limit(6).each do |anime| %>
-                  <div class="ser">
-                    <%= link_to anime.title, anime_path(anime.id), class: "ser-t nowrap" %>
-                    <div class="ser-s">
-                      <%= anime.genres.join(', ') %>
-                    </div>
-                    <div class="ser-d">
-                      Обновлено
-                      <% if anime.updated_at.today? %>
-                        сегодня <%= anime.updated_at.strftime("%H:%M") %>
-                      <% else %>
-                        <%= anime.updated_at.strftime("%d.%m %H:%M") %>
-                      <% end %>
-                    </div>
-                    <div class="ser-i img-box ps-link" data-link="<%= anime_path(anime.id) %>">
-                      <span class="topicImage" style="background-image: url(<%= anime.posters[0] %>);"></span>
-                      <span class="fa fa-play-circle"></span>
-                    </div>
-                  </div>
-                 <% end %>
-
-              </div>
-            </div>
-            <div class="side-b">
-              <div class="side-bt">
-                <a href="/anime?sort_by=rating_desc" class="text-white">
-                  Наивысший рейтинг
-                </a>
-              </div>
-              <div class="side-bc">
-
-                <% Anime.order(rating: :desc).limit(6).each do |anime| %>
-                  <div class="ser">
-                    <%= link_to anime.title, anime_path(anime.id), class: "ser-t nowrap" %>
-                    <div class="ser-s">
-                      <%= anime.genres.join(', ') %>
-                    </div>
-                    <div class="ser-d">
-                      Рейтинг <%= anime.rating.to_f.round(1) %> из 10
-                    </div>
-                    <div class="ser-i img-box ps-link" data-link="<%= anime_path(anime.id) %>">
-                      <span class="topicImage" style="background-image: url(<%= anime.posters[0] %>);"></span>
-                      <span class="fa fa-play-circle"></span>
-                    </div>
-                  </div>
-                <% end %>
-
-              </div>
-            </div>
-            <div class="side-b">
-              <div class="side-bt">Случайные аниме</div>
-              <div class="side-bc">
-
-                <% Anime.order("RANDOM()").limit(6).each do |anime| %>
-                  <div class="ser">
-                    <%= link_to anime.title, anime_path(anime.id), class: "ser-t nowrap" %>
-                    <div class="ser-s">
-                      <%= anime.genres.join(', ') %>
-                    </div>
-                    <div class="ser-d">
-                      Рейтинг <%= anime.rating.round(1) %> из 10
-                    </div>
-                    <div class="ser-i img-box ps-link" data-link="<%= anime_path(anime.id) %>">
-                      <span class="topicImage" style="background-image: url(<%= anime.posters[0] %>);"></span>
-                      <span class="fa fa-play-circle"></span>
-                    </div>
-                  </div>
-                <% end %>
-
-              </div>
-            </div>
-          </aside>
-          <!-- end side -->
         </div>
         <!-- end cols -->
       </div>
@@ -128,5 +40,4 @@
 
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </html>

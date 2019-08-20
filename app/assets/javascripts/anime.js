@@ -1,4 +1,11 @@
 $(document).on("turbolinks:load", function(){
+    var anime_id = $('input[name="page_id"]').val();
+
+    // загрузка если мы уже смотрели это
+    // todo: load in all translators
+    var selected = JSON.parse(localStorage.getItem('anime_' + anime_id) || '{}');
+    $('#translator-btn-' + selected.translator).collapse().find("[data-id='" + selected.episode + "']").addClass('active');
+
     $('.video-button').click(function(e) {
         var that = $(this);
         var href = that.data('href');
@@ -6,11 +13,19 @@ $(document).on("turbolinks:load", function(){
         $('#player').find('iframe').attr('src', href).parent().show();
 
         if (!that.hasClass('active')) {
-            var saved = $(this).data('id');
-            var anime_id = $('input[name="page_id"]').val();
+            var episode = $(this).data('id');
+            var translator = $(this).data('translator-id');
 
+            // переключаем серию (меняем активную кнопку)
             $('.video-button').removeClass('active');
             that.addClass('active');
+
+            // сохраняем в текущем клиенте
+            localStorage.setItem('anime_' + anime_id, JSON.stringify({
+                episode,
+                translator
+            }));
+
             // $.ajax({
             //     url: '/saved/' + anime_id + '/' + saved,
             //     type: 'post',

@@ -46,45 +46,7 @@
 
   <div class="flex-row">
     <% @animes.each do |anime| %>
-      <article class="short__item">
-        <a title="<%= anime.title %>" href="<%= anime_path(anime.id) %>">
-          <header class="carousel__item-header">
-            <div class="short__item-image">
-              <figure>
-                <img itemprop="image" class="b-lazy" src="<%= anime.posters[0] %>" data-src="<%= anime.posters[0] %>" alt="{title}">
-              </figure>
-            </div>
-
-            <% if anime.rating %>
-              <div class="label label__rate"><%= anime.rating.round(1) %></div>
-            <% end %>
-
-            <div class="label label__play">
-              <%= image_tag 'play.png', alt: 'Смотреть' %>
-            </div>
-
-            <div class="label label__rating">
-              <div class="short-rate-perc">{rating}{vote-num}</div>
-            </div>
-
-            <% if anime.year != 0 %>
-              <div class="label label__pg"><%= anime.year %></div>
-            <% end %>
-
-          </header>
-          <footer class="short__item-bottom">
-            <div class="c__item-title">
-              <%= anime.title %>
-            </div>
-            <span class="card__rate">
-            <div class="card__short-rate ci__rate">
-               <div class="card__short-rate--num"><%= anime.title_en %></div>
-              <div class="card__short-rate--num"><%= anime.genres.join(', ') %></div>
-            </div>
-         </span>
-          </footer>
-        </a>
-      </article>
+      <%= render 'shared/anime/short', anime: anime %>
     <% end %>
 
     <% if @animes.length == 0 %>
