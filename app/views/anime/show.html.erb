@@ -73,7 +73,11 @@
 
             <div class="episodes">
               <% tr.episodes.order(created_at: :asc).each_with_index do |episode, index| %>
-                <%= content_tag(:div, index + 1, 'data-id': index, 'data-href': episode.stream_url, class: "video-button") %>
+                <%= content_tag(:div, index + 1,
+                                'data-id': index,
+                                'data-href': episode.stream_url,
+                                'data-translator-id': tr_idx,
+                                class: "video-button") %>
               <% end %>
             </div>
 
