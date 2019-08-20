@@ -22,54 +22,13 @@
       <%= render 'shared/header' %>
 
       <div class="main center container">
-        <div class="cols clearfix">
+        <div class="clearfix">
           <div class="cont">
             <div class="floaters clearfix grid-thumb" id="grid">
               <%= yield %>
             </div>
           </div>
           <!-- end cont -->
-          <aside class="side" id="side">
-            <div class="side-b">
-              <div class="side-bt">
-                <a href="/anime?sort_by=updated_at_desc" class="text-white">
-                  Последние обновления
-                </a>
-              </div>
-              <div class="side-bc">
-
-                <% Anime.order(updated_at: :desc).limit(6).each do |anime| %>
-                  <%= render 'shared/anime/small', anime: anime %>
-                <% end %>
-
-              </div>
-            </div>
-            <div class="side-b">
-              <div class="side-bt">
-                <a href="/anime?sort_by=rating_desc" class="text-white">
-                  Наивысший рейтинг
-                </a>
-              </div>
-              <div class="side-bc">
-
-                <% Anime.order(rating: :desc).limit(6).each do |anime| %>
-                  <%= render 'shared/anime/small', anime: anime %>
-                <% end %>
-
-              </div>
-            </div>
-            <div class="side-b">
-              <div class="side-bt">Случайные аниме</div>
-              <div class="side-bc">
-
-                <% Anime.order("RANDOM()").limit(6).each do |anime| %>
-                  <%= render 'shared/anime/small', anime: anime %>
-                <% end %>
-
-              </div>
-            </div>
-          </aside>
-          <!-- end side -->
         </div>
         <!-- end cols -->
       </div>

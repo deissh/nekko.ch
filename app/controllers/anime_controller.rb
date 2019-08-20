@@ -18,7 +18,7 @@ class AnimeController < ApplicationController
       sort_by: sort_by
     }
     respond_to do |format|
-      format.html { render :index }
+      format.html { render :index, layout: 'sidebar' }
       format.json { render json: @animes }
     end
   end
@@ -31,7 +31,7 @@ class AnimeController < ApplicationController
     @desc = @anime.description
 
     respond_to do |format|
-      format.html { render :show }
+      format.html { render :show, layout: 'sidebar' }
       format.json { render json: @anime }
     end
   end
