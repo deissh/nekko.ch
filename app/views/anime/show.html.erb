@@ -23,9 +23,12 @@
           </svg>
           <span class="fas fa-play"></span> Смотреть онлайн!
         </a>
-        <!--        <a href="#" class="scrolla ic-l to_trailer action-header__btn button" data-target="trailer" title="{title}">-->
-        <!--           <span class="fab fa-youtube"></span>Трейлер-->
-        <!--        </a>-->
+        <% if @anime.youtube_trailer_url? %>
+          <%= link_to raw('<span class="fab fa-youtube"></span>Трейлер'),
+                      @anime.youtube_trailer_url,
+                      target: '_blank',
+                      class: 'scrolla ic-l to_trailer action-header__btn button' %>
+        <% end %>
       </div>
     </div>
   </header>
@@ -88,7 +91,7 @@
   </div>
 
   <div class="tabs-box ignore-select">
-    <div class="embed-responsive embed-responsive-16by9" id="player">
+    <div class="embed-responsive embed-responsive-16by9 hide" id="player">
       <iframe src="" class="embed-responsive-item" allowfullscreen></iframe>
     </div>
   </div>

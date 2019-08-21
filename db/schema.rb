@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_13_073213) do
+ActiveRecord::Schema.define(version: 2019_08_21_050031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(version: 2019_08_13_073213) do
     t.string "studios", array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "youtube_trailer_url", default: ""
   end
 
   create_table "episodes", force: :cascade do |t|
