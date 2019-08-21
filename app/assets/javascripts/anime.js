@@ -4,7 +4,7 @@ $(document).on("turbolinks:load", function(){
     // загрузка если мы уже смотрели это
     // todo: load in all translators
     var selected = JSON.parse(localStorage.getItem('anime_' + anime_id) || '{}');
-    if (selected.translator && selected.episode) {
+    if (selected.translator !== undefined && selected.episode !== undefined) {
         var ep = $('#translator-btn-' + selected.translator).collapse().find("[data-id='" + selected.episode + "']");
         ep.addClass('active');
         $('#player')
