@@ -4,15 +4,27 @@ $(document).on("turbolinks:load", function(){
     // загрузка если мы уже смотрели это
     // todo: load in all translators
     var selected = JSON.parse(localStorage.getItem('anime_' + anime_id) || '{}');
-    var ep = $('#translator-btn-' + selected.translator).collapse().find("[data-id='" + selected.episode + "']")
-    ep.addClass('active');
-    $('#player').find('iframe').attr('src', ep.data('href')).parent().show();
+    if (selected.translator && selected.episode) {
+        var ep = $('#translator-btn-' + selected.translator).collapse().find("[data-id='" + selected.episode + "']");
+        ep.addClass('active');
+        $('#player')
+            .removeClass('hide')
+            .find('iframe')
+            .attr('src', ep.data('href'))
+            .parent()
+            .show();
+    }
 
     $('.video-button').click(function(e) {
         var that = $(this);
         var href = that.data('href');
 
-        $('#player').find('iframe').attr('src', href).parent().show();
+        $('#player')
+            .removeClass('hide')
+            .find('iframe')
+            .attr('src', href)
+            .parent()
+            .show();
 
         if (!that.hasClass('active')) {
             var episode = $(this).data('id');
