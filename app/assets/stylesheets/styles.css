@@ -876,6 +876,7 @@ svg:not(:root).svg-inline--fa {
      float:right;
      min-height:600px;
      padding:30px;
+     padding-top: 10px;
      position:relative;
      z-index:200;
 }
