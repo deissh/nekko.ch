@@ -91,10 +91,11 @@
 .full_header-actions {
     margin-top: 70px;
 }
+.full_header-actions a:first-child {
+    background-color: #fe023d;
+}
 .full_header-actions a {
     margin-right: 15px;
-}
-.full_header-actions a:last-child {
     background-color: #242227;
 }
 svg:not(:root).svg-inline--fa {
