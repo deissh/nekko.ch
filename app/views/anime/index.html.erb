@@ -15,7 +15,8 @@
           <div class="row">
             <div class="col">
               <label for="year">Год выхода</label>
-              <%= select_tag 'year', options_for_select((1978..2019)), include_blank: "Не указано", class: "form-control" %>
+              <%= select_tag 'year', options_for_select((1978..2019), :selected=>@query[:year]),
+                             include_blank: "Не указано", class: "form-control" %>
             </div>
             <div class="col">
               <label for="sort_by">Сортировать по</label>
@@ -28,7 +29,15 @@
                                 ['Дате выхода (сначала старые)', 'year_asc'],
                                 ['Недавно обновлено', 'updated_at_desc'],
                                 ['Недавно добавлены', 'created_at_desc'],
-                             ]),
+                             ], :selected=>@query[:sort_by]),
+                             include_blank: "Не указано",
+                             class: "form-control" %>
+            </div>
+            <div class="col">
+              <label for="sort_by">Жанр</label>
+              <%= select_tag 'genres',
+                             options_for_select(Genre.all.map{ |u| [u.name, u.id] },
+                                                :selected=>@query[:genres]),
                              include_blank: "Не указано",
                              class: "form-control" %>
             </div>

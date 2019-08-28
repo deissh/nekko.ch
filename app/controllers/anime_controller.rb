@@ -6,16 +6,16 @@ class AnimeController < ApplicationController
   def index
     list = Anime.page(page).per(limit)
     list = list.search_by_title(search) unless search.empty?
-    list = list.where('genres @> ?', "{#{genres}}") if genres
     list = list.where(year: year) unless year.empty?
-    list = list.order(sort_by) if sort_by
+    list = list.order(sort_by_order) if sort_by_order
 
     @title = 'Поиск'
     @animes = list
     @query = {
-      q: search,
-      year: year,
-      sort_by: sort_by
+        q: search,
+        year: year,
+        sort_by: sort_by,
+        genres: genres
     }
     respond_to do |format|
       format.html { render :index, layout: 'sidebar' }
@@ -59,7 +59,11 @@ class AnimeController < ApplicationController
   end
 
   def sort_by
-    case params[:sort_by]
+    params[:sort_by]
+  end
+
+  def sort_by_order
+    case sort_by
     when 'title_desc'
       'title DESC'
     when 'title_asc'
