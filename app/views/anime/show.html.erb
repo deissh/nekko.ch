@@ -44,7 +44,7 @@
         <% end %>
         <% if current_admin %>
           <%= link_to raw('<i class="fas fa-edit"></i>Редактировать'),
-                      "/admin/panel/anime/#{@anime.slug}",
+                      "/admin/panel/anime/#{@anime.try(:slug) || @anime.id}",
                       class: 'scrolla ic-l action-header__btn button' %>
         <% end %>
       </div>

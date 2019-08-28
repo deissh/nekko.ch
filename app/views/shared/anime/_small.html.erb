@@ -1,5 +1,5 @@
 <div class="ser">
-  <%= link_to anime.title, anime_path(anime.slug), class: "ser-t nowrap" %>
+  <%= link_to anime.title, anime_path(anime.try(:slug) || anime.id), class: "ser-t nowrap" %>
   <div class="ser-s">
     <%= anime.genres_list.join(', ') %>
   </div>
@@ -11,7 +11,7 @@
       <%= l(anime.updated_at, format: '%A %H:%M') %>
     </div>
   <% end %>
-  <a class="ser-i img-box ps-link" href="<%= anime_path(anime.slug) %>">
+  <a class="ser-i img-box ps-link" href="<%= anime_path(anime.try(:slug) || anime.id) %>">
     <span class="topicImage" style="background-image: url(<%= anime.posters[0] %>);"></span>
     <span class="fa fa-play-circle"></span>
   </a>

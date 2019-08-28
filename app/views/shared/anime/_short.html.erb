@@ -1,5 +1,5 @@
 <article class="short__item">
-  <a title="<%= anime.title %>" href="<%= anime_path(anime.slug) %>">
+  <a title="<%= anime.title %>" href="<%= anime_path(anime.try(:slug) || anime.id) %>">
     <header class="carousel__item-header">
       <div class="short__item-image">
         <figure>
