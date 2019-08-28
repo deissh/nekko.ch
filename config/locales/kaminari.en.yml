@@ -1,0 +1,17 @@
+en:
+  views:
+    pagination:
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
+      truncate: "&hellip;"
+    helpers:
+      page_entries_info:
+        one_page:
+          display_entries:
+            zero: "%{entry_name} not found"
+            one: "Founded <b>1</b> by %{entry_name}"
+            other: "founded <b>all %{count}</b> by %{entry_name}"
+        more_pages:
+          display_entries: "Founded %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> in <b>%{total}</b> total"

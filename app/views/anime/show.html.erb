@@ -44,8 +44,7 @@
         <% end %>
         <% if current_admin %>
           <%= link_to raw('<i class="fas fa-edit"></i>Редактировать'),
-                      "/admin/panel/anime/#{@anime.id}",
-                      target: '_blank',
+                      "/admin/panel/anime/#{@anime.try(:slug) || @anime.id}",
                       class: 'scrolla ic-l action-header__btn button' %>
         <% end %>
       </div>
@@ -65,7 +64,7 @@
           <div class="fi-col-item"><span>Год выхода:</span> <%= @anime["year"] %></div>
           <div class="fi-col-item"><span>Статус:</span> <%= @anime["status"] %></div>
           <div class="fi-col-item"><span>Тип:</span> <%= @anime["type"] %></div>
-          <div class="fi-col-item"><span>Жанры:</span> <%= @anime["genres"].join(', ') %></div>
+          <div class="fi-col-item"><span>Жанры:</span> <%= @anime.genres_list.join(', ') %></div>
           <div class="fi-col-item"><span>Страны:</span> <%= @anime["countries"].join(', ') %></div>
           <div class="fi-col-item"><span>Режиссер:</span> <%= @anime["directors"][0] %></div>
           <div class="fi-col-item"><span>Студия:</span> <%= @anime["studios"][0] %></div>
@@ -75,7 +74,7 @@
     </div>
     <div class="full-taglist ignore-select">
       <div class="full-taglist-t">Теги:</div>
-      <%= @anime["genres"].join(', ') %>
+      <%= @anime.genres_list.join(', ') %>
     </div>
   </div>
 

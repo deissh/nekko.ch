@@ -1,5 +1,5 @@
 <article class="short__item">
-  <a title="<%= anime.title %>" href="<%= anime_path(anime.id) %>">
+  <a title="<%= anime.title %>" href="<%= anime_path(anime.try(:slug) || anime.id) %>">
     <header class="carousel__item-header">
       <div class="short__item-image">
         <figure>
@@ -31,7 +31,7 @@
       <span class="card__rate">
             <div class="card__short-rate ci__rate">
                <div class="card__short-rate--num"><%= anime.title_en %></div>
-              <div class="card__short-rate--num"><%= anime.genres.join(', ') %></div>
+              <div class="card__short-rate--num"><%= anime.genres_list.join(', ') %></div>
             </div>
          </span>
     </footer>
