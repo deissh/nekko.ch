@@ -1,5 +1,8 @@
 {
   "name": "website",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap-select": "^1.13.10",
+    "popper.js": "^1.15.0"
+  }
 }

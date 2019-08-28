@@ -38,8 +38,8 @@
               <%= select_tag 'genres',
                              options_for_select(Genre.all.map{ |u| [u.name, u.id] },
                                                 :selected=>@query[:genres]),
-                             include_blank: "Не указано",
-                             class: "form-control" %>
+                             multiple: true,
+                             class: "form-control selectpicker" %>
             </div>
           </div>
           <div class="row third">

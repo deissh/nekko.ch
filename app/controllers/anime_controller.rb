@@ -4,18 +4,22 @@ class AnimeController < ApplicationController
   # GET /anime
   # GET /anime.json
   def index
-    list = Anime.page(page).per(limit)
+    list = if !genres.blank?
+             Genre.find_by(id: genres).anime
+           else
+             Anime
+           end
     list = list.search_by_title(search) unless search.empty?
     list = list.where(year: year) unless year.empty?
     list = list.order(sort_by_order) if sort_by_order
 
+    @animes = list.page(page).per(limit)
     @title = 'Поиск'
-    @animes = list
     @query = {
-        q: search,
-        year: year,
-        sort_by: sort_by,
-        genres: genres
+      q: search,
+      year: year,
+      sort_by: sort_by,
+      genres: genres
     }
     respond_to do |format|
       format.html { render :index, layout: 'sidebar' }
