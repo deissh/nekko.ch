@@ -2,7 +2,11 @@
 
 class Anime < ApplicationRecord
   include PgSearch::Model
-  pg_search_scope :search_by_title, against: [:title, :title_en, :title_or], using: [:tsearch]
+  extend FriendlyId
+  friendly_id :title_en, use: %i[slugged finders history]
+
+  pg_search_scope :search_by_title,
+                  against: %i[title title_en title_or], using: [:tsearch]
 
   has_many :anime_translators, dependent: :destroy
 
@@ -11,6 +15,7 @@ class Anime < ApplicationRecord
   end
 
   private
+
   def reindex
     PgSearch::Multisearch.rebuild(Anime)
   end
