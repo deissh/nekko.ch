@@ -19,7 +19,7 @@ class SeedFile
       row_data, label = label, nil unless row_data
       # rubocop:enable Style/ParallelAssignment
       row = Row.new(row_data, model, label).import!
-      yield (label || row.try(:title) || row[row.id])
+      yield (label || row.try(:title) || row.try(:name) || row.id)
     end
   end
 

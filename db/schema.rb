@@ -92,8 +92,8 @@ ActiveRecord::Schema.define(version: 2019_08_28_092306) do
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
     t.string "slug"
     t.index ["slug"], name: "index_genres_on_slug", unique: true
   end
