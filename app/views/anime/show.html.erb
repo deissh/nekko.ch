@@ -79,35 +79,41 @@
     </div>
   </div>
 
-  <div class="accordion" id="translators">
-    <% @anime.translators.each_with_index do |tr, tr_idx| %>
-      <div class="card">
-        <div class="card-header translator-header" id="translator-title-<%= tr_idx %>">
-          <h5 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#translator-btn-<%= tr_idx %>" aria-expanded="false" aria-controls="translator-btn-<%= tr_idx %>">
-              <%= tr.name %>
-            </button>
-          </h5>
-        </div>
+  <% if @anime.blocked_ru or @anime.blocked_ua %>
+    <div class="alert alert-danger" role="alert">
+      Заблокировано по требованию владельца
+    </div>
+  <% else %>
+    <div class="accordion" id="translators">
+      <% @anime.translators.each_with_index do |tr, tr_idx| %>
+        <div class="card">
+          <div class="card-header translator-header" id="translator-title-<%= tr_idx %>">
+            <h5 class="mb-0">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#translator-btn-<%= tr_idx %>" aria-expanded="false" aria-controls="translator-btn-<%= tr_idx %>">
+                <%= tr.name %>
+              </button>
+            </h5>
+          </div>
 
-        <div id="translator-btn-<%= tr_idx %>" class="collapse translator-body" aria-labelledby="translator-title-<%= tr_idx %>" data-parent="#translators">
-          <div class="card-body">
+          <div id="translator-btn-<%= tr_idx %>" class="collapse translator-body" aria-labelledby="translator-title-<%= tr_idx %>" data-parent="#translators">
+            <div class="card-body">
 
-            <div class="episodes">
-              <% tr.episodes.order(created_at: :asc).each_with_index do |episode, index| %>
-                <%= content_tag(:div, index + 1,
-                                'data-id': index,
-                                'data-href': episode.stream_url,
-                                'data-translator-id': tr_idx,
-                                class: "video-button") %>
-              <% end %>
+              <div class="episodes">
+                <% tr.episodes.order(created_at: :asc).each_with_index do |episode, index| %>
+                  <%= content_tag(:div, index + 1,
+                                  'data-id': index,
+                                  'data-href': episode.stream_url,
+                                  'data-translator-id': tr_idx,
+                                  class: "video-button") %>
+                <% end %>
+              </div>
+
             </div>
-
           </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
+  <% end %>
 
   <div class="tabs-box ignore-select">
     <div class="embed-responsive embed-responsive-16by9 hide" id="player">
