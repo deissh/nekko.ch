@@ -36,14 +36,14 @@ RailsAdmin.config do |config|
     show_in_app
 
     ## With an audit adapter, you can add:
-    # history_index
-    # history_show
+    history_index
+    history_show
   end
 
   config.model 'Anime' do
     include_all_fields
     field(:posters, :serialized) { html_attributes rows: '3', cols: '70' }
-    field(:genres, :serialized) { html_attributes rows: '5', cols: '70' }
+    # field(:genres, :serialized) { html_attributes rows: '5', cols: '70' }
     field(:countries, :serialized) { html_attributes rows: '5', cols: '70' }
     field(:actors, :serialized) { html_attributes rows: '5', cols: '70' }
     field(:directors, :serialized) { html_attributes rows: '5', cols: '70' }

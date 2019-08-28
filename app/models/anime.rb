@@ -10,8 +10,14 @@ class Anime < ApplicationRecord
 
   has_many :anime_translators, dependent: :destroy
 
+  has_and_belongs_to_many :genres
+
   def translators
     anime_translators
+  end
+
+  def genres_list
+    genres.map(&:name)
   end
 
   private

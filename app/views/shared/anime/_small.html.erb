@@ -1,7 +1,7 @@
 <div class="ser">
   <%= link_to anime.title, anime_path(anime.slug), class: "ser-t nowrap" %>
   <div class="ser-s">
-    <%= anime.genres.join(', ') %>
+    <%= anime.genres_list.join(', ') %>
   </div>
   <div class="ser-d">
     Рейтинг <%= anime.rating.to_f.round(1) %> из 10

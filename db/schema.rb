@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_28_092306) do
+ActiveRecord::Schema.define(version: 2019_08_28_110057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,7 +51,6 @@ ActiveRecord::Schema.define(version: 2019_08_28_092306) do
     t.string "annotation"
     t.text "description"
     t.string "posters", array: true
-    t.string "genres", array: true
     t.string "status"
     t.integer "year"
     t.decimal "rating", default: "5.0"
@@ -68,6 +67,11 @@ ActiveRecord::Schema.define(version: 2019_08_28_092306) do
     t.string "youtube_trailer_url", default: ""
     t.string "slug"
     t.index ["slug"], name: "index_animes_on_slug", unique: true
+  end
+
+  create_table "animes_genres", id: false, force: :cascade do |t|
+    t.bigint "genre_id", null: false
+    t.bigint "anime_id", null: false
   end
 
   create_table "episodes", force: :cascade do |t|
@@ -92,8 +96,8 @@ ActiveRecord::Schema.define(version: 2019_08_28_092306) do
 
   create_table "genres", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
-    t.datetime "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "slug"
     t.index ["slug"], name: "index_genres_on_slug", unique: true
   end
