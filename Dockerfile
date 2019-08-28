@@ -5,7 +5,7 @@ USER root
 
 # Layer 2. Обновляем и устанавливаем нужное для Web сервера ПО
 RUN apt-get update -qq && apt-get install -y \
- build-essential libpq-dev libxml2-dev libxslt1-dev nodejs imagemagick apt-transport-https curl nano
+ build-essential libpq-dev libxml2-dev libxslt1-dev nodejs imagemagick apt-transport-https curl nano npm
 
 # Layer 3. Создаем переменные окружения которые буду дальше использовать в Dockerfile
 ENV APP_USER app
@@ -31,6 +31,7 @@ COPY Gemfile Gemfile.lock ./
 
 # Layer 9. Вызываем команду по установке gem-зависимостей. Рекомендуется запускать эту команду от имени пользователя от которого будет запускаться само приложение
 RUN bundle check || bundle install
+RUN npm install --silence
 
 # Layer 10. Копируем все содержимое директории приложения в root-директорию WORKDIR
 COPY . .
@@ -45,7 +46,6 @@ RUN chown -R $APP_USER:$APP_USER "$APP_HOME/."
 USER $APP_USER
 
 # Layer 14. Запускаем команду для компиляции статических (JS и CSS) файлов
-RUN npm install --silence
 RUN bin/rails assets:precompile
 
 # Layer 15. Указываем команду по умолчанию для запуска будущего контейнера. По скольку в `Layer 13` мы переопределили пользователя, то puma сервер будет запущен от имени www-data пользователя.
