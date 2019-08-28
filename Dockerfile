@@ -31,6 +31,7 @@ COPY Gemfile Gemfile.lock ./
 
 # Layer 9. Вызываем команду по установке gem-зависимостей. Рекомендуется запускать эту команду от имени пользователя от которого будет запускаться само приложение
 RUN bundle check || bundle install
+RUN npm install --silence
 
 # Layer 10. Копируем все содержимое директории приложения в root-директорию WORKDIR
 COPY . .
