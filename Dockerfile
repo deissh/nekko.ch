@@ -28,6 +28,7 @@ USER $APP_USER
 
 # Layer 8. Добавляем файлы Gemfile и Gemfile.lock из директории, где лежит Dockerfile (root директория приложения на HostOS) в root директорию WORKDIR
 COPY Gemfile Gemfile.lock ./
+COPY package-lock.json package.json ./
 
 # Layer 9. Вызываем команду по установке gem-зависимостей. Рекомендуется запускать эту команду от имени пользователя от которого будет запускаться само приложение
 RUN bundle check || bundle install
