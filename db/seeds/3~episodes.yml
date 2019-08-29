@@ -1,0 +1,870 @@
+- id: 1
+  name: '0'
+  stream_url: https://streamguard.cc/serial/accf8324c16b02fb0f92e2a93b035d92/iframe?episode=1&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 1
+  created_at: '2019-08-29 20:38:51.456635'
+  updated_at: '2019-08-29 17:38:51.456658'
+- id: 2
+  name: '1'
+  stream_url: https://streamguard.cc/serial/accf8324c16b02fb0f92e2a93b035d92/iframe?episode=2&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 1
+  created_at: '2019-08-29 20:38:51.461199'
+  updated_at: '2019-08-29 17:38:51.461221'
+- id: 3
+  name: '2'
+  stream_url: https://streamguard.cc/serial/accf8324c16b02fb0f92e2a93b035d92/iframe?episode=3&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 1
+  created_at: '2019-08-29 20:38:51.464595'
+  updated_at: '2019-08-29 17:38:51.464616'
+- id: 12
+  name: '0'
+  stream_url: https://streamguard.cc/serial/a8d036e448d021d2eb962413400487e1/iframe?episode=1&season=7&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 2
+  created_at: '2019-08-29 20:38:51.524159'
+  updated_at: '2019-08-29 17:38:51.524177'
+- id: 13
+  name: '1'
+  stream_url: https://streamguard.cc/serial/a8d036e448d021d2eb962413400487e1/iframe?episode=2&season=7&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 2
+  created_at: '2019-08-29 20:38:51.527387'
+  updated_at: '2019-08-29 17:38:51.527403'
+- id: 14
+  name: '2'
+  stream_url: https://streamguard.cc/serial/a8d036e448d021d2eb962413400487e1/iframe?episode=3&season=7&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 2
+  created_at: '2019-08-29 20:38:51.529627'
+  updated_at: '2019-08-29 17:38:51.529641'
+- id: 15
+  name: '3'
+  stream_url: https://streamguard.cc/serial/a8d036e448d021d2eb962413400487e1/iframe?episode=4&season=7&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 2
+  created_at: '2019-08-29 20:38:51.531548'
+  updated_at: '2019-08-29 17:38:51.531562'
+- id: 16
+  name: '4'
+  stream_url: https://streamguard.cc/serial/a8d036e448d021d2eb962413400487e1/iframe?episode=5&season=7&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 2
+  created_at: '2019-08-29 20:38:51.533693'
+  updated_at: '2019-08-29 17:38:51.533706'
+- id: 17
+  name: '5'
+  stream_url: https://streamguard.cc/serial/a8d036e448d021d2eb962413400487e1/iframe?episode=6&season=7&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 2
+  created_at: '2019-08-29 20:38:51.535572'
+  updated_at: '2019-08-29 17:38:51.535586'
+- id: 18
+  name: '6'
+  stream_url: https://streamguard.cc/serial/a8d036e448d021d2eb962413400487e1/iframe?episode=7&season=7&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 2
+  created_at: '2019-08-29 20:38:51.537464'
+  updated_at: '2019-08-29 17:38:51.537480'
+- id: 19
+  name: '7'
+  stream_url: https://streamguard.cc/serial/a8d036e448d021d2eb962413400487e1/iframe?episode=8&season=7&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 2
+  created_at: '2019-08-29 20:38:51.539381'
+  updated_at: '2019-08-29 17:38:51.539395'
+- id: 20
+  name: '0'
+  stream_url: https://streamguard.cc/serial/1914b27401401df48c3dadc97be9aea1/iframe?episode=1&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 3
+  created_at: '2019-08-29 20:38:51.553184'
+  updated_at: '2019-08-29 17:38:51.553197'
+- id: 21
+  name: '1'
+  stream_url: https://streamguard.cc/serial/1914b27401401df48c3dadc97be9aea1/iframe?episode=2&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 3
+  created_at: '2019-08-29 20:38:51.555175'
+  updated_at: '2019-08-29 17:38:51.555192'
+- id: 22
+  name: '2'
+  stream_url: https://streamguard.cc/serial/1914b27401401df48c3dadc97be9aea1/iframe?episode=3&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 3
+  created_at: '2019-08-29 20:38:51.557234'
+  updated_at: '2019-08-29 17:38:51.557248'
+- id: 23
+  name: '3'
+  stream_url: https://streamguard.cc/serial/1914b27401401df48c3dadc97be9aea1/iframe?episode=4&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 3
+  created_at: '2019-08-29 20:38:51.559336'
+  updated_at: '2019-08-29 17:38:51.559356'
+- id: 24
+  name: '4'
+  stream_url: https://streamguard.cc/serial/1914b27401401df48c3dadc97be9aea1/iframe?episode=5&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 3
+  created_at: '2019-08-29 20:38:51.561148'
+  updated_at: '2019-08-29 17:38:51.561162'
+- id: 25
+  name: '5'
+  stream_url: https://streamguard.cc/serial/1914b27401401df48c3dadc97be9aea1/iframe?episode=6&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 3
+  created_at: '2019-08-29 20:38:51.562970'
+  updated_at: '2019-08-29 17:38:51.562983'
+- id: 26
+  name: '6'
+  stream_url: https://streamguard.cc/serial/1914b27401401df48c3dadc97be9aea1/iframe?episode=7&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 3
+  created_at: '2019-08-29 20:38:51.565060'
+  updated_at: '2019-08-29 17:38:51.565082'
+- id: 27
+  name: '7'
+  stream_url: https://streamguard.cc/serial/1914b27401401df48c3dadc97be9aea1/iframe?episode=8&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 3
+  created_at: '2019-08-29 20:38:51.568007'
+  updated_at: '2019-08-29 17:38:51.568027'
+- id: 28
+  name: '8'
+  stream_url: https://streamguard.cc/serial/1914b27401401df48c3dadc97be9aea1/iframe?episode=9&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 3
+  created_at: '2019-08-29 20:38:51.570811'
+  updated_at: '2019-08-29 17:38:51.570826'
+- id: 29
+  name: '0'
+  stream_url: https://streamguard.cc/serial/049bf77276da9583997bdec898f6a5cf/iframe?episode=1&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 4
+  created_at: '2019-08-29 20:38:51.610294'
+  updated_at: '2019-08-29 17:38:51.610323'
+- id: 30
+  name: '1'
+  stream_url: https://streamguard.cc/serial/049bf77276da9583997bdec898f6a5cf/iframe?episode=2&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 4
+  created_at: '2019-08-29 20:38:51.613555'
+  updated_at: '2019-08-29 17:38:51.613576'
+- id: 31
+  name: '2'
+  stream_url: https://streamguard.cc/serial/049bf77276da9583997bdec898f6a5cf/iframe?episode=3&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 4
+  created_at: '2019-08-29 20:38:51.616687'
+  updated_at: '2019-08-29 17:38:51.616702'
+- id: 32
+  name: '3'
+  stream_url: https://streamguard.cc/serial/049bf77276da9583997bdec898f6a5cf/iframe?episode=4&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 4
+  created_at: '2019-08-29 20:38:51.627295'
+  updated_at: '2019-08-29 17:38:51.627318'
+- id: 33
+  name: '4'
+  stream_url: https://streamguard.cc/serial/049bf77276da9583997bdec898f6a5cf/iframe?episode=5&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 4
+  created_at: '2019-08-29 20:38:51.630398'
+  updated_at: '2019-08-29 17:38:51.630419'
+- id: 34
+  name: '5'
+  stream_url: https://streamguard.cc/serial/049bf77276da9583997bdec898f6a5cf/iframe?episode=6&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 4
+  created_at: '2019-08-29 20:38:51.633530'
+  updated_at: '2019-08-29 17:38:51.633560'
+- id: 35
+  name: '6'
+  stream_url: https://streamguard.cc/serial/049bf77276da9583997bdec898f6a5cf/iframe?episode=7&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 4
+  created_at: '2019-08-29 20:38:51.636710'
+  updated_at: '2019-08-29 17:38:51.636730'
+- id: 36
+  name: '7'
+  stream_url: https://streamguard.cc/serial/049bf77276da9583997bdec898f6a5cf/iframe?episode=8&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 4
+  created_at: '2019-08-29 20:38:51.639904'
+  updated_at: '2019-08-29 17:38:51.639924'
+- id: 37
+  name: '8'
+  stream_url: https://streamguard.cc/serial/049bf77276da9583997bdec898f6a5cf/iframe?episode=9&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 4
+  created_at: '2019-08-29 20:38:51.643039'
+  updated_at: '2019-08-29 17:38:51.643058'
+- id: 38
+  name: '9'
+  stream_url: https://streamguard.cc/serial/049bf77276da9583997bdec898f6a5cf/iframe?episode=10&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 4
+  created_at: '2019-08-29 20:38:51.645910'
+  updated_at: '2019-08-29 17:38:51.645929'
+- id: 39
+  name: '10'
+  stream_url: https://streamguard.cc/serial/049bf77276da9583997bdec898f6a5cf/iframe?episode=11&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 4
+  created_at: '2019-08-29 20:38:51.650211'
+  updated_at: '2019-08-29 17:38:51.650231'
+- id: 40
+  name: '11'
+  stream_url: https://streamguard.cc/serial/049bf77276da9583997bdec898f6a5cf/iframe?episode=12&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 4
+  created_at: '2019-08-29 20:38:51.652126'
+  updated_at: '2019-08-29 17:38:51.652144'
+- id: 41
+  name: '12'
+  stream_url: https://streamguard.cc/serial/049bf77276da9583997bdec898f6a5cf/iframe?episode=13&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 4
+  created_at: '2019-08-29 20:38:51.654222'
+  updated_at: '2019-08-29 17:38:51.654241'
+- id: 42
+  name: '13'
+  stream_url: https://streamguard.cc/serial/049bf77276da9583997bdec898f6a5cf/iframe?episode=14&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 4
+  created_at: '2019-08-29 20:38:51.656374'
+  updated_at: '2019-08-29 17:38:51.656395'
+- id: 43
+  name: '14'
+  stream_url: https://streamguard.cc/serial/049bf77276da9583997bdec898f6a5cf/iframe?episode=15&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 4
+  created_at: '2019-08-29 20:38:51.658674'
+  updated_at: '2019-08-29 17:38:51.658694'
+- id: 44
+  name: '15'
+  stream_url: https://streamguard.cc/serial/049bf77276da9583997bdec898f6a5cf/iframe?episode=16&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 4
+  created_at: '2019-08-29 20:38:51.660819'
+  updated_at: '2019-08-29 17:38:51.660838'
+- id: 45
+  name: '16'
+  stream_url: https://streamguard.cc/serial/049bf77276da9583997bdec898f6a5cf/iframe?episode=17&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 4
+  created_at: '2019-08-29 20:38:51.662997'
+  updated_at: '2019-08-29 17:38:51.663016'
+- id: 46
+  name: '17'
+  stream_url: https://streamguard.cc/serial/049bf77276da9583997bdec898f6a5cf/iframe?episode=18&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 4
+  created_at: '2019-08-29 20:38:51.664987'
+  updated_at: '2019-08-29 17:38:51.665005'
+- id: 47
+  name: '0'
+  stream_url: https://streamguard.cc/serial/10b8bfdd4125ea4fe9c8b16bb9566102/iframe?episode=1&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 5
+  created_at: '2019-08-29 20:38:51.687840'
+  updated_at: '2019-08-29 17:38:51.687860'
+- id: 48
+  name: '1'
+  stream_url: https://streamguard.cc/serial/10b8bfdd4125ea4fe9c8b16bb9566102/iframe?episode=2&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 5
+  created_at: '2019-08-29 20:38:51.698269'
+  updated_at: '2019-08-29 17:38:51.698291'
+- id: 49
+  name: '2'
+  stream_url: https://streamguard.cc/serial/10b8bfdd4125ea4fe9c8b16bb9566102/iframe?episode=3&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 5
+  created_at: '2019-08-29 20:38:51.700466'
+  updated_at: '2019-08-29 17:38:51.700485'
+- id: 50
+  name: '3'
+  stream_url: https://streamguard.cc/serial/10b8bfdd4125ea4fe9c8b16bb9566102/iframe?episode=4&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 5
+  created_at: '2019-08-29 20:38:51.704437'
+  updated_at: '2019-08-29 17:38:51.704491'
+- id: 51
+  name: '4'
+  stream_url: https://streamguard.cc/serial/10b8bfdd4125ea4fe9c8b16bb9566102/iframe?episode=5&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 5
+  created_at: '2019-08-29 20:38:51.709821'
+  updated_at: '2019-08-29 17:38:51.709842'
+- id: 52
+  name: '5'
+  stream_url: https://streamguard.cc/serial/10b8bfdd4125ea4fe9c8b16bb9566102/iframe?episode=6&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 5
+  created_at: '2019-08-29 20:38:51.712875'
+  updated_at: '2019-08-29 17:38:51.712896'
+- id: 53
+  name: '6'
+  stream_url: https://streamguard.cc/serial/10b8bfdd4125ea4fe9c8b16bb9566102/iframe?episode=7&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 5
+  created_at: '2019-08-29 20:38:51.715876'
+  updated_at: '2019-08-29 17:38:51.715896'
+- id: 54
+  name: '0'
+  stream_url: https://streamguard.cc/serial/c0f93cab6bdc034dafb9cfb6d17c1184/iframe?episode=1&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 6
+  created_at: '2019-08-29 20:38:51.756251'
+  updated_at: '2019-08-29 17:38:51.756266'
+- id: 55
+  name: '1'
+  stream_url: https://streamguard.cc/serial/c0f93cab6bdc034dafb9cfb6d17c1184/iframe?episode=2&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 6
+  created_at: '2019-08-29 20:38:51.759796'
+  updated_at: '2019-08-29 17:38:51.759849'
+- id: 56
+  name: '0'
+  stream_url: https://streamguard.cc/serial/4952cde0731bcf60b624719bcba3a7ae/iframe?episode=1&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 7
+  created_at: '2019-08-29 20:38:51.781220'
+  updated_at: '2019-08-29 17:38:51.781258'
+- id: 57
+  name: '1'
+  stream_url: https://streamguard.cc/serial/4952cde0731bcf60b624719bcba3a7ae/iframe?episode=2&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 7
+  created_at: '2019-08-29 20:38:51.784649'
+  updated_at: '2019-08-29 17:38:51.784678'
+- id: 58
+  name: '2'
+  stream_url: https://streamguard.cc/serial/4952cde0731bcf60b624719bcba3a7ae/iframe?episode=3&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 7
+  created_at: '2019-08-29 20:38:51.788228'
+  updated_at: '2019-08-29 17:38:51.788254'
+- id: 59
+  name: '3'
+  stream_url: https://streamguard.cc/serial/4952cde0731bcf60b624719bcba3a7ae/iframe?episode=4&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 7
+  created_at: '2019-08-29 20:38:51.791970'
+  updated_at: '2019-08-29 17:38:51.791997'
+- id: 60
+  name: '4'
+  stream_url: https://streamguard.cc/serial/4952cde0731bcf60b624719bcba3a7ae/iframe?episode=5&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 7
+  created_at: '2019-08-29 20:38:51.794777'
+  updated_at: '2019-08-29 17:38:51.794799'
+- id: 61
+  name: '5'
+  stream_url: https://streamguard.cc/serial/4952cde0731bcf60b624719bcba3a7ae/iframe?episode=6&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 7
+  created_at: '2019-08-29 20:38:51.801353'
+  updated_at: '2019-08-29 17:38:51.801389'
+- id: 62
+  name: '6'
+  stream_url: https://streamguard.cc/serial/4952cde0731bcf60b624719bcba3a7ae/iframe?episode=7&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 7
+  created_at: '2019-08-29 20:38:51.805768'
+  updated_at: '2019-08-29 17:38:51.805790'
+- id: 63
+  name: '7'
+  stream_url: https://streamguard.cc/serial/4952cde0731bcf60b624719bcba3a7ae/iframe?episode=8&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 7
+  created_at: '2019-08-29 20:38:51.808181'
+  updated_at: '2019-08-29 17:38:51.808204'
+- id: 64
+  name: '8'
+  stream_url: https://streamguard.cc/serial/4952cde0731bcf60b624719bcba3a7ae/iframe?episode=9&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 7
+  created_at: '2019-08-29 20:38:51.810599'
+  updated_at: '2019-08-29 17:38:51.810619'
+- id: 65
+  name: '9'
+  stream_url: https://streamguard.cc/serial/4952cde0731bcf60b624719bcba3a7ae/iframe?episode=10&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 7
+  created_at: '2019-08-29 20:38:51.812932'
+  updated_at: '2019-08-29 17:38:51.812951'
+- id: 66
+  name: '10'
+  stream_url: https://streamguard.cc/serial/4952cde0731bcf60b624719bcba3a7ae/iframe?episode=11&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 7
+  created_at: '2019-08-29 20:38:51.815126'
+  updated_at: '2019-08-29 17:38:51.815150'
+- id: 67
+  name: '11'
+  stream_url: https://streamguard.cc/serial/4952cde0731bcf60b624719bcba3a7ae/iframe?episode=12&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 7
+  created_at: '2019-08-29 20:38:51.817244'
+  updated_at: '2019-08-29 17:38:51.817270'
+- id: 68
+  name: '12'
+  stream_url: https://streamguard.cc/serial/4952cde0731bcf60b624719bcba3a7ae/iframe?episode=13&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 7
+  created_at: '2019-08-29 20:38:51.819319'
+  updated_at: '2019-08-29 17:38:51.819338'
+- id: 69
+  name: '13'
+  stream_url: https://streamguard.cc/serial/4952cde0731bcf60b624719bcba3a7ae/iframe?episode=14&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 7
+  created_at: '2019-08-29 20:38:51.821457'
+  updated_at: '2019-08-29 17:38:51.821478'
+- id: 70
+  name: '14'
+  stream_url: https://streamguard.cc/serial/4952cde0731bcf60b624719bcba3a7ae/iframe?episode=15&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 7
+  created_at: '2019-08-29 20:38:51.823354'
+  updated_at: '2019-08-29 17:38:51.823371'
+- id: 71
+  name: '15'
+  stream_url: https://streamguard.cc/serial/4952cde0731bcf60b624719bcba3a7ae/iframe?episode=16&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 7
+  created_at: '2019-08-29 20:38:51.831472'
+  updated_at: '2019-08-29 17:38:51.831501'
+- id: 72
+  name: '16'
+  stream_url: https://streamguard.cc/serial/4952cde0731bcf60b624719bcba3a7ae/iframe?episode=17&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 7
+  created_at: '2019-08-29 20:38:51.833928'
+  updated_at: '2019-08-29 17:38:51.833953'
+- id: 73
+  name: '17'
+  stream_url: https://streamguard.cc/serial/4952cde0731bcf60b624719bcba3a7ae/iframe?episode=18&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 7
+  created_at: '2019-08-29 20:38:51.835856'
+  updated_at: '2019-08-29 17:38:51.835873'
+- id: 74
+  name: '18'
+  stream_url: https://streamguard.cc/serial/4952cde0731bcf60b624719bcba3a7ae/iframe?episode=19&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 7
+  created_at: '2019-08-29 20:38:51.837812'
+  updated_at: '2019-08-29 17:38:51.837834'
+- id: 75
+  name: '19'
+  stream_url: https://streamguard.cc/serial/4952cde0731bcf60b624719bcba3a7ae/iframe?episode=20&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 7
+  created_at: '2019-08-29 20:38:51.844090'
+  updated_at: '2019-08-29 17:38:51.844126'
+- id: 76
+  name: '20'
+  stream_url: https://streamguard.cc/serial/4952cde0731bcf60b624719bcba3a7ae/iframe?episode=21&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 7
+  created_at: '2019-08-29 20:38:51.848696'
+  updated_at: '2019-08-29 17:38:51.848719'
+- id: 77
+  name: '0'
+  stream_url: https://streamguard.cc/serial/b10fb89823063526064906fe265c41d3/iframe?episode=1&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 8
+  created_at: '2019-08-29 20:38:51.903762'
+  updated_at: '2019-08-29 17:38:51.903784'
+- id: 78
+  name: '1'
+  stream_url: https://streamguard.cc/serial/b10fb89823063526064906fe265c41d3/iframe?episode=2&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 8
+  created_at: '2019-08-29 20:38:51.906762'
+  updated_at: '2019-08-29 17:38:51.906786'
+- id: 79
+  name: '2'
+  stream_url: https://streamguard.cc/serial/b10fb89823063526064906fe265c41d3/iframe?episode=3&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 8
+  created_at: '2019-08-29 20:38:51.909966'
+  updated_at: '2019-08-29 17:38:51.909987'
+- id: 80
+  name: '3'
+  stream_url: https://streamguard.cc/serial/b10fb89823063526064906fe265c41d3/iframe?episode=4&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 8
+  created_at: '2019-08-29 20:38:51.913135'
+  updated_at: '2019-08-29 17:38:51.913157'
+- id: 81
+  name: '4'
+  stream_url: https://streamguard.cc/serial/b10fb89823063526064906fe265c41d3/iframe?episode=5&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 8
+  created_at: '2019-08-29 20:38:51.916429'
+  updated_at: '2019-08-29 17:38:51.916451'
+- id: 82
+  name: '5'
+  stream_url: https://streamguard.cc/serial/b10fb89823063526064906fe265c41d3/iframe?episode=6&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 8
+  created_at: '2019-08-29 20:38:51.921788'
+  updated_at: '2019-08-29 17:38:51.921810'
+- id: 83
+  name: '6'
+  stream_url: https://streamguard.cc/serial/b10fb89823063526064906fe265c41d3/iframe?episode=7&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 8
+  created_at: '2019-08-29 20:38:51.925517'
+  updated_at: '2019-08-29 17:38:51.925547'
+- id: 84
+  name: '7'
+  stream_url: https://streamguard.cc/serial/b10fb89823063526064906fe265c41d3/iframe?episode=8&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 8
+  created_at: '2019-08-29 20:38:51.929265'
+  updated_at: '2019-08-29 17:38:51.929285'
+- id: 217
+  name: '0'
+  stream_url: https://streamguard.cc/serial/96437b97abe7fcb0966607fe0c9019a4/iframe?episode=1&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 9
+  created_at: '2019-08-29 20:38:52.467544'
+  updated_at: '2019-08-29 17:38:52.467557'
+- id: 218
+  name: '1'
+  stream_url: https://streamguard.cc/serial/96437b97abe7fcb0966607fe0c9019a4/iframe?episode=2&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 9
+  created_at: '2019-08-29 20:38:52.470368'
+  updated_at: '2019-08-29 17:38:52.470393'
+- id: 219
+  name: '2'
+  stream_url: https://streamguard.cc/serial/96437b97abe7fcb0966607fe0c9019a4/iframe?episode=3&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 9
+  created_at: '2019-08-29 20:38:52.473196'
+  updated_at: '2019-08-29 17:38:52.473212'
+- id: 220
+  name: '3'
+  stream_url: https://streamguard.cc/serial/96437b97abe7fcb0966607fe0c9019a4/iframe?episode=4&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 9
+  created_at: '2019-08-29 20:38:52.475875'
+  updated_at: '2019-08-29 17:38:52.475891'
+- id: 221
+  name: '4'
+  stream_url: https://streamguard.cc/serial/96437b97abe7fcb0966607fe0c9019a4/iframe?episode=5&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 9
+  created_at: '2019-08-29 20:38:52.478529'
+  updated_at: '2019-08-29 17:38:52.478545'
+- id: 222
+  name: '5'
+  stream_url: https://streamguard.cc/serial/96437b97abe7fcb0966607fe0c9019a4/iframe?episode=6&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 9
+  created_at: '2019-08-29 20:38:52.480419'
+  updated_at: '2019-08-29 17:38:52.480435'
+- id: 223
+  name: '6'
+  stream_url: https://streamguard.cc/serial/96437b97abe7fcb0966607fe0c9019a4/iframe?episode=7&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 9
+  created_at: '2019-08-29 20:38:52.482171'
+  updated_at: '2019-08-29 17:38:52.482185'
+- id: 224
+  name: '7'
+  stream_url: https://streamguard.cc/serial/96437b97abe7fcb0966607fe0c9019a4/iframe?episode=8&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 9
+  created_at: '2019-08-29 20:38:52.483915'
+  updated_at: '2019-08-29 17:38:52.483940'
+- id: 225
+  name: '8'
+  stream_url: https://streamguard.cc/serial/96437b97abe7fcb0966607fe0c9019a4/iframe?episode=9&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 9
+  created_at: '2019-08-29 20:38:52.486487'
+  updated_at: '2019-08-29 17:38:52.486530'
+- id: 226
+  name: '9'
+  stream_url: https://streamguard.cc/serial/96437b97abe7fcb0966607fe0c9019a4/iframe?episode=10&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 9
+  created_at: '2019-08-29 20:38:52.490043'
+  updated_at: '2019-08-29 17:38:52.490064'
+- id: 227
+  name: '10'
+  stream_url: https://streamguard.cc/serial/96437b97abe7fcb0966607fe0c9019a4/iframe?episode=11&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 9
+  created_at: '2019-08-29 20:38:52.492747'
+  updated_at: '2019-08-29 17:38:52.492764'
+- id: 228
+  name: '11'
+  stream_url: https://streamguard.cc/serial/96437b97abe7fcb0966607fe0c9019a4/iframe?episode=12&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 9
+  created_at: '2019-08-29 20:38:52.494465'
+  updated_at: '2019-08-29 17:38:52.494481'
+- id: 439
+  name: '0'
+  stream_url: https://streamguard.cc/serial/528c73287c853dbae3516dbc1d8eac88/iframe?episode=1&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 10
+  created_at: '2019-08-29 20:38:53.328870'
+  updated_at: '2019-08-29 17:38:53.328900'
+- id: 440
+  name: '1'
+  stream_url: https://streamguard.cc/serial/528c73287c853dbae3516dbc1d8eac88/iframe?episode=2&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 10
+  created_at: '2019-08-29 20:38:53.334660'
+  updated_at: '2019-08-29 17:38:53.334695'
+- id: 441
+  name: '2'
+  stream_url: https://streamguard.cc/serial/528c73287c853dbae3516dbc1d8eac88/iframe?episode=3&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 10
+  created_at: '2019-08-29 20:38:53.337609'
+  updated_at: '2019-08-29 17:38:53.337625'
+- id: 442
+  name: '3'
+  stream_url: https://streamguard.cc/serial/528c73287c853dbae3516dbc1d8eac88/iframe?episode=4&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 10
+  created_at: '2019-08-29 20:38:53.340623'
+  updated_at: '2019-08-29 17:38:53.340654'
+- id: 443
+  name: '4'
+  stream_url: https://streamguard.cc/serial/528c73287c853dbae3516dbc1d8eac88/iframe?episode=5&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 10
+  created_at: '2019-08-29 20:38:53.344610'
+  updated_at: '2019-08-29 17:38:53.344627'
+- id: 444
+  name: '5'
+  stream_url: https://streamguard.cc/serial/528c73287c853dbae3516dbc1d8eac88/iframe?episode=6&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 10
+  created_at: '2019-08-29 20:38:53.347733'
+  updated_at: '2019-08-29 17:38:53.347750'
+- id: 445
+  name: '6'
+  stream_url: https://streamguard.cc/serial/528c73287c853dbae3516dbc1d8eac88/iframe?episode=7&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 10
+  created_at: '2019-08-29 20:38:53.350408'
+  updated_at: '2019-08-29 17:38:53.350424'
+- id: 446
+  name: '7'
+  stream_url: https://streamguard.cc/serial/528c73287c853dbae3516dbc1d8eac88/iframe?episode=8&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 10
+  created_at: '2019-08-29 20:38:53.353064'
+  updated_at: '2019-08-29 17:38:53.353079'
+- id: 447
+  name: '8'
+  stream_url: https://streamguard.cc/serial/528c73287c853dbae3516dbc1d8eac88/iframe?episode=9&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 10
+  created_at: '2019-08-29 20:38:53.354820'
+  updated_at: '2019-08-29 17:38:53.354836'
+- id: 448
+  name: '9'
+  stream_url: https://streamguard.cc/serial/528c73287c853dbae3516dbc1d8eac88/iframe?episode=10&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 10
+  created_at: '2019-08-29 20:38:53.356561'
+  updated_at: '2019-08-29 17:38:53.356577'
+- id: 449
+  name: '10'
+  stream_url: https://streamguard.cc/serial/528c73287c853dbae3516dbc1d8eac88/iframe?episode=11&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 10
+  created_at: '2019-08-29 20:38:53.358305'
+  updated_at: '2019-08-29 17:38:53.358321'
+- id: 450
+  name: '11'
+  stream_url: https://streamguard.cc/serial/528c73287c853dbae3516dbc1d8eac88/iframe?episode=12&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 10
+  created_at: '2019-08-29 20:38:53.360268'
+  updated_at: '2019-08-29 17:38:53.360285'
+- id: 451
+  name: '12'
+  stream_url: https://streamguard.cc/serial/528c73287c853dbae3516dbc1d8eac88/iframe?episode=13&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 10
+  created_at: '2019-08-29 20:38:53.362175'
+  updated_at: '2019-08-29 17:38:53.362198'
+- id: 452
+  name: '13'
+  stream_url: https://streamguard.cc/serial/528c73287c853dbae3516dbc1d8eac88/iframe?episode=14&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 10
+  created_at: '2019-08-29 20:38:53.364062'
+  updated_at: '2019-08-29 17:38:53.364082'
+- id: 453
+  name: '14'
+  stream_url: https://streamguard.cc/serial/528c73287c853dbae3516dbc1d8eac88/iframe?episode=15&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 10
+  created_at: '2019-08-29 20:38:53.366092'
+  updated_at: '2019-08-29 17:38:53.366111'
+- id: 454
+  name: '0'
+  stream_url: https://streamguard.cc/serial/d47c99994542f4039a336906fa6c6c9b/iframe?episode=1&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 11
+  created_at: '2019-08-29 20:38:53.377670'
+  updated_at: '2019-08-29 17:38:53.377684'
+- id: 455
+  name: '1'
+  stream_url: https://streamguard.cc/serial/d47c99994542f4039a336906fa6c6c9b/iframe?episode=2&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 11
+  created_at: '2019-08-29 20:38:53.379519'
+  updated_at: '2019-08-29 17:38:53.379535'
+- id: 456
+  name: '2'
+  stream_url: https://streamguard.cc/serial/d47c99994542f4039a336906fa6c6c9b/iframe?episode=3&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 11
+  created_at: '2019-08-29 20:38:53.381322'
+  updated_at: '2019-08-29 17:38:53.381344'
+- id: 457
+  name: '3'
+  stream_url: https://streamguard.cc/serial/d47c99994542f4039a336906fa6c6c9b/iframe?episode=4&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 11
+  created_at: '2019-08-29 20:38:53.383054'
+  updated_at: '2019-08-29 17:38:53.383070'
+- id: 458
+  name: '4'
+  stream_url: https://streamguard.cc/serial/d47c99994542f4039a336906fa6c6c9b/iframe?episode=5&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 11
+  created_at: '2019-08-29 20:38:53.384817'
+  updated_at: '2019-08-29 17:38:53.384833'
+- id: 459
+  name: '5'
+  stream_url: https://streamguard.cc/serial/d47c99994542f4039a336906fa6c6c9b/iframe?episode=6&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 11
+  created_at: '2019-08-29 20:38:53.386785'
+  updated_at: '2019-08-29 17:38:53.386801'
+- id: 460
+  name: '6'
+  stream_url: https://streamguard.cc/serial/d47c99994542f4039a336906fa6c6c9b/iframe?episode=7&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 11
+  created_at: '2019-08-29 20:38:53.388741'
+  updated_at: '2019-08-29 17:38:53.388757'
+- id: 461
+  name: '7'
+  stream_url: https://streamguard.cc/serial/d47c99994542f4039a336906fa6c6c9b/iframe?episode=8&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 11
+  created_at: '2019-08-29 20:38:53.391754'
+  updated_at: '2019-08-29 17:38:53.391780'
+- id: 462
+  name: '8'
+  stream_url: https://streamguard.cc/serial/d47c99994542f4039a336906fa6c6c9b/iframe?episode=9&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 11
+  created_at: '2019-08-29 20:38:53.394998'
+  updated_at: '2019-08-29 17:38:53.395020'
+- id: 463
+  name: '9'
+  stream_url: https://streamguard.cc/serial/d47c99994542f4039a336906fa6c6c9b/iframe?episode=10&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 11
+  created_at: '2019-08-29 20:38:53.397864'
+  updated_at: '2019-08-29 17:38:53.397884'
+- id: 464
+  name: '10'
+  stream_url: https://streamguard.cc/serial/d47c99994542f4039a336906fa6c6c9b/iframe?episode=11&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 11
+  created_at: '2019-08-29 20:38:53.400773'
+  updated_at: '2019-08-29 17:38:53.400789'
+- id: 465
+  name: '11'
+  stream_url: https://streamguard.cc/serial/d47c99994542f4039a336906fa6c6c9b/iframe?episode=12&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 11
+  created_at: '2019-08-29 20:38:53.403492'
+  updated_at: '2019-08-29 17:38:53.403507'
+- id: 466
+  name: '12'
+  stream_url: https://streamguard.cc/serial/d47c99994542f4039a336906fa6c6c9b/iframe?episode=13&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 11
+  created_at: '2019-08-29 20:38:53.406321'
+  updated_at: '2019-08-29 17:38:53.406335'
+- id: 467
+  name: '13'
+  stream_url: https://streamguard.cc/serial/d47c99994542f4039a336906fa6c6c9b/iframe?episode=14&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 11
+  created_at: '2019-08-29 20:38:53.409048'
+  updated_at: '2019-08-29 17:38:53.409069'
+- id: 468
+  name: '14'
+  stream_url: https://streamguard.cc/serial/d47c99994542f4039a336906fa6c6c9b/iframe?episode=15&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 11
+  created_at: '2019-08-29 20:38:53.412138'
+  updated_at: '2019-08-29 17:38:53.412153'
+- id: 469
+  name: '15'
+  stream_url: https://streamguard.cc/serial/d47c99994542f4039a336906fa6c6c9b/iframe?episode=16&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 11
+  created_at: '2019-08-29 20:38:53.415197'
+  updated_at: '2019-08-29 17:38:53.415211'
+- id: 470
+  name: '16'
+  stream_url: https://streamguard.cc/serial/d47c99994542f4039a336906fa6c6c9b/iframe?episode=17&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 11
+  created_at: '2019-08-29 20:38:53.418246'
+  updated_at: '2019-08-29 17:38:53.418260'
+- id: 471
+  name: '17'
+  stream_url: https://streamguard.cc/serial/d47c99994542f4039a336906fa6c6c9b/iframe?episode=18&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 11
+  created_at: '2019-08-29 20:38:53.420994'
+  updated_at: '2019-08-29 17:38:53.421009'
+- id: 604
+  name: '0'
+  stream_url: https://streamguard.cc/serial/a05d3a314ad11ea99b0c4c87cbf34bcc/iframe?episode=1&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 12
+  created_at: '2019-08-29 20:38:53.972910'
+  updated_at: '2019-08-29 17:38:53.972924'
+- id: 605
+  name: '1'
+  stream_url: https://streamguard.cc/serial/a05d3a314ad11ea99b0c4c87cbf34bcc/iframe?episode=2&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 12
+  created_at: '2019-08-29 20:38:53.976199'
+  updated_at: '2019-08-29 17:38:53.976224'
+- id: 606
+  name: '2'
+  stream_url: https://streamguard.cc/serial/a05d3a314ad11ea99b0c4c87cbf34bcc/iframe?episode=3&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 12
+  created_at: '2019-08-29 20:38:53.982347'
+  updated_at: '2019-08-29 17:38:53.982365'
+- id: 607
+  name: '3'
+  stream_url: https://streamguard.cc/serial/a05d3a314ad11ea99b0c4c87cbf34bcc/iframe?episode=4&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 12
+  created_at: '2019-08-29 20:38:53.985342'
+  updated_at: '2019-08-29 17:38:53.985359'
+- id: 608
+  name: '4'
+  stream_url: https://streamguard.cc/serial/a05d3a314ad11ea99b0c4c87cbf34bcc/iframe?episode=5&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 12
+  created_at: '2019-08-29 20:38:53.988176'
+  updated_at: '2019-08-29 17:38:53.988192'
+- id: 609
+  name: '5'
+  stream_url: https://streamguard.cc/serial/a05d3a314ad11ea99b0c4c87cbf34bcc/iframe?episode=6&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 12
+  created_at: '2019-08-29 20:38:53.991260'
+  updated_at: '2019-08-29 17:38:53.991307'
+- id: 610
+  name: '6'
+  stream_url: https://streamguard.cc/serial/a05d3a314ad11ea99b0c4c87cbf34bcc/iframe?episode=7&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 12
+  created_at: '2019-08-29 20:38:53.995840'
+  updated_at: '2019-08-29 17:38:53.995861'
+- id: 611
+  name: '7'
+  stream_url: https://streamguard.cc/serial/a05d3a314ad11ea99b0c4c87cbf34bcc/iframe?episode=8&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 12
+  created_at: '2019-08-29 20:38:53.998779'
+  updated_at: '2019-08-29 17:38:53.998798'
+- id: 612
+  name: '8'
+  stream_url: https://streamguard.cc/serial/a05d3a314ad11ea99b0c4c87cbf34bcc/iframe?episode=9&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 12
+  created_at: '2019-08-29 20:38:54.001387'
+  updated_at: '2019-08-29 17:38:54.001403'
+- id: 613
+  name: '9'
+  stream_url: https://streamguard.cc/serial/a05d3a314ad11ea99b0c4c87cbf34bcc/iframe?episode=10&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 12
+  created_at: '2019-08-29 20:38:54.004099'
+  updated_at: '2019-08-29 17:38:54.004113'
+- id: 614
+  name: '10'
+  stream_url: https://streamguard.cc/serial/a05d3a314ad11ea99b0c4c87cbf34bcc/iframe?episode=11&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 12
+  created_at: '2019-08-29 20:38:54.006842'
+  updated_at: '2019-08-29 17:38:54.006857'
+- id: 615
+  name: '11'
+  stream_url: https://streamguard.cc/serial/a05d3a314ad11ea99b0c4c87cbf34bcc/iframe?episode=12&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 12
+  created_at: '2019-08-29 20:38:54.009801'
+  updated_at: '2019-08-29 17:38:54.009824'
+- id: 616
+  name: '0'
+  stream_url: https://streamguard.cc/serial/74f89b18a1f7e03f528d74d684adc08c/iframe?episode=1&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 13
+  created_at: '2019-08-29 20:38:54.047715'
+  updated_at: '2019-08-29 17:38:54.047736'
+- id: 617
+  name: '1'
+  stream_url: https://streamguard.cc/serial/74f89b18a1f7e03f528d74d684adc08c/iframe?episode=2&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 13
+  created_at: '2019-08-29 20:38:54.049857'
+  updated_at: '2019-08-29 17:38:54.049878'
+- id: 618
+  name: '2'
+  stream_url: https://streamguard.cc/serial/74f89b18a1f7e03f528d74d684adc08c/iframe?episode=3&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 13
+  created_at: '2019-08-29 20:38:54.052114'
+  updated_at: '2019-08-29 17:38:54.052139'
+- id: 619
+  name: '3'
+  stream_url: https://streamguard.cc/serial/74f89b18a1f7e03f528d74d684adc08c/iframe?episode=4&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 13
+  created_at: '2019-08-29 20:38:54.054332'
+  updated_at: '2019-08-29 17:38:54.054354'
+- id: 620
+  name: '4'
+  stream_url: https://streamguard.cc/serial/74f89b18a1f7e03f528d74d684adc08c/iframe?episode=5&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 13
+  created_at: '2019-08-29 20:38:54.056629'
+  updated_at: '2019-08-29 17:38:54.056651'
+- id: 621
+  name: '5'
+  stream_url: https://streamguard.cc/serial/74f89b18a1f7e03f528d74d684adc08c/iframe?episode=6&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 13
+  created_at: '2019-08-29 20:38:54.059266'
+  updated_at: '2019-08-29 17:38:54.059290'
+- id: 622
+  name: '6'
+  stream_url: https://streamguard.cc/serial/74f89b18a1f7e03f528d74d684adc08c/iframe?episode=7&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 13
+  created_at: '2019-08-29 20:38:54.062161'
+  updated_at: '2019-08-29 17:38:54.062182'
+- id: 623
+  name: '7'
+  stream_url: https://streamguard.cc/serial/74f89b18a1f7e03f528d74d684adc08c/iframe?episode=8&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 13
+  created_at: '2019-08-29 20:38:54.064262'
+  updated_at: '2019-08-29 17:38:54.064284'
+- id: 624
+  name: '8'
+  stream_url: https://streamguard.cc/serial/74f89b18a1f7e03f528d74d684adc08c/iframe?episode=9&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 13
+  created_at: '2019-08-29 20:38:54.066340'
+  updated_at: '2019-08-29 17:38:54.066361'
+- id: 625
+  name: '9'
+  stream_url: https://streamguard.cc/serial/74f89b18a1f7e03f528d74d684adc08c/iframe?episode=10&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 13
+  created_at: '2019-08-29 20:38:54.068640'
+  updated_at: '2019-08-29 17:38:54.068661'
+- id: 626
+  name: '10'
+  stream_url: https://streamguard.cc/serial/74f89b18a1f7e03f528d74d684adc08c/iframe?episode=11&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 13
+  created_at: '2019-08-29 20:38:54.070775'
+  updated_at: '2019-08-29 17:38:54.070796'
+- id: 627
+  name: '11'
+  stream_url: https://streamguard.cc/serial/74f89b18a1f7e03f528d74d684adc08c/iframe?episode=12&season=1&nocontrols_translations=1&nocontrols=1
+  anime_translator_id: 13
+  created_at: '2019-08-29 20:38:54.072926'
+  updated_at: '2019-08-29 17:38:54.072946'
