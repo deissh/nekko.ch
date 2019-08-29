@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root 'anime#index'
 
   resources :anime, as: 'anime', only: %i[show index]
+  resources :blogs, only: %i[show index]
 
   scope '/admin' do
     mount RailsAdmin::Engine => '/panel', as: 'rails_admin'

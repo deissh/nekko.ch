@@ -1,0 +1,17 @@
+<div>
+  <div class="flex-row">
+    <% @blogs.each do |blog| %>
+      <%= render 'shared/post/short', post: blog %>
+    <% end %>
+
+    <% if @blogs.length == 0 %>
+      Ничего не найдено
+    <% else %>
+
+      <div class="col-12">
+        <%= paginate @blogs, window: 2 %>
+      </div>
+
+    <% end %>
+  </div>
+</div>

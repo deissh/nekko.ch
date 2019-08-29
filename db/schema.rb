@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_28_172943) do
+ActiveRecord::Schema.define(version: 2019_08_29_072328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,17 @@ ActiveRecord::Schema.define(version: 2019_08_28_172943) do
   create_table "animes_genres", id: false, force: :cascade do |t|
     t.bigint "genre_id", null: false
     t.bigint "anime_id", null: false
+  end
+
+  create_table "blogs", force: :cascade do |t|
+    t.string "title"
+    t.text "content"
+    t.boolean "spoiler"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "bg_url"
+    t.text "description"
+    t.integer "views", default: 0
   end
 
   create_table "episodes", force: :cascade do |t|

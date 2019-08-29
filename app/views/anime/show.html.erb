@@ -70,7 +70,7 @@
           <div class="fi-col-item"><span>Режиссер:</span> <%= @anime["directors"][0] %></div>
           <div class="fi-col-item"><span>Студия:</span> <%= @anime["studios"][0] %></div>
         </div>
-        <div class="full-infos"><%= @anime["description"] %></div>
+        <div class="full-infos"><%= @anime["description"].html_safe %></div>
       </div>
     </div>
     <div class="full-taglist ignore-select">

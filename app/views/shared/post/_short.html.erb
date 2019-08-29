@@ -1,0 +1,16 @@
+<article class="short__item">
+  <a title="<%= post.title %>" href="<%= '/blogs/' + post.id.to_s %>">
+    <header class="carousel__item-header">
+      <div class="short__item-imagenews">
+        <figure>
+          <img itemprop="image" class="b-lazy" src="<%= post.bg_url %>" data-src="<%= post.bg_url %>" alt="{title}">
+        </figure>
+      </div>
+      <div class="label label__rate"><span><i class="far fa-eye"></i> <%= post.views %></span></div>
+<!--      <div class="label label__pg">100 <span>просмотров</span></div>-->
+    </header>
+    <footer class="short__item-bottom">
+      <div class="c__item-title"><%= post.title %></div>
+    </footer>
+  </a>
+</article>

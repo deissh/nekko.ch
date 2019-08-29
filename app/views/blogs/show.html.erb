@@ -1,0 +1,46 @@
+<!-- topside -->
+<!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
+<!--<ins class="adsbygoogle"-->
+<!--     style="display:block;margin-left:-18px;margin-right:-18px;"-->
+<!--     data-ad-client="ca-pub-5548459704131146"-->
+<!--     data-ad-slot="5403532046"-->
+<!--     data-ad-format="auto"-->
+<!--     data-full-width-responsive="true"></ins>-->
+<!--<script>-->
+<!--    (adsbygoogle = window.adsbygoogle || []).push({});-->
+<!--</script>-->
+<!-- end topside ad -->
+
+<article class="full">
+  <%= hidden_field_tag 'page_id', @blog.id %>
+  <header class="full_header">
+    <div class="full_header-bg" id="full_header-bg">
+      <div class="full_header__bg-img" style="background-image: url(<%= @blog[:bg_url] %>);"></div>
+    </div>
+    <div class="full_header-inner">
+      <div class="full_header-title" id="full_header-title">
+        <div class="full_content-poster img_box">
+          <img itemprop="image" class="b-lazy" src="<%= @blog[:bg_url] %>" data-src="<%= @blog[:bg_url] %>" alt="{title}">
+        </div>
+        <h1>
+          <%= @blog["title"] %>
+        </h1>
+      </div>
+      <div class="full_header-actions">
+        <% if current_admin %>
+          <%= link_to raw('<i class="fas fa-edit"></i>Редактировать'),
+                      # working only with id
+                      "/admin/panel/blog/#{@blog.id}",
+                      class: 'scrolla ic-l action-header__btn button' %>
+        <% end %>
+      </div>
+    </div>
+  </header>
+  <div class="full-desc">
+    <div class="full-text clearfix video-box">
+      <div class="full-info clearfix ignore-select">
+        <div class="full-infos"><%= @blog["content"].html_safe %></div>
+      </div>
+    </div>
+  </div>
+</article>
