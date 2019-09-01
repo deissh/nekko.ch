@@ -62,7 +62,7 @@
           <div class="side-bt">Случайные аниме</div>
           <div class="side-bc">
 
-            <% Anime.order("RANDOM()").limit(6).each do |anime| %>
+            <% Anime.order(Arel.sql("RANDOM()")).limit(6).each do |anime| %>
               <%= render 'shared/anime/small', anime: anime %>
             <% end %>
 
