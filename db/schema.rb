@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_28_172943) do
+ActiveRecord::Schema.define(version: 2019_09_01_112020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -133,8 +133,22 @@ ActiveRecord::Schema.define(version: 2019_08_28_172943) do
     t.datetime "updated_at", null: false
     t.string "picture", default: "https://via.placeholder.com/150"
     t.string "role", default: "user"
+    t.text "name"
+    t.text "past_names"
+    t.text "about"
+    t.text "bio"
+    t.date "birthday"
+    t.string "gender", default: "not_set"
+    t.string "language", default: "ru"
+    t.string "location"
+    t.string "theme", default: "default"
+    t.string "waifu_or_husbando"
+    t.string "slug"
+    t.index ["birthday"], name: "index_users_on_birthday"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["name"], name: "index_users_on_name", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["slug"], name: "index_users_on_slug", unique: true
   end
 
   add_foreign_key "anime_translators", "animes"
