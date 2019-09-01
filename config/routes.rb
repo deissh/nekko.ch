@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  get 'user/profile'
+  get 'user/settings'
   devise_for :admins, path: 'adm'
   devise_for :users, path: 'users'
 

@@ -40,10 +40,11 @@
                   <% end %>
                 </div>
                 <ul class="login-menu">
-                  <li><a href="#">Мой профиль</a></li>
+                  <li><%= link_to "Мой профиль", user_profile_path %></li>
                   <li><a href="#">Сообщения</a></li>
                   <li><a href="#">Мои закладки</a></li>
                   <li><a href="#">Последние комментарии</a></li>
+                  <li><%= link_to "Настройки", user_settings_path %></li>
                   <li><%= link_to "Выйти", destroy_user_session_path, method: :delete %></li>
                 </ul>
               </li>
