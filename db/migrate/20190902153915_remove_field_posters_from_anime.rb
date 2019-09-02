@@ -12,8 +12,8 @@ class RemoveFieldPostersFromAnime < ActiveRecord::Migration[5.2]
             open(anime.posters[0])
           end
 
-      anime.poster.rewind(io: u, filename: 'img')
-      anime.background.rewind(io: u, filename: 'img')
+      anime.poster.attach(io: u, filename: 'img')
+      anime.background.attach(io: u, filename: 'img')
       anime.save!
     end
     remove_column :animes, :posters, :string
