@@ -10,10 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_28_110057) do
+ActiveRecord::Schema.define(version: 2019_09_02_153915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -50,7 +71,6 @@ ActiveRecord::Schema.define(version: 2019_08_28_110057) do
     t.string "title_or"
     t.string "annotation"
     t.text "description"
-    t.string "posters", array: true
     t.string "status"
     t.integer "year"
     t.decimal "rating", default: "5.0"
@@ -111,6 +131,18 @@ ActiveRecord::Schema.define(version: 2019_08_28_110057) do
     t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id"
   end
 
+  create_table "rails_admin_histories", id: :serial, force: :cascade do |t|
+    t.text "message"
+    t.string "username"
+    t.integer "item"
+    t.string "table"
+    t.integer "month", limit: 2
+    t.bigint "year"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["item", "table", "month", "year"], name: "index_rails_admin_histories"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -121,10 +153,25 @@ ActiveRecord::Schema.define(version: 2019_08_28_110057) do
     t.datetime "updated_at", null: false
     t.string "picture", default: "https://via.placeholder.com/150"
     t.string "role", default: "user"
+    t.text "name"
+    t.text "past_names"
+    t.text "about"
+    t.text "bio"
+    t.date "birthday"
+    t.string "gender", default: "not_set"
+    t.string "language", default: "ru"
+    t.string "location"
+    t.string "theme", default: "default"
+    t.string "waifu_or_husbando"
+    t.string "slug"
+    t.index ["birthday"], name: "index_users_on_birthday"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["name"], name: "index_users_on_name", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["slug"], name: "index_users_on_slug", unique: true
   end
 
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "anime_translators", "animes"
   add_foreign_key "episodes", "anime_translators"
 end

@@ -2,6 +2,16 @@
 
 en:
   devise:
+    email: "Email"
+    password: "Password"
+    remember: "Remember me"
+    links:
+      log_in: "Log in"
+      sign_up: "Sign up"
+      forgot_password: "Forgot your password?"
+      recive_confirmation: "Didn't receive confirmation instructions?"
+      recive_unlock: "Didn't receive unlock instructions?"
+      sign_in_with: "Sign in with %{provider}"
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."

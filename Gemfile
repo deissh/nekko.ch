@@ -78,3 +78,5 @@ gem 'rails_admin', '~> 2.0.0.rc'
 gem 'pg_search'
 
 gem 'friendly_id', '~> 5.2.4'
+
+gem 'aws-sdk-s3'

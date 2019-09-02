@@ -12,6 +12,9 @@ class Anime < ApplicationRecord
 
   has_and_belongs_to_many :genres
 
+  has_one_attached :poster
+  has_one_attached :background
+
   def translators
     anime_translators
   end
