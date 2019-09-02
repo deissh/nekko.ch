@@ -9,6 +9,7 @@ class AnimeController < ApplicationController
            else
              Anime
            end
+    list = list.where(hide: false)
     list = list.search_by_title(search) unless search.empty?
     list = list.where(year: year) unless year.empty?
     list = list.order(sort_by_order) if sort_by_order

@@ -23,6 +23,14 @@ class Anime < ApplicationRecord
     genres.map(&:name)
   end
 
+  def poster_attachment_path
+    poster.attached? ? poster : 'https://via.placeholder.com/300x450'
+  end
+
+  def background_attachment_path
+    background.attached? ? background : 'https://via.placeholder.com/600x450'
+  end
+
   private
 
   def reindex
