@@ -15,12 +15,12 @@
   <%= hidden_field_tag 'page_id', @anime.id %>
   <header class="full_header">
     <div class="full_header-bg" id="full_header-bg">
-      <div class="full_header__bg-img" style="background-image: url(<%= @anime.background.service_url %>);"></div>
+      <div class="full_header__bg-img" style="background-image: url(<%= url_for(@anime.background) %>);"></div>
     </div>
     <div class="full_header-inner">
       <div class="full_header-title" id="full_header-title">
         <div class="full_content-poster img_box">
-          <img itemprop="image" class="b-lazy" src="<%= @anime.poster.service_url %>" data-src="<%= @anime.poster.service_url %>" alt="{title}">
+          <%= image_tag url_for(@anime.poster), 'data-src': url_for(@anime.poster), class: "b-lazy" %>
         </div>
         <h1>
           <%= @anime["title"] %>
@@ -55,8 +55,8 @@
     <div class="full-text clearfix video-box">
       <div class="full-poster ignore-select" id="full-poster">
         <div class="f-poster">
-          <a href="<%= @anime.poster.service_url %>" onclick="return hs.expand(this)">
-            <%= image_tag @anime.poster.service_url %>
+          <a href="<%= url_for(@anime.poster) %>" onclick="return hs.expand(this)">
+            <%= image_tag url_for(@anime.poster) %>
           </a>
         </div>
       </div>

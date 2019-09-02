@@ -3,7 +3,7 @@
     <header class="carousel__item-header">
       <div class="short__item-image">
         <figure>
-          <img itemprop="image" class="b-lazy" src="<%= anime.poster.service_url %>" data-src="<%= anime.poster.service_url %>" alt="{title}">
+          <%= image_tag url_for(anime.poster), 'data-src': url_for(anime.poster), class: "b-lazy" %>
         </figure>
       </div>
 
