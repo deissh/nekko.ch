@@ -1,7 +1,6 @@
 //= require bootstrap-select
 
-$(document).on("turbolinks:load", function() {
-    // init multi-select
+$(document).ready(function () {
     $('.selectpicker').selectpicker({
         noneSelectedText: 'Ничего не выбрано',
         noneResultsText: 'Ничего не найдено',
@@ -13,6 +12,11 @@ $(document).on("turbolinks:load", function() {
         styleBase: 'form-control',
         countSelectedText: "{0} жанров выбрано"
     });
+});
+
+$(document).on("turbolinks:load", function() {
+    $('.selectpicker').selectpicker('render').trigger('load.bs.select.data-api');
+    $(document);
 
     $('#reset-form').click(function (e) {
         $(':input', '#search-form').not(':button, :submit, :reset, :hidden')

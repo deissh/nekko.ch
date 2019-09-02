@@ -1,4 +1,4 @@
-$(document).on("turbolinks:load", function(){
+$(document).on("turbolinks:load", function(event){
     var anime_id = $('input[name="page_id"]').val();
 
     // загрузка если мы уже смотрели это
@@ -39,6 +39,15 @@ $(document).on("turbolinks:load", function(){
                 episode,
                 translator
             }));
+
+            if (typeof gtag === "function") {
+                gtag('send', {
+                    hitType: 'event',
+                    eventCategory: 'Video',
+                    eventAction: 'play',
+                    eventLabel: 'anime__' + anime_id + '__' + translator + '__' + episode
+                });
+            }
 
             // $.ajax({
             //     url: '/saved/' + anime_id + '/' + saved,

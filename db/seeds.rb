@@ -10,7 +10,7 @@ class SeedFile
 
   def initialize(file, model: nil)
     @file = file
-    @model = model || File.basename(file, '.*').classify.constantize
+    @model = model || File.basename(file, '.*').split('~')[1].classify.constantize
   end
 
   def import!

@@ -1,0 +1,78 @@
+- id: 1
+  name: SHIZA Project
+  translator_id:
+  anime_id: 1
+  created_at: '2019-08-29 20:38:51.449779'
+  updated_at: '2019-08-29 17:38:51.449801'
+- id: 2
+  name: SHIZA Project
+  translator_id:
+  anime_id: 2
+  created_at: '2019-08-29 20:38:51.489501'
+  updated_at: '2019-08-29 17:38:51.489528'
+- id: 3
+  name: AniLibria
+  translator_id:
+  anime_id: 3
+  created_at: '2019-08-29 20:38:51.550981'
+  updated_at: '2019-08-29 17:38:51.550993'
+- id: 4
+  name: AniLibria
+  translator_id:
+  anime_id: 4
+  created_at: '2019-08-29 20:38:51.606893'
+  updated_at: '2019-08-29 17:38:51.606920'
+- id: 5
+  name: AniLibria
+  translator_id:
+  anime_id: 5
+  created_at: '2019-08-29 20:38:51.685592'
+  updated_at: '2019-08-29 17:38:51.685613'
+- id: 6
+  name: AniLibria
+  translator_id:
+  anime_id: 6
+  created_at: '2019-08-29 20:38:51.753257'
+  updated_at: '2019-08-29 17:38:51.753275'
+- id: 7
+  name: AniLibria
+  translator_id:
+  anime_id: 7
+  created_at: '2019-08-29 20:38:51.777740'
+  updated_at: '2019-08-29 17:38:51.777760'
+- id: 8
+  name: AniLibria
+  translator_id:
+  anime_id: 8
+  created_at: '2019-08-29 20:38:51.900716'
+  updated_at: '2019-08-29 17:38:51.900733'
+- id: 9
+  name: AniLibria
+  translator_id:
+  anime_id: 9
+  created_at: '2019-08-29 20:38:51.951450'
+  updated_at: '2019-08-29 17:38:51.951468'
+- id: 10
+  name: SHIZA Project
+  translator_id:
+  anime_id: 10
+  created_at: '2019-08-29 20:38:52.509049'
+  updated_at: '2019-08-29 17:38:52.509061'
+- id: 11
+  name: SHIZA Project
+  translator_id:
+  anime_id: 4
+  created_at: '2019-08-29 20:38:53.374702'
+  updated_at: '2019-08-29 17:38:53.374724'
+- id: 12
+  name: SHIZA Project
+  translator_id:
+  anime_id: 11
+  created_at: '2019-08-29 20:38:53.440613'
+  updated_at: '2019-08-29 17:38:53.440624'
+- id: 13
+  name: Многоголосый закадровый
+  translator_id:
+  anime_id: 12
+  created_at: '2019-08-29 20:38:54.045630'
+  updated_at: '2019-08-29 17:38:54.045646'
