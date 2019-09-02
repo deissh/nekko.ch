@@ -1,5 +1,6 @@
-RailsAdmin.config do |config|
+# frozen_string_literal: true
 
+RailsAdmin.config do |config|
   ### Popular gems integration
 
   ## == Devise ==
@@ -49,7 +50,9 @@ RailsAdmin.config do |config|
       pretty_value do
         if value
           path = Rails.application.routes.url_helpers.rails_blob_path(value, only_path: true)
-          bindings[:view].tag(:img, { src: value.service_url, class: 'preview img-thumbnail' })
+          bindings[:view].tag(:img,
+                              src: Rails.application.routes.url_helpers.rails_blob_path(value, only_path: true),
+                              class: 'preview img-thumbnail')
         end
       end
     end
@@ -58,7 +61,9 @@ RailsAdmin.config do |config|
       pretty_value do
         if value
           path = Rails.application.routes.url_helpers.rails_blob_path(value, only_path: true)
-          bindings[:view].tag(:img, { src: value.service_url, class: 'preview img-thumbnail' })
+          bindings[:view].tag(:img,
+                              src: Rails.application.routes.url_helpers.rails_blob_path(value, only_path: true),
+                              class: 'preview img-thumbnail')
         end
       end
     end
