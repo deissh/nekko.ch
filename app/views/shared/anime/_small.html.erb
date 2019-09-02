@@ -12,7 +12,7 @@
     </div>
   <% end %>
   <a class="ser-i img-box ps-link" href="<%= anime_path(anime.try(:slug) || anime.id) %>">
-    <span class="topicImage" style="background-image: url(<%= anime.posters[0] %>);"></span>
+    <span class="topicImage" style="background-image: url(<%= anime.poster.service_url %>);"></span>
     <span class="fa fa-play-circle"></span>
   </a>
 </div>
