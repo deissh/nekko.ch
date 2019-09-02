@@ -1,20 +1,22 @@
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145302713-1"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+<% if Rails.env == "production" %>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-145302713-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    // fix collecting info with turbolinks
-    document.addEventListener('turbolinks:load', event => {
-        if (typeof gtag === 'function') {
-            console.log(event);
-            gtag('config', 'UA-145302713-1', {
-                'page_path': event.data.url.replace(window.location.protocol + "//" + window.location.hostname + (location.port && ":" + location.port), "")
-            });
-        }
-    });
-</script>
+      // fix collecting info with turbolinks
+      document.addEventListener('turbolinks:load', event => {
+          if (typeof gtag === 'function') {
+              console.log(event);
+              gtag('config', 'UA-145302713-1', {
+                  'page_path': event.data.url.replace(window.location.protocol + "//" + window.location.hostname + (location.port && ":" + location.port), "")
+              });
+          }
+      });
+  </script>
+<% end %>
 
 <!-- Google Ads -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
