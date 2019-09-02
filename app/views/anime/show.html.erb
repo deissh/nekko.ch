@@ -15,7 +15,7 @@
   <%= hidden_field_tag 'page_id', @anime.id %>
   <header class="full_header">
     <div class="full_header-bg" id="full_header-bg">
-      <div class="full_header__bg-img" style="background-image: url(<%= @anime.background_attachment_path %>);"></div>
+      <div class="full_header__bg-img" style="background-image: url(<%= url_for(@anime.background_attachment_path) %>);"></div>
     </div>
     <div class="full_header-inner">
       <div class="full_header-title" id="full_header-title">
