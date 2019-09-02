@@ -44,12 +44,28 @@ RailsAdmin.config do |config|
 
   config.model 'Anime' do
     include_all_fields
-    field(:posters, :serialized) { html_attributes rows: '3', cols: '70' }
-    # field(:genres, :serialized) { html_attributes rows: '5', cols: '70' }
+
+    field :poster, :active_storage do
+      pretty_value do
+        if value
+          path = Rails.application.routes.url_helpers.rails_blob_path(value, only_path: true)
+          bindings[:view].tag(:img, { src: value.service_url, class: 'preview img-thumbnail' })
+        end
+      end
+    end
+
+    field :background, :active_storage do
+      pretty_value do
+        if value
+          path = Rails.application.routes.url_helpers.rails_blob_path(value, only_path: true)
+          bindings[:view].tag(:img, { src: value.service_url, class: 'preview img-thumbnail' })
+        end
+      end
+    end
+
     field(:countries, :serialized) { html_attributes rows: '5', cols: '70' }
     field(:actors, :serialized) { html_attributes rows: '5', cols: '70' }
     field(:directors, :serialized) { html_attributes rows: '5', cols: '70' }
     field(:studios, :serialized) { html_attributes rows: '5', cols: '70' }
-
   end
 end
