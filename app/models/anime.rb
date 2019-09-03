@@ -25,7 +25,6 @@ class Anime < ApplicationRecord
 
   def poster_attachment_path
     if poster.attached?
-      url = URI(poster.attachment.service_url)
       "https://301222.selcdn.ru/nekko-ch-cdn1/#{poster.attachment.key}"
     else
       'https://via.placeholder.com/300x450'
@@ -34,7 +33,6 @@ class Anime < ApplicationRecord
 
   def background_attachment_path
     if background.attached?
-      url = URI(background.attachment.service_url)
       "https://301222.selcdn.ru/nekko-ch-cdn1/#{background.attachment.key}"
     else
       'https://via.placeholder.com/300x450'
