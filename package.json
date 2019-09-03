@@ -2,7 +2,7 @@
   "name": "website",
   "private": true,
   "dependencies": {
-    "bootstrap-select": "^1.13.10",
+    "@nobleclem/jquery-multiselect": "^2.4.16",
     "popper.js": "^1.15.0"
   }
 }

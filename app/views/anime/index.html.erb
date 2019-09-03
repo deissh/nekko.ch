@@ -13,12 +13,12 @@
         <div class="advance-search">
           <span class="desc">Расширенный поиск</span>
           <div class="row">
-            <div class="col">
+            <div class="col-12 col-md-4">
               <label for="year">Год выхода</label>
               <%= select_tag 'year', options_for_select((1978..2019), :selected=>@query[:year]),
                              include_blank: "Не указано", class: "form-control" %>
             </div>
-            <div class="col">
+            <div class="col-12 col-md-4">
               <label for="sort_by">Сортировать по</label>
               <%= select_tag 'sort_by',
                              options_for_select([
@@ -33,7 +33,7 @@
                              include_blank: "Не указано",
                              class: "form-control" %>
             </div>
-            <div class="col">
+            <div class="col-12 col-md-4">
               <label for="sort_by">Жанр</label>
               <%= select_tag 'genres',
                              options_for_select(Genre.all.map{ |u| [u.name, u.id] },

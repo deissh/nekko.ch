@@ -119,6 +119,20 @@
   }
 }
 
+.ms-options-wrap > button:focus, .ms-options-wrap > button {
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  user-select: none;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.ms-options-wrap > button > span {
+  position: absolute;
+  top: 0;
+  left: 15px;
+}
+
 @media screen and (max-width: 767px) {
   #search-form .inner-form {
     .basic-search .input-field {

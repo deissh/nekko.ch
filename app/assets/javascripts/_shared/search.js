@@ -1,28 +1,35 @@
-//= require bootstrap-select
+//= require @nobleclem/jquery-multiselect/jquery.multiselect.js
 
-$(document).ready(function () {
-    $('.selectpicker').selectpicker({
-        noneSelectedText: 'Ничего не выбрано',
-        noneResultsText: 'Ничего не найдено',
-        selectAllText: 'Выбрать все',
-        deselectAllText: 'Отменить выбор',
-        title: 'Не указано',
-        selectedTextFormat: 'count > 1',
-        style: 'color-btn',
-        styleBase: 'form-control',
-        countSelectedText: "{0} жанров выбрано"
+function GenreSelect () {
+    $('.ms-options-wrap').remove();
+    $('.selectpicker').removeClass('jqmsLoaded');
+    $('.selectpicker').multiselect({
+        texts: {
+            placeholder: 'Выбрать жанры',
+            search: 'Поиск по названию',
+            selectAll: 'Выбрать все',
+            unselectAll: 'Снять выбор со всех',
+            noneSelected: 'Ничего не выбрано',
+            selectedOptions: ' выбрано'
+        },
+        search   : true,
+        selectAll: true,
+        maxPlaceholderOpts: 3,
+        defaultSelected: []
     });
-});
+}
 
 $(document).on("turbolinks:load", function() {
-    $('.selectpicker').selectpicker('render').trigger('load.bs.select.data-api');
-    $(document);
+    GenreSelect();
 
     $('#reset-form').click(function (e) {
         $(':input', '#search-form').not(':button, :submit, :reset, :hidden')
             .val('')
             .prop('checked', false)
             .prop('selected', false);
-        $('.selectpicker').selectpicker('val', []);
+        $(".selectpicker > option:selected")
+            .removeAttr("selected")
+            .parent()
+            .multiselect('reset');
     })
 });
