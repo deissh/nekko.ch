@@ -119,6 +119,17 @@
   }
 }
 
+#ms-list-1 > button {
+  color: #495057;
+  font-size: 1rem;
+  font-weight: 400;
+  height: calc(1.5em + 0.75rem + 2px);
+
+  :hover {
+    color: #495057;
+  }
+}
+
 .ms-options-wrap > button:focus, .ms-options-wrap > button {
   background-clip: padding-box;
   border: 1px solid #ced4da;
