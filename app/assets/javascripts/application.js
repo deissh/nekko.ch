@@ -33,9 +33,6 @@ $(document).on("turbolinks:load", function(){
         $(this).parent().toggleClass('menuactive').siblings().removeClass('menuactive').children('ul').fadeOut(100);
         return false;
     });
-    $(document).click(function() {
-        $('.head-menu li:has(ul) > a').parent().toggleClass('menuactive').siblings().removeClass('menuactive').children('ul').fadeOut(100);
-    });
 
     $("#show-menu").click(function(){
         if(localStorage.getItem('search-panel') === false) {
