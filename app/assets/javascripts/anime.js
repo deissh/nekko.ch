@@ -40,15 +40,6 @@ $(document).on("turbolinks:load", function(event){
                 translator
             }));
 
-            if (typeof gtag === "function") {
-                gtag('send', {
-                    hitType: 'event',
-                    eventCategory: 'Video',
-                    eventAction: 'play',
-                    eventLabel: 'anime__' + anime_id + '__' + translator + '__' + episode
-                });
-            }
-
             // $.ajax({
             //     url: '/saved/' + anime_id + '/' + saved,
             //     type: 'post',
