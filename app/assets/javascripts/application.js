@@ -25,6 +25,7 @@ Components
 ==========
  */
 //= require './_shared/search.js'
+//= require './_shared/zoom.js'
 
 // top navbar
 $(document).on("turbolinks:load", function(){

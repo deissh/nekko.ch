@@ -55,9 +55,7 @@
     <div class="full-text clearfix video-box">
       <div class="full-poster ignore-select" id="full-poster">
         <div class="f-poster">
-          <a href="#">
-            <%= image_tag @anime.poster_attachment_path %>
-          </a>
+          <%= image_tag @anime.poster_attachment_path, 'data-enlargable': true, style: 'cursor: zoom-in' %>
         </div>
       </div>
       <div class="full-info clearfix ignore-select">
