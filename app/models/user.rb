@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   extend FriendlyId
   friendly_id :name, use: :slugged
@@ -19,12 +21,31 @@ class User < ApplicationRecord
 
   has_many :anime_progresses
 
-
   validates :email, format: { with: /\A.*@.*\..*\z/, message: 'is not an email' },
                     if: :email_changed?, allow_blank: true
   validates :about, length: { maximum: 500 }
   validates :gender, length: { maximum: 20 }
-
+  with_options if: :slug_changed?, allow_nil: true do
+    validates :slug, uniqueness: { case_sensitive: false }
+    validates :slug, format: {
+      with: /\A[_A-Za-z0-9]+\z/,
+      message: 'can only contain letters, numbers, and underscores'
+    }
+    validates :slug, format: {
+      with: /\A[A-Za-z0-9]/,
+      message: 'must begin with a letter or number'
+    }
+    validates :slug, format: {
+      without: /\A[0-9]*\z/,
+      message: 'cannot be entirely numbers'
+    }
+    validates :slug, length: 3..20
+  end
+  validate :not_reserved_slug, if: ->(user) { user.slug.present? && user.slug_changed? }
+  validate :not_reserved_name, if: :name_changed?
+  validates :name, presence: true,
+                   length: { minimum: 3, maximum: 20 },
+                   if: ->(user) { user.registered? && user.name_changed? }
 
   scope :active, -> { where(deleted_at: nil) }
 
@@ -33,5 +54,15 @@ class User < ApplicationRecord
       # Push it onto the front and limit
       self.past_names = [name_was, *past_names].first(PAST_NAMES_LIMIT)
     end
+  end
+
+  private
+
+  def not_reserved_slug
+    errors.add(:slug, 'is reserved') if RESERVED_NAMES.include?(slug&.downcase)
+  end
+
+  def not_reserved_name
+    errors.add(:name, 'is reserved') if RESERVED_NAMES.include?(name.downcase)
   end
 end
