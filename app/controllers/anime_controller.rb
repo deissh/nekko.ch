@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class AnimeController < ApplicationController
-  before_action :authenticate_user!, only: %i[progress]
+  before_action :authenticate_user!, only: %i[progress add_progress]
 
   # GET /anime
   # GET /anime.json
@@ -44,7 +44,7 @@ class AnimeController < ApplicationController
     end
   end
 
-  # GET /anime/1/progress.json
+  # GET /api/v1/anime/:id/progress
   def progress
     @anime = Anime.find(params[:id])
 
@@ -53,10 +53,11 @@ class AnimeController < ApplicationController
     end
   end
 
+  # POST /api/v1/anime/:id/progress
   def add_progress
-    params.permit(:translator_id, :anime_id, :episode_id)
+    params.permit(:translator_id, :episode_id)
 
-    anime = Anime.find(params[:anime_id])
+    anime = Anime.find(params[:id])
     tr = anime.translators.find(params[:translator_id])
 
     progress = AnimeProgress.create!(anime: anime,

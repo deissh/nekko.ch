@@ -83,25 +83,25 @@
     </div>
   <% else %>
     <div class="accordion" id="translators">
-      <% @anime.translators.each_with_index do |tr, tr_idx| %>
+      <% @anime.translators.each do |tr| %>
         <div class="card">
-          <div class="card-header translator-header" id="translator-title-<%= tr_idx %>">
+          <div class="card-header translator-header" id="translator-title-<%= tr.id %>">
             <h5 class="mb-0">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#translator-btn-<%= tr_idx %>" aria-expanded="false" aria-controls="translator-btn-<%= tr_idx %>">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#translator-btn-<%= tr.id %>" aria-expanded="false" aria-controls="translator-btn-<%= tr.id %>">
                 <%= tr.name %>
               </button>
             </h5>
           </div>
 
-          <div id="translator-btn-<%= tr_idx %>" class="collapse translator-body" aria-labelledby="translator-title-<%= tr_idx %>" data-parent="#translators">
+          <div id="translator-btn-<%= tr.id %>" class="collapse translator-body" aria-labelledby="translator-title-<%= tr.id %>" data-parent="#translators">
             <div class="card-body">
 
               <div class="episodes">
                 <% tr.episodes.order(created_at: :asc).each_with_index do |episode, index| %>
                   <%= content_tag(:div, index + 1,
-                                  'data-id': index,
+                                  'data-id': episode.id,
                                   'data-href': episode.stream_url,
-                                  'data-translator-id': tr_idx,
+                                  'data-translator-id': tr.id,
                                   class: "video-button") %>
                 <% end %>
               </div>
