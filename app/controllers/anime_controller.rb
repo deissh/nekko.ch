@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class AnimeController < ApplicationController
+  before_action :authenticate_user!, only: %i[progress]
+
   # GET /anime
   # GET /anime.json
   def index
@@ -39,6 +41,31 @@ class AnimeController < ApplicationController
     respond_to do |format|
       format.html { render :show, layout: 'sidebar' }
       format.json { render json: @anime }
+    end
+  end
+
+  # GET /anime/1/progress.json
+  def progress
+    @anime = Anime.find(params[:id])
+
+    respond_to do |format|
+      format.json { render json: @anime.last_watch(current_user.id) }
+    end
+  end
+
+  def add_progress
+    params.permit(:translator_id, :anime_id, :episode_id)
+
+    anime = Anime.find(params[:anime_id])
+    tr = anime.translators.find(params[:translator_id])
+
+    progress = AnimeProgress.create!(anime: anime,
+                                     anime_translator: tr,
+                                     episode: tr.episodes.find(params[:episode_id]),
+                                     user: current_user)
+
+    respond_to do |format|
+      format.json { render json: progress }
     end
   end
 

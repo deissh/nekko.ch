@@ -15,6 +15,14 @@ class Anime < ApplicationRecord
   has_one_attached :poster
   has_one_attached :background
 
+  has_many :anime_progresses
+
+  def last_watch(user_id)
+    anime_progresses
+      .where(user: user_id)
+      .order(created_at: :desc).first!
+  end
+
   def translators
     anime_translators
   end

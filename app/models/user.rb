@@ -17,6 +17,8 @@ class User < ApplicationRecord
   enum theme: %i[default]
   enum gender: %i[not_set male female]
 
+  has_many :anime_progresses
+
 
   validates :email, format: { with: /\A.*@.*\..*\z/, message: 'is not an email' },
                     if: :email_changed?, allow_blank: true
