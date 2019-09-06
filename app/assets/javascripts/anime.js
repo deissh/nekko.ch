@@ -35,6 +35,9 @@ function saveEpisode(anime_id, translator_id, episode_id) {
 
 $(document).on("turbolinks:load", function(event){
     const anime_id = $('input[name="page_id"]').val();
+    if (anime_id === undefined) {
+        return
+    }
 
     // загрузка если мы уже смотрели это
     $.ajax({
