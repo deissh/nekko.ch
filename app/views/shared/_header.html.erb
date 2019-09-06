@@ -19,10 +19,10 @@
         </li>
 
         <li class="head-ic">
-          <a href="#">
+          <a href="#" style="width: 80px;">
             <% if (user_signed_in?) %>
               <div class="loginbtn img-box align-middle" id="loginbtn">
-                <%= image_tag current_user.picture || "https://via.placeholder.com/150" %>
+                <%= image_tag current_user.avatar_path %>
               </div>
             <% else %>
               <span class="fa fa-user"></span>
@@ -33,7 +33,7 @@
               <li>
                 <div class="login-avatar">
                   <div class="avatar-box" id="avatar-box">
-                    <%= image_tag current_user.picture || "https://via.placeholder.com/150" %>
+                    <%= image_tag current_user.avatar_path %>
                   </div>
                   <% if current_admin %>
                     <a href="/admin/panel" target="_blank">Админпанель</a>

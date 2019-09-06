@@ -20,6 +20,9 @@ class User < ApplicationRecord
   enum gender: %i[not_set male female]
 
   has_many :anime_progresses
+  has_one_attached :avatar
+  has_one_attached :background
+
 
   validates :email, format: { with: /\A.*@.*\..*\z/, message: 'is not an email' },
                     if: :email_changed?, allow_blank: true
@@ -53,6 +56,22 @@ class User < ApplicationRecord
     if name_changed?
       # Push it onto the front and limit
       self.past_names = [name_was, *past_names].first(PAST_NAMES_LIMIT)
+    end
+  end
+
+  def avatar_path
+    if avatar.attached?
+      "https://301222.selcdn.ru/nekko-ch-cdn1/#{avatar.attachment.key}"
+    else
+      'https://301222.selcdn.ru/nekko-ch-cdn1/assets/user-default-avatar.jpg'
+    end
+  end
+
+  def background_path
+    if background.attached?
+      "https://301222.selcdn.ru/nekko-ch-cdn1/#{background.attachment.key}"
+    else
+      'https://301222.selcdn.ru/nekko-ch-cdn1/assets/user-default-background.jpg'
     end
   end
 
