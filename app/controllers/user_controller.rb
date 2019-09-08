@@ -5,6 +5,11 @@ class UserController < ApplicationController
 
   def profile
     @title = @user.name
+
+    respond_to do |format|
+      format.html { render :profile, layout: 'clear' }
+      format.json { render json: @user }
+    end
   end
 
   def library; end
