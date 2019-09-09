@@ -11,6 +11,15 @@ Rails.application.routes.draw do
   # anime search and view
   resources :anime, as: 'anime', only: %i[show index]
 
+  # Help section
+  scope '/help' do
+    # etc
+    get 'page/privacy'
+    get 'page/copyright'
+    get 'page/rules'
+    get 'page/about'
+  end
+
   # JSON Api
   scope '/api/v1', defaults: { format: :json } do
     # get and save current progress by user
