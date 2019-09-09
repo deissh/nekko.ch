@@ -48,7 +48,7 @@ class User < ApplicationRecord
   validate :not_reserved_name, if: :name_changed?
   validates :name, presence: true,
                    length: { minimum: 3, maximum: 20 },
-                   if: ->(user) { user.registered? && user.name_changed? }
+                   if: ->(user) { user.name_changed? }
 
   scope :active, -> { where(deleted_at: nil) }
 
