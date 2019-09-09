@@ -5,17 +5,14 @@
 
   <div class="main center container">
     <div class="clearfix">
-      <div class="cont">
-        123
-        <div class="row" id="grid">
-          <div class="col-12 col-sm-3">
+      <div class="row block">
+        <div class="col-12 col-sm-3">
           123
-          </div>
-          <div class="flex-row col-12 col-sm-9">
+        </div>
+        <div class="flex-row col-12 col-sm-9">
             <% Anime.limit(10).each do |anime| %>
               <%= render 'shared/anime/short', anime: anime %>
             <% end %>
-          </div>
         </div>
       </div>
     </div>
