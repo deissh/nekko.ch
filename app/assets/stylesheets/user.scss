@@ -13,6 +13,11 @@
     .main {
         margin-top: 200px;
 
+        .profile-image {
+            max-width: 380px;
+            max-height: 380px;
+        }
+
         .block {
             padding-top: 15px;
         }
