@@ -55,7 +55,7 @@ class User < ApplicationRecord
   before_update do
     if name_changed?
       # Push it onto the front and limit
-      self.past_names = [name_was, *past_names].first(PAST_NAMES_LIMIT)
+      self.also_name = [name_was, *also_name].first(PAST_NAMES_LIMIT)
     end
   end
 
@@ -72,6 +72,28 @@ class User < ApplicationRecord
       "https://301222.selcdn.ru/nekko-ch-cdn1/#{background.attachment.key}"
     else
       'https://301222.selcdn.ru/nekko-ch-cdn1/assets/user-default-background.jpg'
+    end
+  end
+
+  def gender_converted
+    case gender
+    when 'female'
+      'Женский'
+    when 'male'
+      'Мужской'
+    else
+      'Не указано'
+    end
+  end
+
+  def language_converted
+    case language
+    when 'ru'
+      'Русский'
+    when 'en'
+      'Английский'
+    else
+      'Не указан'
     end
   end
 

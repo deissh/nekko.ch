@@ -6,25 +6,27 @@
   <div class="main center container">
     <div class="clearfix">
       <div class="row block">
-        <div class="col-12 col-sm-3 clearfix pb-3">
+        <div class="col-12 col-sm-4 clearfix pb-3">
           <div class="row">
             <div class="col-6 col-sm-12">
               <%= image_tag url_for(@user.avatar_path), class: "rounded" %>
             </div>
-            <div class="col-6 col-sm-12">
+            <div class="col-12 col-sm-12">
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">Имя: <%= @user.name %></li>
-                <li class="list-group-item">Прошлые имена: <%= @user.past_names.join(', ') %></li>
-                <li class="list-group-item">Пол: </li>
-                <li class="list-group-item">Язык: </li>
-                <li class="list-group-item">День рождения: </li>
-                <li class="list-group-item">Вайфу/Хазбанту: </li>
-                <li class="list-group-item">О себе: </li>
+                <li class="list-group-item">Прошлые имена: <%= @user.also_name.join(', ') %></li>
+                <li class="list-group-item">Пол: <%= @user.gender_converted %></li>
+                <li class="list-group-item">Язык: <%= @user.language_converted %></li>
+                <% if @user.birthday %>
+                  <li class="list-group-item">День рождения: <%= I18n.l(@user.birthday, format: :long) %></li>
+                <% end %>
+                <li class="list-group-item">Вайфу/Хазбанту: <%= @user.waifu_or_husbando || 'Не указано' %></li>
+                <li class="list-group-item">О себе: <%= @user.about || 'Не указано' %></li>
               </ul>
             </div>
           </div>
         </div>
-        <div class="col-12 col-sm-9">
+        <div class="col-12 col-sm-8">
           <div class="flex-row ">
             <% Anime.limit(10).each do |anime| %>
               <%= render 'shared/anime/short', anime: anime %>
