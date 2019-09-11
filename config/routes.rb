@@ -13,6 +13,14 @@ Rails.application.routes.draw do
   scope '/user' do
     get '/:id', as: 'user_profile', to: 'user#profile'
   end
+    
+  scope '/help' do
+    # etc
+    get 'page/privacy'
+    get 'page/copyright'
+    get 'page/rules'
+    get 'page/about'
+  end
 
   # JSON Api
   scope '/api/v1', defaults: { format: :json } do
