@@ -51,4 +51,10 @@
       border-color: #fe023d;
     }
   }
+
+  @media screen and (max-width: 760px) {
+    .full-poster {
+      width: 100%;
+    }
+  }
 }
