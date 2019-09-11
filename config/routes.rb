@@ -20,6 +20,9 @@ Rails.application.routes.draw do
     scope '/anime' do
       get '/:id/progress', to: 'anime#progress'
       post '/:id/progress', to: 'anime#add_progress'
+
+      get '/:id/status', to: 'anime#get_status'
+      post '/:id/status', to: 'anime#change_status'
     end
   end
 

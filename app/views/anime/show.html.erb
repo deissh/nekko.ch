@@ -57,6 +57,13 @@
         <div class="f-poster">
           <%= image_tag @anime.poster_attachment_path, 'data-enlargable': true, style: 'cursor: zoom-in' %>
         </div>
+        <div class="btn-group-vertical" id="anime_status">
+<!--          <button type="button" class="btn btn-secondary">Не указано</button>-->
+          <button type="button" class="btn btn-secondary" data-status="inprogress">Смотрю</button>
+          <button type="button" class="btn btn-secondary" data-status="completed">Просмотрено</button>
+          <button type="button" class="btn btn-secondary" data-status="favorite">Любимое</button>
+          <button type="button" class="btn btn-secondary" data-status="throw">Брошено</button>
+        </div>
       </div>
       <div class="full-info clearfix ignore-select">
         <div class="fi-col">
