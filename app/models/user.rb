@@ -5,7 +5,7 @@ class User < ApplicationRecord
   friendly_id :name, use: :slugged
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :trackable
 
   RESERVED_NAMES = %w[
     admin administrator connect dashboard developer developers edit favorites
