@@ -23,7 +23,6 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_one_attached :background
 
-
   validates :email, format: { with: /\A.*@.*\..*\z/, message: 'is not an email' },
                     if: :email_changed?, allow_blank: true
   validates :about, length: { maximum: 500 }
@@ -95,6 +94,13 @@ class User < ApplicationRecord
     else
       'Не указан'
     end
+  end
+
+  def anime_statuses(type)
+    UserAnimeStatus
+      .where(user: id, status: type)
+      .includes(:anime)
+      .map(&:anime)
   end
 
   private

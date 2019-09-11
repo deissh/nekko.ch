@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_10_192030) do
+ActiveRecord::Schema.define(version: 2019_09_11_095939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -157,6 +157,17 @@ ActiveRecord::Schema.define(version: 2019_09_10_192030) do
     t.index ["item", "table", "month", "year"], name: "index_rails_admin_histories"
   end
 
+  create_table "user_anime_statuses", force: :cascade do |t|
+    t.bigint "anime_id"
+    t.bigint "user_id"
+    t.integer "status", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["anime_id"], name: "index_user_anime_statuses_on_anime_id"
+    t.index ["status"], name: "index_user_anime_statuses_on_status"
+    t.index ["user_id"], name: "index_user_anime_statuses_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -192,4 +203,6 @@ ActiveRecord::Schema.define(version: 2019_09_10_192030) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "anime_translators", "animes"
   add_foreign_key "episodes", "anime_translators"
+  add_foreign_key "user_anime_statuses", "animes"
+  add_foreign_key "user_anime_statuses", "users"
 end

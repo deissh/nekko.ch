@@ -37,16 +37,20 @@
           <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-inprogress" role="tabpanel" aria-labelledby="nav-inprogress-tab">
               <div class="flex-row ">
-                <% Anime.with_attached_poster.includes(:genres).limit(10).each do |anime| %>
+                <% @user.anime_statuses(:in_progress).each do |anime| %>
                   <%= render 'shared/anime/short', anime: anime %>
                 <% end %>
               </div>
             </div>
             <div class="tab-pane fade" id="nav-complited" role="tabpanel" aria-labelledby="nav-complited-tab">
-              Просмотрено
+              <% @user.anime_statuses(:complited).each do |anime| %>
+                <%= render 'shared/anime/short', anime: anime %>
+              <% end %>
             </div>
             <div class="tab-pane fade" id="nav-throw" role="tabpanel" aria-labelledby="nav-throw-tab">
-              Брошено
+              <% @user.anime_statuses(:throw).each do |anime| %>
+                <%= render 'shared/anime/short', anime: anime %>
+              <% end %>
             </div>
           </div>
         </div>
