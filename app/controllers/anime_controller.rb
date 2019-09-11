@@ -84,11 +84,14 @@ class AnimeController < ApplicationController
   def change_status
     params.permit(:status)
 
+    as = UserAnimeStatus
+         .where(user: current_user.id, anime: params[:id])
+         .first_or_create!(status: params[:status])
+         .update!(status: params[:status])
+
     respond_to do |format|
       format.json do
-        render json: UserAnimeStatus
-          .find_or_initialize_by(user: current_user.id, anime: params[:id])
-          .update!(status: params[:status])
+        render json: as
       end
     end
   end
