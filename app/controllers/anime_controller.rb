@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class AnimeController < ApplicationController
-  before_action :authenticate_user!, only: %i[progress add_progress]
+  before_action :authenticate_user!, only: %i[progress add_progress get_status change_status]
 
   # GET /anime
   # GET /anime.json
@@ -67,6 +67,32 @@ class AnimeController < ApplicationController
 
     respond_to do |format|
       format.json { render json: progress }
+    end
+  end
+
+  # GET /api/v1/anime/:id/status
+  def get_status
+    respond_to do |format|
+      format.json do
+        render json: UserAnimeStatus
+          .where(user: current_user.id, anime: params[:id]).first!
+      end
+    end
+  end
+
+  # POST /api/v1/anime/:id/status
+  def change_status
+    params.permit(:status)
+
+    as = UserAnimeStatus
+         .where(user: current_user.id, anime: params[:id])
+         .first_or_create!(status: params[:status])
+         .update!(status: params[:status])
+
+    respond_to do |format|
+      format.json do
+        render json: as
+      end
     end
   end
 

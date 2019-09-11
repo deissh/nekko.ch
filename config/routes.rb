@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'user/profile'
-  get 'user/settings'
   devise_for :admins, path: 'adm'
   devise_for :users, path: 'users'
 
@@ -11,7 +9,11 @@ Rails.application.routes.draw do
   # anime search and view
   resources :anime, as: 'anime', only: %i[show index]
 
-  # Help section
+  # user
+  scope '/user' do
+    get '/:id', as: 'user_profile', to: 'user#profile'
+  end
+    
   scope '/help' do
     # etc
     get 'page/privacy'
@@ -26,6 +28,9 @@ Rails.application.routes.draw do
     scope '/anime' do
       get '/:id/progress', to: 'anime#progress'
       post '/:id/progress', to: 'anime#add_progress'
+
+      get '/:id/status', to: 'anime#get_status'
+      post '/:id/status', to: 'anime#change_status'
     end
   end
 

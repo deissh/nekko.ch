@@ -38,3 +38,23 @@
   display: none;
   margin: auto;
 }
+
+.full-desc {
+  .btn-group-vertical {
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  #anime_status {
+    .active {
+      background-color: #fe023d;
+      border-color: #fe023d;
+    }
+  }
+
+  @media screen and (max-width: 760px) {
+    .full-poster {
+      width: 100%;
+    }
+  }
+}

@@ -56,6 +56,20 @@ $(document).on("turbolinks:load", function(event){
         }
     });
 
+    // загрузка статуса для данного аниме
+    $.ajax({
+        url: '/api/v1/anime/' + anime_id + '/status',
+        type: 'get',
+        success: function(data) {
+            console.info('Прогресс успешно загружен', data);
+            $('#anime_status > button').removeClass('active');
+            $('#anime_status > button[data-status="' + data.status + '"]').addClass('active');
+        },
+        error: function (e) {
+            console.info('Не удалось загрузить статус аниме с сервера', e);
+        }
+    });
+
     $('.video-button').click(function(e) {
         const that = $(this);
         const href = that.data('href');
@@ -78,5 +92,28 @@ $(document).on("turbolinks:load", function(event){
             // сохраняем в текущем клиенте
             saveEpisode(anime_id, translator, episode);
         }
+    });
+
+    $('#anime_status > button').click(function(e) {
+        const that = $(this);
+        const status = that.data('status');
+
+        $('#anime_status > button').removeClass('active');
+        that.addClass('active');
+
+        $.ajax({
+            url: '/api/v1/anime/' + anime_id + '/status',
+            type: 'post',
+            data: {
+                status
+            },
+            success: function(data) {
+                console.info('Статус данного аниме успешно сохранен', data);
+            },
+            error: function (e) {
+                alert('Произошла ошибка при сохранении, больше информции можно найти в консоли');
+                console.error(e);
+            }
+        });
     });
 });
