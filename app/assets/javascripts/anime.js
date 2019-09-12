@@ -98,9 +98,6 @@ $(document).on("turbolinks:load", function(event){
         const that = $(this);
         const status = that.data('status');
 
-        $('#anime_status > button').removeClass('active');
-        that.addClass('active');
-
         $.ajax({
             url: '/api/v1/anime/' + anime_id + '/status',
             type: 'post',
@@ -109,10 +106,14 @@ $(document).on("turbolinks:load", function(event){
             },
             success: function(data) {
                 console.info('Статус данного аниме успешно сохранен', data);
+                $('#anime_status > button').removeClass('active');
+                that.addClass('active');
             },
             error: function (e) {
-                alert('Произошла ошибка при сохранении, больше информции можно найти в консоли');
                 console.error(e);
+                if (e.status === 401) {
+                    alert('Войдите в свой аккаунт что бы получить больше!');
+                }
             }
         });
     });
