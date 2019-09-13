@@ -10,9 +10,7 @@ Rails.application.routes.draw do
   resources :anime, as: 'anime', only: %i[show index]
 
   # user
-  scope '/user' do
-    get '/:id', as: 'user_profile', to: 'user#profile'
-  end
+  resources :user, as: 'user', only: %i[show]
     
   scope '/help' do
     # etc

@@ -62,7 +62,8 @@ class User < ApplicationRecord
     if avatar.attached?
       "https://301222.selcdn.ru/nekko-ch-cdn1/#{avatar.attachment.key}"
     else
-      'https://301222.selcdn.ru/nekko-ch-cdn1/assets/user-default-avatar.jpg'
+      # 'https://301222.selcdn.ru/nekko-ch-cdn1/assets/user-default-avatar.jpg'
+      'https://via.placeholder.com/450x450'
     end
   end
 
