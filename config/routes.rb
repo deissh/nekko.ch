@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   # user
   resources :user, as: 'user', only: %i[show]
-    
+
   scope '/help' do
     # etc
     get 'page/privacy'
