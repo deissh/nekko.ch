@@ -12,6 +12,14 @@ function openEpisode(anime_id, translator_id, episode_id) {
         episode_id,
         translator_id
     }));
+
+    // Google Analitycs only in production mode
+    try {
+        gtag('event', 'video_change', {
+            'event_label': 'Select episode or translator',
+            'event_category': 'video_player'
+        });
+    } catch (e) { console.error(e); }
 }
 
 function saveEpisode(anime_id, translator_id, episode_id) {
@@ -116,5 +124,12 @@ $(document).on("turbolinks:load", function(event){
                 }
             }
         });
+
+        try {
+            gtag('event', 'anime_status_change', {
+                'event_label': 'Change anime progress',
+                'event_category': 'account'
+            });
+        } catch (e) { console.error(e); }
     });
 });
