@@ -2,7 +2,9 @@
 
 Rails.application.routes.draw do
   devise_for :admins, path: 'adm'
-  devise_for :users, path: 'user'
+  devise_for :users, path: 'user', controllers: {
+    registrations: 'users/registrations'
+  }
 
   root 'anime#index'
 
