@@ -3,23 +3,36 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #profile {
-    background: #f3f5fd;
+  background: #f3f5fd;
     
-    .full_header-bg {
-        border-radius: 0px;
-        max-height: 350px;
-    }
+  .full_header-bg {
+      border-radius: 0px;
+      max-height: 350px;
+  }
 
-    .main {
-        margin-top: 200px;
+  .main {
+     margin-top: 200px;
 
-        .profile-image {
-            max-width: 380px;
-            max-height: 380px;
-        }
+     .profile-image {
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+        max-height: 380px;
+     }
+     .profile-actions {
+       a {
+         border-radius: 0;
+         padding: 0;
+         margin: 0;
+       }
 
-        .block {
-            padding-top: 15px;
-        }
-    }
+       :last-child {
+         border-bottom-right-radius: 0.25rem;
+         border-bottom-left-radius: 0.25rem;
+       }
+     }
+
+     .block {
+        padding-top: 15px;
+     }
+  }
 }
