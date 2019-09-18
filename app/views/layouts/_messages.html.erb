@@ -1,0 +1,19 @@
+<% flash.each do |key, value| %>
+  <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true" style="position: absolute;z-index: 100;right: 0;">
+    <div class="toast-header">
+      <%#= image_tag 'airbnb-512.png', height: '30', width: '30', :class=>"rounded mr-2" %>
+      <strong class="mr-auto">Notification</strong>
+    </div>
+    <div class="toast-body">
+      <%= value %>
+    </div>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        setTimeout(function(){
+            $('.toast').fadeOut();
+        }, 2000);
+    })
+</script>
