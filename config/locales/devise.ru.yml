@@ -3,6 +3,7 @@ ru:
     email: "Email"
     password: "Пароль"
     remember: "Запомнить меня"
+    save: "Сохранить"
     links:
       log_in: "Войти"
       sign_up: "Зарегистрироваться"
