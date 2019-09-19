@@ -1,8 +1,19 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
-  def authorize_admin
-    if current_user.role == 'admin'
-      return
+  protect_from_forgery with: :exception
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:name, :email, :password)}
+    devise_parameter_sanitizer.permit(:account_update) do |u|
+      u.permit(:name, :avatar, :background, :about, :bio,
+               :gender, :language, :birthday,
+               :waifu_or_husbando, :email,
+               :private_info, :private_statuses,
+               :password, :current_password)
     end
-    redirect_to root_path, alert: 'Admins only!'
   end
 end

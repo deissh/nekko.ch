@@ -21,6 +21,8 @@
 <body>
 <%= render 'shared/header' %>
 
+<%= render partial: 'layouts/messages', flash: flash %>
+
 <%= yield %>
 </body>
 </html>

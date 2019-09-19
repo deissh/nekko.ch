@@ -10,28 +10,38 @@
             <%= render "devise/shared/error_messages", resource: resource %>
 
             <div class="form-group">
-              <%= f.label :email %>
-              <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
+              <label>Никнейм</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">/user/</div>
+                </div>
+                <%= f.text_field :name, autofocus: true, class: "form-control" %>
+              </div>
             </div>
 
             <div class="form-group">
-              <%= f.label :password %>
+              <label>Почта</label>
+              <%= f.email_field :email, autocomplete: 'email', class: 'form-control' %>
+            </div>
+
+            <div class="form-group">
+              <label>Пароль</label>
               <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control' %>
 
               <% if @minimum_password_length %>
                 <small class="form-text text-muted">
-                  Minimum password length <%= @minimum_password_length %>
+                  Минимальная длинна <%= @minimum_password_length %>
                 </small>
               <% end %>
             </div>
 
             <div class="form-group">
-              <%= f.label :password_confirmation %>
+              <label>Подтвердите пароль</label>
               <%= f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control' %>
             </div>
 
             <div class="form-group">
-              <%= f.submit 'Sign Up', class: 'btn btn-primary' %>
+              <%= f.submit 'Зарегистрироваться', class: 'btn btn-primary' %>
             </div>
           <% end %>
 

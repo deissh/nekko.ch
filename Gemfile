@@ -71,6 +71,7 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'devise'
 gem 'font-awesome-sass', '~> 5.9.0'
 gem 'jquery-rails'
+gem 'bootstrap4-datetime-picker-rails'
 gem 'kaminari'
 
 gem 'rails_admin', '~> 2.0.0.rc'

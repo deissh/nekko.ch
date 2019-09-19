@@ -1,43 +1,130 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div id="edit">
+  <div class="row">
+    <div class="col-12 col-sm-3">
+      <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="true">Профиль</a>
+        <a class="nav-link" id="v-pills-privacy-tab" data-toggle="pill" href="#v-pills-privacy" role="tab" aria-controls="v-pills-privacy" aria-selected="false">Приватность</a>
+        <a class="nav-link" id="v-pills-password-tab" data-toggle="pill" href="#v-pills-password" role="tab" aria-controls="v-pills-password" aria-selected="false">Пароль</a>
+        <a class="nav-link" id="v-pills-saving-tab" data-toggle="pill" href="#v-pills-saving" role="tab" aria-controls="v-pills-saving" aria-selected="false">Сохранение</a>
+      </div>
+    </div>
+    <div class="col-12 col-sm-9">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <div class="tab-content" id="v-pills-tabContent">
+          <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+            <div class="form-group">
+              <label>Никнейм</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">/user/</div>
+                </div>
+                <%= f.text_field :name, autofocus: true, class: "form-control" %>
+              </div>
+            </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            <div class="form-group">
+              <label>Аватарка</label>
+              <%= image_tag url_for(current_user.avatar_path), class: 'img-thumbnail rounded', id: 'avatar-preview', style: 'display: block;width: 250px;' %>
+              <%= f.file_field :avatar, class: "form-control-file", id: 'avatar' %>
+            </div>
+
+            <div class="form-group">
+              <label>Задний фон профиля</label>
+              <%= image_tag url_for(current_user.background_path), class: 'img-fluid rounded', id: 'background-preview' %>
+              <%= f.file_field :background, class: "form-control-file", id: 'background' %>
+            </div>
+
+            <div class="form-group">
+              <label>О себе</label>
+              <%= f.text_area :about, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <label>Биография</label>
+              <%= f.text_area :bio, class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <label>Пол</label>
+              <%= f.select :gender,
+                           [['Не указан', 'not_set'], %w(Мужской male), %w(Женский female)],
+                           {},
+                           {class: 'form-control'} %>
+            </div>
+
+            <div class="form-group">
+              <label>Язык</label>
+              <%= f.select :language,
+                           [['Не указан', 'not_set'], %w(Русский ru), %w(Английский en)],
+                           {},
+                           {class: 'form-control'} %>
+            </div>
+
+            <div class="form-group">
+              <label>День рождения</label>
+              <%= f.text_field :birthday, class: "form-control datetimepicker-input", id: "birthdayselect", 'data-toggle': "datetimepicker", 'data-target': "#birthdayselect" %>
+            </div>
+
+            <div class="form-group">
+              <label>Вайфу/Хазбанту</label>
+              <%= f.text_field :waifu_or_husbando, autocomplete: "email", class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <label>Почта</label>
+              <%= f.email_field :email, autocomplete: "email", class: "form-control" %>
+            </div>
+
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <div>Ожидается активация для почты <%= resource.unconfirmed_email %></div>
+            <% end %>
+
+          </div>
+
+          <div class="tab-pane fade" id="v-pills-privacy" role="tabpanel" aria-labelledby="v-pills-privacy-tab">
+            <div class="custom-control custom-switch">
+              <%= f.check_box :private_info, class: 'custom-control-input', id: 'private_info' %>
+              <label class="custom-control-label" for="private_info">Скрыть информацию в профиле</label>
+            </div>
+            <div class="custom-control custom-switch">
+              <%= f.check_box :private_statuses, class: 'custom-control-input', id: 'private_statuses' %>
+              <label class="custom-control-label" for="private_statuses">Скрыть информацию в просмотрах аниме</label>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="v-pills-password" role="tabpanel" aria-labelledby="v-pills-password-tab">
+            <div class="form-group">
+              <label>Пароль</label>
+              <i>(пропустите если не хотите менять пароль)</i><br />
+              <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+              <% if @minimum_password_length %>
+                <br />
+                <em><%= @minimum_password_length %> минимальная длинна</em>
+              <% end %>
+            </div>
+
+            <div class="form-group">
+              <label>Подтвердите пароль</label>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="v-pills-saving" role="tabpanel" aria-labelledby="v-pills-saving-tab">
+            <div class="form-group">
+              <label>Текущий пароль</label>
+              <i>(для сохранения изменений введите свой пароль)</i><br />
+              <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
+            </div>
+
+            <div class="form-group">
+              <button class="btn btn-primary" type="submit">Сохранить</button>
+            </div>
+
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>

@@ -3,11 +3,11 @@
 class UserController < ApplicationController
   before_action :load_user
 
-  def profile
+  def show
     @title = @user.name
 
     respond_to do |format|
-      format.html { render :profile, layout: 'clear' }
+      format.html { render :show, layout: 'clear' }
       format.json { render json: @user }
     end
   end

@@ -2,7 +2,9 @@
 
 Rails.application.routes.draw do
   devise_for :admins, path: 'adm'
-  devise_for :users, path: 'users'
+  devise_for :users, path: 'user', controllers: {
+    registrations: 'users/registrations'
+  }
 
   root 'anime#index'
 
@@ -10,10 +12,8 @@ Rails.application.routes.draw do
   resources :anime, as: 'anime', only: %i[show index]
 
   # user
-  scope '/user' do
-    get '/:id', as: 'user_profile', to: 'user#profile'
-  end
-    
+  resources :user, as: 'user', only: %i[show]
+
   scope '/help' do
     # etc
     get 'page/privacy'
