@@ -93,4 +93,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.active_storage.service = :selectel
+  config.cdn_baseUrl = "https://ff4b0998-90b6-45a5-91b6-35ca123b81ac.selcdn.net/"
+  config.cdn_fallbackUrl = "https://via.placeholder.com/300x450"
 end

@@ -33,17 +33,17 @@ class Anime < ApplicationRecord
 
   def poster_attachment_path
     if poster.attached?
-      "https://301222.selcdn.ru/nekko-ch-cdn1/#{poster.attachment.key}"
+      Rails.configuration.cdn_baseUrl + poster.attachment.key
     else
-      'https://via.placeholder.com/300x450'
+      Rails.configuration.cdn_fallbackUrl
     end
   end
 
   def background_attachment_path
     if background.attached?
-      "https://301222.selcdn.ru/nekko-ch-cdn1/#{background.attachment.key}"
+      Rails.configuration.cdn_baseUrl + background.attachment.key
     else
-      'https://via.placeholder.com/300x450'
+      Rails.configuration.cdn_fallbackUrl
     end
   end
 

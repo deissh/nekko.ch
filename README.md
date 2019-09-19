@@ -6,10 +6,10 @@
 
 <p align="center">
   <a href="https://circleci.com/gh/nekko-ru/website"><img src="https://circleci.com/gh/nekko-ru/website.svg?style=svg"></a>
-  <br />
+<!--   <br />
   <a href="https://github.com/deissh/website/blob/master/README_RU.md">
     Версия на русском
-  </a>
+  </a> -->
 </p>
 
 <p align="center">
@@ -85,4 +85,7 @@ rails s
 
 ## Screenshots
 
-<img src="https://i.imgur.com/WPgqVBp.jpg" />
+<img src="https://i.imgur.com/gFn4acx.png" />
+<img src="https://i.imgur.com/6iJDbAL.png" />
+<img src="https://i.imgur.com/CWNqrfm.png" />
+<img src="https://i.imgur.com/qJVnbjv.png" />
