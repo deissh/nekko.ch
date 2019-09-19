@@ -57,7 +57,7 @@
                   <% end %>
                 </div>
                 <ul class="login-menu">
-                  <li><%= link_to "Мой профиль", user_path(current_user.id) %></li>
+                  <li><%= link_to "Мой профиль", user_path(current_user.slug || current_user.id) %></li>
                   <li><a href="#">Сообщения</a></li>
                   <li><a href="#">Мои закладки</a></li>
                   <li><a href="#">Последние комментарии</a></li>

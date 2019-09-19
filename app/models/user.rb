@@ -2,7 +2,7 @@
 
 class User < ApplicationRecord
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :name, use: %i[slugged finders]
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :trackable
