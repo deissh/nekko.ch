@@ -43,6 +43,7 @@ services:
       REDIS_DB: "redis://in_memory_store:6379"
       SECRET_KEY_BASE: STUB
       DEVISE_SECRET_KEY: STUB
+      RAILS_LOG_TO_STDOUT: true
     depends_on:
       - db
       - in_memory_store
