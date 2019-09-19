@@ -52,35 +52,35 @@
               <div class="tab-pane fade show active" id="nav-inprogress" role="tabpanel" aria-labelledby="nav-inprogress-tab">
                 <div class="flex-row ">
                   <%  @user.anime_statuses(:inprogress).each do |anime|  %>
-                  <%=  render 'shared/anime / short', anime: anime  %>
+                  <%=  render 'shared/anime/short', anime: anime  %>
                   <%  end %>
                 </div>
               </div>
               <div class="tab-pane fade" id="nav-planed" role="tabpanel" aria-labelledby="nav-planed-tab">
                 <div class="flex-row ">
                   <%  @user.anime_statuses(:planed).each do |anime| %>
-                  <%=  render 'shared / anime / short', anime: anime  %>
+                  <%=  render 'shared/anime/short', anime: anime  %>
                   <%  end %>
                 </div>
               </div>
               <div class="tab-pane fade" id="nav-complited" role="tabpanel" aria-labelledby="nav-complited-tab">
                 <div class="flex-row ">
                   <%  @user.anime_statuses(:completed).each do |anime| %>
-                  <%=  render 'shared / anime / short', anime: anime  %>
+                  <%=  render 'shared/anime/short', anime: anime  %>
                   <%  end %>
                 </div>
               </div>
               <div class="tab-pane fade" id="nav-favorite" role="tabpanel" aria-labelledby="nav-favorite-tab">
                 <div class="flex-row ">
                   <%  @user.anime_statuses(:favorite).each do |anime| %>
-                  <%=  render 'shared / anime / short', anime: anime  %>
+                  <%=  render 'shared/anime/short', anime: anime  %>
                   <%  end %>
                 </div>
               </div>
               <div class="tab-pane fade" id="nav-throw" role="tabpanel" aria-labelledby="nav-throw-tab">
                 <div class="flex-row ">
                   <%  @user.anime_statuses(:throw).each do |anime| %>
-                  <%=  render 'shared / anime / short', anime: anime  %>
+                  <%=  render 'shared/anime/short', anime: anime  %>
                   <%  end  %>
                 </div>
               </div>
