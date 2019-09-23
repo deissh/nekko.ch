@@ -5,6 +5,13 @@ class UserController < ApplicationController
 
   def show
     @title = @user.name
+    @statuses = {
+        inprogress: @user.anime_statuses(:inprogress),
+        planed: @user.anime_statuses(:planed),
+        completed: @user.anime_statuses(:completed),
+        favorite: @user.anime_statuses(:favorite),
+        throw: @user.anime_statuses(:throw)
+    }
 
     respond_to do |format|
       format.html { render :show, layout: 'clear' }

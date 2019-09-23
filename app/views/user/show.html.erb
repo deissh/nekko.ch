@@ -41,45 +41,55 @@
           <div class="col-12 col-sm-9">
             <nav class="pl-3 pb-3">
               <div class="nav nav-pills" id="nav-tab" role="tablist">
-                <a class="nav-item nav-link active" id="nav-inprogress-tab" data-toggle="tab" href="#nav-inprogress" role="tab" aria-controls="nav-inprogress" aria-selected="true">Смотрю</a>
-                <a class="nav-item nav-link" id="nav-planed-tab" data-toggle="tab" href="#nav-planed" role="tab" aria-controls="nav-planed" aria-selected="true">Запланировано</a>
-                <a class="nav-item nav-link" id="nav-complited-tab" data-toggle="tab" href="#nav-complited" role="tab" aria-controls="nav-complited" aria-selected="false">Просмотрено</a>
-                <a class="nav-item nav-link" id="nav-favorite-tab" data-toggle="tab" href="#nav-favorite" role="tab" aria-controls="nav-favorite" aria-selected="false">Любимое</a>
-                <a class="nav-item nav-link" id="nav-throw-tab" data-toggle="tab" href="#nav-throw" role="tab" aria-controls="nav-throw" aria-selected="false">Брошено</a>
+                <a class="nav-item nav-link active" id="nav-inprogress-tab" data-toggle="tab" href="#nav-inprogress" role="tab" aria-controls="nav-inprogress" aria-selected="true">
+                  Смотрю (<%= @statuses[:inprogress].count %>)
+                </a>
+                <a class="nav-item nav-link" id="nav-planed-tab" data-toggle="tab" href="#nav-planed" role="tab" aria-controls="nav-planed" aria-selected="true">
+                  Запланировано (<%= @statuses[:planed].count %>)
+                </a>
+                <a class="nav-item nav-link" id="nav-complited-tab" data-toggle="tab" href="#nav-complited" role="tab" aria-controls="nav-complited" aria-selected="false">
+                  Просмотрено (<%= @statuses[:completed].count %>)
+                </a>
+                <a class="nav-item nav-link" id="nav-favorite-tab" data-toggle="tab" href="#nav-favorite" role="tab" aria-controls="nav-favorite" aria-selected="false">
+                  Любимое (<%= @statuses[:favorite].count %>)
+                </a>
+                <a class="nav-item nav-link" id="nav-throw-tab" data-toggle="tab" href="#nav-throw" role="tab" aria-controls="nav-throw" aria-selected="false">
+                  Брошено (<%= @statuses[:throw].count %>)
+                </a>
               </div>
             </nav>
             <div class="tab-content" id="nav-tabContent">
               <div class="tab-pane fade show active" id="nav-inprogress" role="tabpanel" aria-labelledby="nav-inprogress-tab">
                 <div class="flex-row ">
-                  <%  @user.anime_statuses(:inprogress).each do |anime|  %>
+                  <%  @statuses[:inprogress].each do |anime|  %>
                   <%=  render 'shared/anime/short', anime: anime  %>
                   <%  end %>
                 </div>
               </div>
               <div class="tab-pane fade" id="nav-planed" role="tabpanel" aria-labelledby="nav-planed-tab">
                 <div class="flex-row ">
-                  <%  @user.anime_statuses(:planed).each do |anime| %>
+                  <%  @statuses[:planed].each do |anime| %>
                   <%=  render 'shared/anime/short', anime: anime  %>
                   <%  end %>
                 </div>
               </div>
               <div class="tab-pane fade" id="nav-complited" role="tabpanel" aria-labelledby="nav-complited-tab">
                 <div class="flex-row ">
-                  <%  @user.anime_statuses(:completed).each do |anime| %>
+                  <%  @statuses[:completed].each do |anime| %>
                   <%=  render 'shared/anime/short', anime: anime  %>
                   <%  end %>
                 </div>
               </div>
               <div class="tab-pane fade" id="nav-favorite" role="tabpanel" aria-labelledby="nav-favorite-tab">
                 <div class="flex-row ">
-                  <%  @user.anime_statuses(:favorite).each do |anime| %>
+                  <%  @statuses[:favorite].each do |anime| %>
                   <%=  render 'shared/anime/short', anime: anime  %>
                   <%  end %>
                 </div>
               </div>
               <div class="tab-pane fade" id="nav-throw" role="tabpanel" aria-labelledby="nav-throw-tab">
                 <div class="flex-row ">
-                  <%  @user.anime_statuses(:throw).each do |anime| %>
+                  <%  @statuses[:throw].each do |anime| %>
                   <%=  render 'shared/anime/short', anime: anime  %>
                   <%  end  %>
                 </div>
