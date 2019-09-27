@@ -35,9 +35,9 @@ class AnimeController < ApplicationController
   # GET /anime/1.json
   def show
     @anime = Anime.includes(:anime_translators, :genres)
-                 .with_attached_poster
-                 .with_attached_background
-                 .find(params[:id])
+                  .with_attached_poster
+                  .with_attached_background
+                  .find(params[:id])
     @title = @anime.title
     @desc = @anime.description
 
