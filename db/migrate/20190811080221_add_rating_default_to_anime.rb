@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# rubocop:disable Style/Documentation
 class AddRatingDefaultToAnime < ActiveRecord::Migration[5.2]
   def change
     change_column_default(
@@ -8,3 +11,4 @@ class AddRatingDefaultToAnime < ActiveRecord::Migration[5.2]
     )
   end
 end
+# rubocop:enable Style/Documentation

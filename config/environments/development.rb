@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -62,6 +64,6 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   config.active_storage.service = :selectel
-  config.cdn_baseUrl = "https://ff4b0998-90b6-45a5-91b6-35ca123b81ac.selcdn.net/"
-  config.cdn_fallbackUrl = "https://via.placeholder.com/300x450"
+  config.cdn_baseUrl = 'https://ff4b0998-90b6-45a5-91b6-35ca123b81ac.selcdn.net/'
+  config.cdn_fallbackUrl = 'https://via.placeholder.com/300x450'
 end

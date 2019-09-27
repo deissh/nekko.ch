@@ -1,5 +1,9 @@
+# frozen_string_literal: true
+
+# rubocop:disable Style/Documentation
 class CreateAnimes < ActiveRecord::Migration[5.2]
-  def change
+  # rubocop:disable Metrics/MethodLength
+  def change # rubocop:disable Metrics/AbcSize
     create_table :animes do |t|
       t.string :title
       t.string :title_en
@@ -23,4 +27,6 @@ class CreateAnimes < ActiveRecord::Migration[5.2]
       t.timestamps
     end
   end
+  # rubocop:enable Metrics/MethodLength
 end
+# rubocop:enable Style/Documentation

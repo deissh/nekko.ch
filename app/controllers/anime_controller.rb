@@ -5,7 +5,7 @@ class AnimeController < ApplicationController
 
   # GET /anime
   # GET /anime.json
-  def index
+  def index # rubocop:disable Metrics/AbcSize
     list = if !genres.blank?
              Genre.find_by(id: genres).anime
            else
@@ -74,7 +74,7 @@ class AnimeController < ApplicationController
   end
 
   # GET /api/v1/anime/:id/status
-  def get_status
+  def get_status # rubocop:disable Naming/AccessorMethodName
     respond_to do |format|
       format.json do
         render json: UserAnimeStatus
@@ -125,7 +125,7 @@ class AnimeController < ApplicationController
     params[:sort_by]
   end
 
-  def sort_by_order
+  def sort_by_order # rubocop:disable Metrics/CyclomaticComplexity
     case sort_by
     when 'title_desc'
       'title DESC'

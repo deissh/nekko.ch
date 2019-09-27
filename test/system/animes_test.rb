@@ -1,41 +1,43 @@
-require "application_system_test_case"
+# frozen_string_literal: true
+
+require 'application_system_test_case'
 
 class AnimesTest < ApplicationSystemTestCase
   setup do
     @anime = animes(:one)
   end
 
-  test "visiting the index" do
+  test 'visiting the index' do
     visit animes_url
-    assert_selector "h1", text: "Animes"
+    assert_selector 'h1', text: 'Animes'
   end
 
-  test "creating a Anime" do
+  test 'creating a Anime' do
     visit animes_url
-    click_on "New Anime"
+    click_on 'New Anime'
 
-    click_on "Create Anime"
+    click_on 'Create Anime'
 
-    assert_text "Anime was successfully created"
-    click_on "Back"
+    assert_text 'Anime was successfully created'
+    click_on 'Back'
   end
 
-  test "updating a Anime" do
+  test 'updating a Anime' do
     visit animes_url
-    click_on "Edit", match: :first
+    click_on 'Edit', match: :first
 
-    click_on "Update Anime"
+    click_on 'Update Anime'
 
-    assert_text "Anime was successfully updated"
-    click_on "Back"
+    assert_text 'Anime was successfully updated'
+    click_on 'Back'
   end
 
-  test "destroying a Anime" do
+  test 'destroying a Anime' do
     visit animes_url
     page.accept_confirm do
-      click_on "Destroy", match: :first
+      click_on 'Destroy', match: :first
     end
 
-    assert_text "Anime was successfully destroyed"
+    assert_text 'Anime was successfully destroyed'
   end
 end

@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# rubocop:disable Style/Documentation
 class CreateJoinTableGenreAnime < ActiveRecord::Migration[5.2]
   def change
     create_join_table :genres, :animes do |t|
@@ -6,3 +9,4 @@ class CreateJoinTableGenreAnime < ActiveRecord::Migration[5.2]
     end
   end
 end
+# rubocop:enable Style/Documentation

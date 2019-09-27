@@ -6,7 +6,7 @@ class Anime < ApplicationRecord
   friendly_id :title_en, use: %i[slugged finders history]
 
   pg_search_scope :search_by_title,
-                  against: %i[title title_en title_or], using: [:tsearch]
+    against: %i[title title_en title_or], using: [:tsearch]
 
   has_many :anime_translators, dependent: :destroy
 

@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 
+# rubocop:disable Style/Documentation
 class DeviseCreateAdmins < ActiveRecord::Migration[5.2]
-  def change
+  # rubocop:disable Metrics/MethodLength
+  def change # rubocop:disable Metrics/AbcSize
     create_table :admins do |t|
       ## Database authenticatable
-      t.string :email,              null: false, default: ""
-      t.string :encrypted_password, null: false, default: ""
+      t.string :email,              null: false, default: ''
+      t.string :encrypted_password, null: false, default: ''
 
       ## Recoverable
       t.string   :reset_password_token
@@ -40,4 +42,6 @@ class DeviseCreateAdmins < ActiveRecord::Migration[5.2]
     # add_index :admins, :confirmation_token,   unique: true
     # add_index :admins, :unlock_token,         unique: true
   end
+  # rubocop:enable Metrics/MethodLength
 end
+# rubocop:enable Style/Documentation

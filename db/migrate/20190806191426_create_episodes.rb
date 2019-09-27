@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# rubocop:disable Style/Documentation
 class CreateEpisodes < ActiveRecord::Migration[5.2]
   def change
     create_table :episodes do |t|
@@ -9,3 +12,4 @@ class CreateEpisodes < ActiveRecord::Migration[5.2]
     end
   end
 end
+# rubocop:enable Style/Documentation

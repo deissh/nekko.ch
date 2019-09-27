@@ -4,7 +4,9 @@ RailsAdmin.config do |config|
   ### Popular gems integration
 
   ## == Devise ==
+  # rubocop:disable Lint/ShadowingOuterLocalVariable
   RailsAdmin.config do |config|
+    # rubocop:enable Lint/ShadowingOuterLocalVariable
     config.authenticate_with do
       warden.authenticate! scope: :admin
     end
@@ -51,8 +53,8 @@ RailsAdmin.config do |config|
         if value
           path = Rails.application.routes.url_helpers.rails_blob_path(value, only_path: true)
           bindings[:view].tag(:img,
-                              src: Rails.application.routes.url_helpers.rails_blob_path(value, only_path: true),
-                              class: 'preview img-thumbnail')
+            src: Rails.application.routes.url_helpers.rails_blob_path(value, only_path: true),
+            class: 'preview img-thumbnail')
         end
       end
     end
@@ -62,8 +64,8 @@ RailsAdmin.config do |config|
         if value
           path = Rails.application.routes.url_helpers.rails_blob_path(value, only_path: true)
           bindings[:view].tag(:img,
-                              src: Rails.application.routes.url_helpers.rails_blob_path(value, only_path: true),
-                              class: 'preview img-thumbnail')
+            src: Rails.application.routes.url_helpers.rails_blob_path(value, only_path: true),
+            class: 'preview img-thumbnail')
         end
       end
     end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -83,7 +85,7 @@ Rails.application.configure do
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
-  if ENV["RAILS_LOG_TO_STDOUT"].present?
+  if ENV['RAILS_LOG_TO_STDOUT'].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
@@ -93,6 +95,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.active_storage.service = :selectel
-  config.cdn_baseUrl = "https://ff4b0998-90b6-45a5-91b6-35ca123b81ac.selcdn.net/"
-  config.cdn_fallbackUrl = "https://via.placeholder.com/300x450"
+  config.cdn_baseUrl = 'https://ff4b0998-90b6-45a5-91b6-35ca123b81ac.selcdn.net/'
+  config.cdn_fallbackUrl = 'https://via.placeholder.com/300x450'
 end

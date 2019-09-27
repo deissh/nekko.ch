@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AnimeProgress < ApplicationRecord
   belongs_to :anime
   belongs_to :anime_translator

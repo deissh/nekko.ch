@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require 'yaml'
 require 'zlib'
 
 SEED_DIR = 'db/seeds'
 
-class SeedFile
+class SeedFile # rubocop:disable Style/Documentation
   MAX_ID = 2_147_483_647 # Yoinked from Postgres docs
 
   attr_reader :model, :file
@@ -29,7 +31,7 @@ class SeedFile
     @data ||= YAML.load_file(file)
   end
 
-  class Row
+  class Row # rubocop:disable Style/Documentation
     attr_reader :data, :model, :label
 
     def initialize(data, model, label = nil)
@@ -58,7 +60,7 @@ end
 Dir[Rails.root.join("#{SEED_DIR}/*.yml")].each do |f|
   seed = SeedFile.new(f)
   puts "==> Seeding: #{seed.model.name}"
-  print "  "
+  print '  '
   seed.import! { |key| print "#{key} | " }
   print "\n"
 end

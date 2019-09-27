@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# rubocop:disable Style/Documentation
 class CreateRailsAdminHistoriesTable < ActiveRecord::Migration[4.2]
   def self.up
     create_table :rails_admin_histories do |t|
@@ -5,14 +8,15 @@ class CreateRailsAdminHistoriesTable < ActiveRecord::Migration[4.2]
       t.string :username
       t.integer :item
       t.string :table
-      t.integer :month, :limit => 2
-      t.integer :year, :limit => 5
+      t.integer :month, limit: 2
+      t.integer :year, limit: 5
       t.timestamps
     end
-    add_index(:rails_admin_histories, [:item, :table, :month, :year], :name => 'index_rails_admin_histories')
+    add_index(:rails_admin_histories, %i[item table month year], name: 'index_rails_admin_histories')
   end
 
   def self.down
     drop_table :rails_admin_histories
   end
 end
+# rubocop:enable Style/Documentation

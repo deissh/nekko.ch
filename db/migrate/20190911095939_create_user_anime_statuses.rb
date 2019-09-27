@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# rubocop:disable Style/Documentation
 class CreateUserAnimeStatuses < ActiveRecord::Migration[5.2]
   def change
     create_table :user_anime_statuses do |t|
@@ -11,3 +14,4 @@ class CreateUserAnimeStatuses < ActiveRecord::Migration[5.2]
     add_index :user_anime_statuses, :status
   end
 end
+# rubocop:enable Style/Documentation

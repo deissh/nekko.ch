@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
+# rubocop:disable Style/Documentation
 class CreatePgSearchDocuments < ActiveRecord::Migration[5.2]
   def self.up
-    say_with_time("Creating table for pg_search multisearch") do
+    say_with_time('Creating table for pg_search multisearch') do
       create_table :pg_search_documents do |t|
         t.text :content
         t.belongs_to :searchable, polymorphic: true, index: true
@@ -10,8 +13,9 @@ class CreatePgSearchDocuments < ActiveRecord::Migration[5.2]
   end
 
   def self.down
-    say_with_time("Dropping table for pg_search multisearch") do
+    say_with_time('Dropping table for pg_search multisearch') do
       drop_table :pg_search_documents
     end
   end
 end
+# rubocop:enable Style/Documentation

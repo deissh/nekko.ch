@@ -3,13 +3,17 @@
 require 'open-uri'
 require 'json'
 
+# rubocop:disable Style/Documentation
 class RemoveFieldPostersFromAnime < ActiveRecord::Migration[5.2]
-  def self.up
+  # rubocop:disable Metrics/MethodLength
+  def self.up # rubocop:disable Metrics/AbcSize
     Anime.all.each do |anime|
       u = if anime.posters.is_a? String
+            # rubocop:disable Security/Open
             open(JSON.parse(anime.posters)[0])
+            # rubocop:enable Security/Open
           else
-            open(anime.posters[0])
+            open(anime.posters[0]) # rubocop:disable Security/Open
           end
 
       anime.poster.attach(io: u, filename: 'img')
@@ -18,6 +22,7 @@ class RemoveFieldPostersFromAnime < ActiveRecord::Migration[5.2]
     end
     remove_column :animes, :posters, :string
   end
+  # rubocop:enable Metrics/MethodLength
 
   def self.down
     add_column :animes, :posters, :string
@@ -26,3 +31,4 @@ class RemoveFieldPostersFromAnime < ActiveRecord::Migration[5.2]
     end
   end
 end
+# rubocop:enable Style/Documentation
