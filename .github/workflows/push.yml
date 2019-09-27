@@ -1,9 +1,9 @@
-name: Ruby
+name: Build on Push
 
 on: [push]
 
 jobs:
-  build:
+  test:
 
     runs-on: ubuntu-latest
 
@@ -13,8 +13,11 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6.x
-    - name: Build and test with Rake
+    - name: Install gems
       run: |
         gem install bundler
         bundle install --jobs 4 --retry 3
-        bundle exec rake
+    - name: Install RuboCop
+      run: gem install rubocop
+    - name: Run RuboCop
+      run: rubocop
