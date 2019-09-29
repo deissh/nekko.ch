@@ -1,4 +1,5 @@
 - id: 1
+  media_id: 1
   title: 7 семян
   title_en: 7Seeds
   title_or: "-"
@@ -6,7 +7,6 @@
   description: "-"
   status: Закончено
   year: 2019
-  rating: 0
   blocked_ru: false
   blocked_ua: false
   world_art_id: '9889'
@@ -32,6 +32,7 @@
   youtube_trailer_url: ''
   slug:
 - id: 2
+  media_id: 2
   title: Театр тьмы ТВ-7
   title_en: Yami shibai TV-7
   title_or: "-"
@@ -41,7 +42,6 @@
     слухах и городских легендах жителей Японии.
   status: Закончено
   year: 2013
-  rating: 7.106
   blocked_ru: false
   blocked_ua: false
   world_art_id: '10099'
@@ -68,6 +68,7 @@
   youtube_trailer_url: ''
   slug:
 - id: 3
+  media_id: 3
   title: Фокусница-старшеклассница
   title_en: Tejina Senpai
   title_or: "-"
@@ -75,7 +76,6 @@
   description: "-"
   status: Закончено
   year: 2019
-  rating: 0
   blocked_ru: false
   blocked_ua: false
   world_art_id: '9865'
@@ -98,6 +98,7 @@
   youtube_trailer_url: ''
   slug:
 - id: 5
+  media_id: 4
   title: Городская дьяволица
   title_en: Machikado Mazoku
   title_or: "-"
@@ -105,7 +106,6 @@
   description: "-"
   status: Закончено
   year: 2019
-  rating: 0
   blocked_ru: false
   blocked_ua: false
   world_art_id: '9972'
@@ -122,6 +122,7 @@
   youtube_trailer_url: ''
   slug:
 - id: 6
+  media_id: 5
   title: Приятели с пушками
   title_en: Cannon Busters
   title_or: "-"
@@ -129,7 +130,6 @@
   description: "-"
   status: Закончено
   year: 2019
-  rating: 0
   blocked_ru: false
   blocked_ua: false
   world_art_id: '9758'
@@ -158,6 +158,7 @@
   youtube_trailer_url: ''
   slug:
 - id: 7
+  media_id: 6
   title: 'Юно: Девушка, что воспевает любовь на грани этого мира'
   title_en: Konoyo no Hate de Koi o Utau Shoujo Yu-No
   title_or: "-"
@@ -165,7 +166,6 @@
   description: "-"
   status: Закончено
   year: 2019
-  rating: 5
   blocked_ru: false
   blocked_ua: false
   world_art_id: '9527'
@@ -179,6 +179,7 @@
   youtube_trailer_url: ''
   slug:
 - id: 8
+  media_id: 7
   title: Маг-обманщик из другого мира
   title_en: Isekai Cheat Magician
   title_or: "-"
@@ -186,7 +187,6 @@
   description: "-"
   status: Закончено
   year: 2019
-  rating: 0
   blocked_ru: false
   blocked_ua: false
   world_art_id: '10002'
@@ -208,6 +208,7 @@
   youtube_trailer_url: ''
   slug:
 - id: 9
+  media_id: 8
   title: Блич
   title_en: Bleach
   title_or: "-"
@@ -243,7 +244,6 @@
     и захватывающей истории."
   status: Закончено
   year: 2004
-  rating: 7.948
   blocked_ru: false
   blocked_ua: false
   world_art_id: '2656'
@@ -273,6 +273,7 @@
   youtube_trailer_url: ''
   slug:
 - id: 10
+  media_id: 9
   title: 'WIXOSS: зараженный селектор ТВ-1'
   title_en: Selector Infected WIXOSS TV-1
   title_or: "-"
@@ -292,7 +293,6 @@
     и с головой погружается в мир Селекторов.
   status: Закончено
   year: 2014
-  rating: 6.279
   blocked_ru: false
   blocked_ua: false
   world_art_id: '2105'
@@ -325,6 +325,7 @@
   youtube_trailer_url: ''
   slug:
 - id: 4
+  media_id: 10
   title: Кэрол и Тьюсдей
   title_en: Carole and Tuesday
   title_or: "-"
@@ -346,7 +347,6 @@
     итоге превратится в нечто большее.
   status: Закончено
   year: 2019
-  rating: 0
   blocked_ru: false
   blocked_ua: false
   world_art_id: '9604'
@@ -372,6 +372,7 @@
   youtube_trailer_url: ''
   slug:
 - id: 11
+  media_id: 11
   title: Проделки сакуры
   title_en: Sakura Trick
   title_or: "-"
@@ -389,7 +390,6 @@
     нечто необычное. Они решают поцеловаться...
   status: Закончено
   year: 2014
-  rating: 6.505
   blocked_ru: false
   blocked_ua: false
   world_art_id: '1685'
@@ -412,6 +412,7 @@
   youtube_trailer_url: ''
   slug:
 - id: 12
+  media_id: 12
   title: 'WIXOSS: Зараженный селектор ТВ-1'
   title_en: Selector Infected WIXOSS TV-1
   title_or: "-"
@@ -431,7 +432,6 @@
     и с головой погружается в мир Селекторов.
   status: Закончено
   year: 2014
-  rating: 6.279
   blocked_ru: false
   blocked_ua: false
   world_art_id: '2105'

@@ -18,8 +18,4 @@ class Media < ApplicationRecord
 
   validates :media_type, presence: true
   validates :rating, presence: true, :inclusion => 1..10
-
-  def title
-    anime.title
-  end
 end

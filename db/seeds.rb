@@ -12,7 +12,7 @@ class SeedFile # rubocop:disable Style/Documentation
 
   def initialize(file, model: nil)
     @file = file
-    @model = model || File.basename(file, '.*').split('~')[1].classify.constantize
+    @model = model || File.basename(file, '.*').split('~')[1].camelize.constantize
   end
 
   def import!
@@ -57,7 +57,7 @@ class SeedFile # rubocop:disable Style/Documentation
   end
 end
 
-Dir[Rails.root.join("#{SEED_DIR}/*.yml")].each do |f|
+Dir[Rails.root.join("#{SEED_DIR}/*.yml")].sort.each do |f|
   seed = SeedFile.new(f)
   puts "==> Seeding: #{seed.model.name}"
   print '  '

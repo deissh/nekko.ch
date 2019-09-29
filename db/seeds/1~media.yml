@@ -1,0 +1,72 @@
+- id: 1
+  nsfw: false
+  media_type: 0
+  rating: 5
+  created_at: '2019-09-29 10:29:09.029392'
+  updated_at: '2019-09-29 10:29:09.029392'
+- id: 2
+  nsfw: false
+  media_type: 0
+  rating: 5
+  created_at: '2019-09-29 10:29:09.050014'
+  updated_at: '2019-09-29 10:29:09.050014'
+- id: 3
+  nsfw: false
+  media_type: 0
+  rating: 5
+  created_at: '2019-09-29 10:29:09.054740'
+  updated_at: '2019-09-29 10:29:09.054740'
+- id: 4
+  nsfw: false
+  media_type: 0
+  rating: 5
+  created_at: '2019-09-29 10:29:09.058971'
+  updated_at: '2019-09-29 10:29:09.058971'
+- id: 5
+  nsfw: false
+  media_type: 0
+  rating: 5
+  created_at: '2019-09-29 10:29:09.063538'
+  updated_at: '2019-09-29 10:29:09.063538'
+- id: 6
+  nsfw: false
+  media_type: 0
+  rating: 5
+  created_at: '2019-09-29 10:29:09.067880'
+  updated_at: '2019-09-29 10:29:09.067880'
+- id: 7
+  nsfw: false
+  media_type: 0
+  rating: 5
+  created_at: '2019-09-29 10:29:09.072393'
+  updated_at: '2019-09-29 10:29:09.072393'
+- id: 8
+  nsfw: false
+  media_type: 0
+  rating: 5
+  created_at: '2019-09-29 10:29:09.076703'
+  updated_at: '2019-09-29 10:29:09.076703'
+- id: 9
+  nsfw: false
+  media_type: 0
+  rating: 5
+  created_at: '2019-09-29 10:29:09.081220'
+  updated_at: '2019-09-29 10:29:09.081220'
+- id: 10
+  nsfw: false
+  media_type: 0
+  rating: 5
+  created_at: '2019-09-29 10:29:09.086252'
+  updated_at: '2019-09-29 10:29:09.086252'
+- id: 11
+  nsfw: false
+  media_type: 0
+  rating: 5
+  created_at: '2019-09-29 10:29:09.090903'
+  updated_at: '2019-09-29 10:29:09.090903'
+- id: 12
+  nsfw: false
+  media_type: 0
+  rating: 5
+  created_at: '2019-09-29 10:29:09.095071'
+  updated_at: '2019-09-29 10:29:09.095071'
