@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'sidekiq/web'
 
 Rails.application.routes.draw do
   devise_for :admins, path: 'adm'
@@ -36,5 +37,8 @@ Rails.application.routes.draw do
 
   scope '/admin' do
     mount RailsAdmin::Engine => '/panel', as: 'rails_admin'
+    authenticate :admin do
+      mount Sidekiq::Web => '/sidekiq'
+    end
   end
 end
