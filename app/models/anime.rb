@@ -8,14 +8,16 @@ class Anime < ApplicationRecord
   pg_search_scope :search_by_title,
     against: %i[title title_en title_or], using: [:tsearch]
 
-  has_many :anime_translators, dependent: :destroy
-
-  has_and_belongs_to_many :genres
-
   has_one_attached :poster
   has_one_attached :background
 
   has_many :anime_progresses
+  has_many :anime_translators, dependent: :destroy
+  has_and_belongs_to_many :genres, -> { includes :genres }
+  belongs_to :media
+
+  scope :short, -> { includes(:genres, :media).joins(:media).with_attached_poster.where(hide: false) }
+  scope :full, -> { includes(:genres, :anime_translators, :media).joins(:media).with_attached_poster.with_attached_background }
 
   def last_watch(user_id)
     anime_progresses

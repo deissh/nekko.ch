@@ -11,7 +11,7 @@ class AnimeController < ApplicationController
            else
              Anime
            end
-    list = list.with_attached_poster.includes(:genres)
+    list = list.short
     list = list.where(hide: false)
     list = list.search_by_title(search) unless search.empty?
     list = list.where(year: year) unless year.empty?
@@ -34,10 +34,7 @@ class AnimeController < ApplicationController
   # GET /anime/1
   # GET /anime/1.json
   def show
-    @anime = Anime.includes(:anime_translators, :genres)
-                  .with_attached_poster
-                  .with_attached_background
-                  .find(params[:id])
+    @anime = Anime.full.find(params[:id])
     @title = @anime.title
     @desc = @anime.description
 

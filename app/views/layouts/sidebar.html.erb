@@ -41,7 +41,7 @@
           </div>
           <div class="side-bc">
 
-            <% Anime.includes(:genres).with_attached_poster.where(hide: false).order(updated_at: :desc).limit(6).each do |anime| %>
+            <% Anime.short.order(updated_at: :desc).limit(6).each do |anime| %>
               <%= render 'shared/anime/small', anime: anime %>
             <% end %>
 
@@ -55,7 +55,7 @@
           </div>
           <div class="side-bc">
 
-            <% Anime.includes(:genres).with_attached_poster.where(hide: false).order(rating: :desc).limit(6).each do |anime| %>
+            <% Anime.short.where(hide: false).order(rating: :desc).limit(6).each do |anime| %>
               <%= render 'shared/anime/small', anime: anime %>
             <% end %>
 
@@ -65,7 +65,7 @@
           <div class="side-bt">Случайные аниме</div>
           <div class="side-bc">
 
-            <% Anime.includes(:genres).with_attached_poster.where(hide: false).order(Arel.sql("RANDOM()")).limit(6).each do |anime| %>
+            <% Anime.short.order(Arel.sql("RANDOM()")).limit(6).each do |anime| %>
               <%= render 'shared/anime/small', anime: anime %>
             <% end %>
 

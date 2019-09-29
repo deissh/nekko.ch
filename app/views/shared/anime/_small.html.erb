@@ -4,7 +4,7 @@
     <%= anime.genres_list.first(3).join(', ') %>
   </div>
   <div class="ser-d">
-    Рейтинг <%= anime.rating.to_f.round(1) %> из 10
+    Рейтинг <%= anime.media.rating.to_f.round(1) %> из 10
   </div>
   <% if anime.updated_at.today? %>
     <div class="ser-d">
