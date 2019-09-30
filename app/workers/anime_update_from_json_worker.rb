@@ -4,11 +4,10 @@ require 'open-uri'
 class AnimeUpdateFromJsonWorker
   include Sidekiq::Worker
 
-  # @param [String] anime json object
-  def perform(data)
+  def perform(data) # rubocop:disable Metrics/AbcSize
     data = JSON.parse(data)
 
-    anime = Anime.find(title: data['title']) rescue nil
+    anime = Anime.find(title: data['title']) rescue nil # rubocop:disable Style/RescueModifier
     if anime.nil?
       logger.info "Creating #{data['title']}"
       anime_media = Media.create!(nsfw: false,
@@ -23,8 +22,8 @@ class AnimeUpdateFromJsonWorker
                             year: data['year'],
                             blocked_ru: data['blocked_ru'],
                             blocked_ua: data['blocked_ua'],
-                            world_art_id: data['world_art_id'] || "",
-                            kinopoisk_id: data['kinopoisk_id'] || "",
+                            world_art_id: data['world_art_id'] || '',
+                            kinopoisk_id: data['kinopoisk_id'] || '',
                             countries: data['countries'],
                             actors: data['actors'],
                             directors: data['directors'],
