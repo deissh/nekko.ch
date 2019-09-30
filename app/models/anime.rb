@@ -16,8 +16,8 @@ class Anime < ApplicationRecord
   has_and_belongs_to_many :genres, -> { includes :genres }
   belongs_to :media
 
-  scope :short, -> { includes(:genres, :media).joins(:media).with_attached_poster.where(hide: false) }
-  scope :full, -> { includes(:genres, :anime_translators, :media).joins(:media).with_attached_poster.with_attached_background }
+  scope :short, -> { includes(:genres, :media).joins(:media).where(hide: false) }
+  scope :full, -> { includes(:genres, :anime_translators, :media).joins(:media) }
 
   def last_watch(user_id)
     anime_progresses
@@ -45,7 +45,7 @@ class Anime < ApplicationRecord
     if background.attached?
       Rails.configuration.cdn_baseUrl + background.attachment.key
     else
-      Rails.configuration.cdn_fallbackUrl
+      poster_attachment_path
     end
   end
 

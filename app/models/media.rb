@@ -17,5 +17,5 @@ class Media < ApplicationRecord
   }
 
   validates :media_type, presence: true
-  validates :rating, presence: true, :inclusion => 1..10
+  validates :rating, presence: true, inclusion: 0..10
 end
