@@ -1,4 +1,5 @@
 require 'json'
+require 'open-uri'
 
 class AnimeUpdateFromJsonWorker
   include Sidekiq::Worker
@@ -28,7 +29,14 @@ class AnimeUpdateFromJsonWorker
                             actors: data['actors'],
                             directors: data['directors'],
                             studios: data['studios'],
-                            hide: true, media: anime_media)
+                            hide: false, media: anime_media)
     end
+
+    # Обновление постера если его нету
+    unless anime.poster.attached? && data['poster'].nil?
+      u = open(data['poster']) # rubocop:disable Security/Open
+      anime.poster.attach(io: u, filename: 'poster.jpg')
+    end
+    anime.save!
   end
 end

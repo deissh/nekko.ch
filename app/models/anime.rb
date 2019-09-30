@@ -16,8 +16,8 @@ class Anime < ApplicationRecord
   has_and_belongs_to_many :genres, -> { includes :genres }
   belongs_to :media
 
-  scope :short, -> { includes(:genres, :media).joins(:media).where(hide: false) }
-  scope :full, -> { includes(:genres, :anime_translators, :media).joins(:media) }
+  scope :short, -> { includes(:genres, :media).where(hide: false) }
+  scope :full, -> { includes(:genres, :anime_translators, :media) }
 
   def last_watch(user_id)
     anime_progresses
