@@ -40,7 +40,13 @@ class AnimeController < ApplicationController
 
     respond_to do |format|
       format.html { render :show, layout: 'sidebar' }
-      format.json { render json: @anime }
+      format.json do
+        render json: @anime.as_json(include: {
+          translators: {
+            include: :episodes
+          }
+        })
+      end
     end
   end
 
