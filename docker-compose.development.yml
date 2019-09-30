@@ -49,7 +49,7 @@ services:
       DB_NAME: nekko_development
       DB_USERNAME: postgres
       DB_PASSWORD: postgres
-      REDIS_DB: "redis://in_memory_store:6379"
+      REDIS_URL: 'redis://in_memory_store/1'
       SECRET_KEY_BASE: STUB
       DEVISE_SECRET_KEY: STUB
     depends_on: # Указываем список сервисов от которых зависит текущий сервис. Текущий сервис будет запущен только после того как запустятся зависимые сервисы
@@ -59,3 +59,9 @@ services:
       - 3000:3000 # Указываем что порт из контейнера будет проксироваться на порт HostOS (HostPort:ContainerPort)
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000"]
+
+  # Sidekiq
+  sidekiq:
+    <<: *server_app
+    ports: []
+    command: [sidekiq]
