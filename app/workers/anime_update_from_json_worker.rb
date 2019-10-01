@@ -29,6 +29,9 @@ class AnimeUpdateFromJsonWorker
                             directors: data['directors'],
                             studios: data['studios'],
                             hide: false, media: anime_media)
+
+      anime.genres << Genre.where('name ILIKE ANY ( array[?] )', data['genres']) rescue [] # rubocop:disable Style/RescueModifier
+
       logger.info "Created #{anime.title_en}"
     end
 

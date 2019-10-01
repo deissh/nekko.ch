@@ -13,7 +13,7 @@ class Anime < ApplicationRecord
 
   has_many :anime_progresses
   has_many :anime_translators, dependent: :destroy
-  has_and_belongs_to_many :genres, -> { includes :genres }
+  has_and_belongs_to_many :genres
   belongs_to :media
 
   scope :short, -> { includes(:genres, :media).where(hide: false) }
