@@ -8,7 +8,7 @@ class AnimeUpdateFromJsonWorker
     data = JSON.parse(data)
 
     # получаем аниме по его названию, если его нет то создаем новый тайтл
-    anime = Anime.find(title: data['title']) rescue nil # rubocop:disable Style/RescueModifier
+    anime = Anime.find(title_en: data['title_en']) rescue nil # rubocop:disable Style/RescueModifier
     if anime.nil?
       logger.info "Creating #{data['title']}"
       anime_media = Media.create!(nsfw: false,
