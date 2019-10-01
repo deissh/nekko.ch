@@ -8,9 +8,8 @@ class AnimeUpdateFromJsonWorker
     data = JSON.parse(data)
 
     # получаем аниме по его названию, если его нет то создаем новый тайтл
-    anime = Anime.find(title_en: data['title_en']) rescue nil # rubocop:disable Style/RescueModifier
+    anime = Anime.find_by(title: data['title']) rescue nil # rubocop:disable Style/RescueModifier
     if anime.nil?
-      logger.info "Creating #{data['title']}"
       anime_media = Media.create!(nsfw: false,
                                   media_type: 0,
                                   rating: (data['rating'] || 5).round)
@@ -30,21 +29,24 @@ class AnimeUpdateFromJsonWorker
                             directors: data['directors'],
                             studios: data['studios'],
                             hide: false, media: anime_media)
+      logger.info "Created #{anime.title_en}"
     end
 
     # Обновление постера если его нету
     unless anime.poster.attached? && data['poster'].nil?
       begin
+        # todo: disable if not prodaction
         u = open(data['poster']) # rubocop:disable Security/Open
         anime.poster.attach(io: u, filename: 'poster.jpg')
       rescue StandardError
         logger.error 'Uploading new image'
       end
     end
-
+    
     data['translators'].each do |tr|
-      translator = anime.translators.find(name: tr['name']) rescue nil # rubocop:disable Style/RescueModifier
+      translator = anime.translators.find_by(name: tr['name']) rescue nil # rubocop:disable Style/RescueModifier
       if translator.nil?
+        logger.info "New translator #{tr['name']} in #{anime.title_en}"
         translator = AnimeTranslator.create!(name: tr['name'],
                                              translator_id: tr['id'],
                                              anime: anime)
@@ -64,6 +66,6 @@ class AnimeUpdateFromJsonWorker
     end
 
     # сохраняем все изменения
-    anime.save!
+    anime.save! if anime.changed?
   end
 end
