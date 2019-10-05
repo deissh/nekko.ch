@@ -81,3 +81,6 @@ gem 'pg_search'
 gem 'friendly_id', '~> 5.2.4'
 
 gem 'aws-sdk-s3', require: false
+
+gem 'sidekiq'
+gem 'faraday'
