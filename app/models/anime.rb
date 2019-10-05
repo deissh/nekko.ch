@@ -14,10 +14,9 @@ class Anime < ApplicationRecord
   has_many :anime_progresses
   has_many :anime_translators, dependent: :destroy
   has_and_belongs_to_many :genres
-  belongs_to :media
 
-  scope :short, -> { includes(:genres, :media).where(hide: false) }
-  scope :full, -> { includes(:genres, :anime_translators, :media) }
+  scope :short, -> { includes(:genres).where(hide: false) }
+  scope :full, -> { includes(:genres, :anime_translators) }
 
   def last_watch(user_id)
     anime_progresses
@@ -47,6 +46,11 @@ class Anime < ApplicationRecord
     else
       poster_attachment_path
     end
+  end
+
+  before_update do
+    # обновляем ссылку на постер
+    self.poster_url = poster_attachment_path
   end
 
   private

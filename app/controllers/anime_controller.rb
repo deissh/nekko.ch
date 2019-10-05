@@ -135,9 +135,9 @@ class AnimeController < ApplicationController
     when 'title_asc'
       'title ASC'
     when 'rating_desc'
-      'media.rating DESC'
+      'rating DESC'
     when 'rating_asc'
-      'media.rating ASC'
+      'rating ASC'
     when 'year_desc'
       'year DESC'
     when 'year_asc'
@@ -152,7 +152,7 @@ class AnimeController < ApplicationController
       'updated_at ASC'
     else
       # default sort
-      'media.rating DESC'
+      'rating DESC'
     end
   end
 end

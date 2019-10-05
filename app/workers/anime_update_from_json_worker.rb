@@ -10,9 +10,6 @@ class AnimeUpdateFromJsonWorker
     # получаем аниме по его названию, если его нет то создаем новый тайтл
     anime = Anime.find_by(title: data['title']) rescue nil # rubocop:disable Style/RescueModifier
     if anime.nil?
-      anime_media = Media.create!(nsfw: false,
-                                  media_type: 0,
-                                  rating: (data['rating'] || 5).round)
       anime = Anime.create!(title: data['title'],
                             title_en: data['title_en'],
                             title_or: data['title_or'],
@@ -28,24 +25,27 @@ class AnimeUpdateFromJsonWorker
                             actors: data['actors'],
                             directors: data['directors'],
                             studios: data['studios'],
-                            hide: false, media: anime_media)
+                            rating: (data['rating'] || 5).round,
+                            hide: false)
 
-      anime.genres << Genre.where('name ILIKE ANY ( array[?] )', data['genres']) rescue [] # rubocop:disable Style/RescueModifier
+      if data['genres']
+        anime.genres << Genre.where('name ILIKE ANY ( array[?] )', data['genres']) rescue [] # rubocop:disable Style/RescueModifier
+      end
 
       logger.info "Created #{anime.title_en}"
     end
 
     # Обновление постера если его нету
-    unless anime.poster.attached? && data['poster'].nil?
+    if anime.poster_url.nil? && !data['poster'].nil?
       begin
-        # todo: disable if not prodaction
-        u = open(data['poster']) # rubocop:disable Security/Open
-        anime.poster.attach(io: u, filename: 'poster.jpg')
+        # TODO: disable if not production
+        # u = open(data['poster']) # rubocop:disable Security/Open
+        # anime.poster.attach(io: u, filename: 'poster.jpg')
       rescue StandardError
         logger.error 'Uploading new image'
       end
     end
-    
+
     data['translators'].each do |tr|
       translator = anime.translators.find_by(name: tr['name']) rescue nil # rubocop:disable Style/RescueModifier
       if translator.nil?

@@ -55,7 +55,7 @@
           </div>
           <div class="side-bc">
 
-            <% Anime.short.where(hide: false).order('media.rating DESC').limit(6).each do |anime| %>
+            <% Anime.short.where(hide: false).order('rating DESC').limit(6).each do |anime| %>
               <%= render 'shared/anime/small', anime: anime %>
             <% end %>
 

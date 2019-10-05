@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_29_105218) do
+ActiveRecord::Schema.define(version: 2019_10_05_181609) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -99,8 +99,8 @@ ActiveRecord::Schema.define(version: 2019_09_29_105218) do
     t.string "youtube_trailer_url", default: ""
     t.string "slug"
     t.boolean "hide", default: false
-    t.bigint "media_id"
-    t.index ["media_id"], name: "index_animes_on_media_id"
+    t.integer "rating", default: 5
+    t.string "poster_url"
     t.index ["slug"], name: "index_animes_on_slug", unique: true
   end
 
@@ -135,24 +135,6 @@ ActiveRecord::Schema.define(version: 2019_09_29_105218) do
     t.datetime "updated_at", null: false
     t.string "slug"
     t.index ["slug"], name: "index_genres_on_slug", unique: true
-  end
-
-  create_table "media", force: :cascade do |t|
-    t.boolean "nsfw", default: false, null: false
-    t.integer "media_type", default: 0, null: false
-    t.integer "rating", default: 5, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "media_votes", force: :cascade do |t|
-    t.bigint "media_id", null: false
-    t.bigint "user_id", null: false
-    t.integer "vote", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["media_id"], name: "index_media_votes_on_media_id"
-    t.index ["user_id"], name: "index_media_votes_on_user_id"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
@@ -223,10 +205,7 @@ ActiveRecord::Schema.define(version: 2019_09_29_105218) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "anime_translators", "animes"
-  add_foreign_key "animes", "media", column: "media_id"
   add_foreign_key "episodes", "anime_translators"
-  add_foreign_key "media_votes", "media", column: "media_id"
-  add_foreign_key "media_votes", "users"
   add_foreign_key "user_anime_statuses", "animes"
   add_foreign_key "user_anime_statuses", "users"
 end
