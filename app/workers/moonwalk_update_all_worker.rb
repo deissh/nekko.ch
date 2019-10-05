@@ -3,7 +3,7 @@ class MoonwalkUpdateAllWorker
 
   def perform
     # todo: вынести в конфиг
-    data = JSON.parse(Faraday.get('http://localhost:8080/updates').body)
+    data = JSON.parse(Faraday.get(ENV['MOONWALK_PARSER_URL'] || 'http://localhost:8080' + '/updates').body)
 
     logger.info "Total parsed: #{data.length}"
 

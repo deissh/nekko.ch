@@ -3,7 +3,7 @@ class MoonwalkFetchAllWorker
 
   def perform
     # todo: вынести в конфиг
-    data = JSON.parse(Faraday.get('http://localhost:8080/fetch').body)
+    data = JSON.parse(Faraday.get(ENV['MOONWALK_PARSER_URL'] || 'http://localhost:8080' + '/fetch').body)
 
     data.each do |anime|
       AnimeUpdateFromJsonWorker.perform_async(anime.to_json)

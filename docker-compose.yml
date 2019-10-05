@@ -41,6 +41,7 @@ services:
       DEVISE_SECRET_KEY: STUB
       RAILS_LOG_TO_STDOUT: 'true'
       REDIS_URL: 'redis://in_memory_store:6379/1'
+      MOONWALK_PARSER_URL: 'http://moonwalk:8080'
     depends_on:
       - db
       - in_memory_store
@@ -54,3 +55,9 @@ services:
     <<: *server_app
     ports: []
     command: [sidekiq]
+
+  moonwalk:
+    image: deissh/moonwalk-parser
+    environment:
+      # ho ho its public
+      MOONWALK_API_TOKEN: 6eb82f15e2d7c6cbb2fdcebd05a197a2

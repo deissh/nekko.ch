@@ -52,6 +52,7 @@ services:
       REDIS_URL: 'redis://in_memory_store/1'
       SECRET_KEY_BASE: STUB
       DEVISE_SECRET_KEY: STUB
+      MOONWALK_PARSER_URL: 'http://moonwalk:8080'
     depends_on: # Указываем список сервисов от которых зависит текущий сервис. Текущий сервис будет запущен только после того как запустятся зависимые сервисы
       - db
       - in_memory_store
@@ -65,3 +66,9 @@ services:
     <<: *server_app
     ports: []
     command: [sidekiq]
+
+  moonwalk:
+    image: deissh/moonwalk-parser
+    environment:
+      # ho ho its public
+      MOONWALK_API_TOKEN: 6eb82f15e2d7c6cbb2fdcebd05a197a2
