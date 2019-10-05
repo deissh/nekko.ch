@@ -46,8 +46,27 @@ RailsAdmin.config do |config|
   end
 
   config.model 'Anime' do
-    include_all_fields
+    # include_all_fields
 
+    list do
+      include_fields :id, :title, :title_en, :status, :genres, :rating, :created_at, :updated_at
+    end
+
+    field :slug
+    field :title
+    field :title_en
+    field :title_or
+    field :annotation
+    field :description
+    field :genres
+    field :rating
+    field :status
+    field :year
+    field :world_art_id
+    field :kinopoisk_id
+    field :youtube_trailer_url
+
+    field :poster_url
     field :poster, :active_storage do
       pretty_value do
         if value

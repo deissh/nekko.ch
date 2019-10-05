@@ -18,6 +18,8 @@ class Anime < ApplicationRecord
   scope :short, -> { includes(:genres).where(hide: false) }
   scope :full, -> { includes(:genres, :anime_translators) }
 
+  validates :title, :annotation, :description, presence: true
+
   def last_watch(user_id)
     anime_progresses
       .where(user: user_id)
