@@ -60,7 +60,7 @@ class AnimeUpdateFromJsonWorker
       last_ep = translator.episodes.all.last
 
       next unless new_ep_count != ep_count
-      new_eps = tr['episodes'].last(new_ep_count - ep_count)
+      new_eps = tr['episodes'].last(new_ep_count - ep_count) rescue [] # rubocop:disable Style/RescueModifier
       new_eps.each_with_index do |stream_url, idx|
         Episode.create!(name: idx.to_s,
                         stream_url: stream_url,
