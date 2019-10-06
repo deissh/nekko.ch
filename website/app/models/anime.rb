@@ -38,7 +38,7 @@ class Anime < ApplicationRecord
     if poster.attached?
       Rails.configuration.cdn_baseUrl + poster.attachment.key
     else
-      poster_url unless poster_url.nil? || poster_url == '-'
+      poster_url unless poster_url.nil?
       Rails.configuration.cdn_fallbackUrl
     end
   end
