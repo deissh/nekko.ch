@@ -57,6 +57,10 @@ services:
     <<: *server_app
     ports: []
     command: [sidekiq]
+    depends_on:
+      - server_app
+      - db
+      - in_memory_store
 
   moonwalk:
     image: deissh/moonwalk-parser
