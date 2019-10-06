@@ -39,8 +39,8 @@ class AnimeUpdateFromJsonWorker
     if (anime.poster_url.nil? || anime.poster_url == Rails.configuration.cdn_fallbackUrl) && !data['poster'].nil? # rubocop:disable Metrics/LineLength
       begin
         open(data['poster']) { |u| anime.poster.attach(io: u, filename: 'poster.jpg') } # rubocop:disable Security/Open
-      rescue StandardError
-        logger.error 'Uploading new image'
+      rescue StandardError => e
+        logger.error e.message
         anime.poster_url = data['poster']
       end
     end
