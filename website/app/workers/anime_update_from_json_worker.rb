@@ -41,10 +41,10 @@ class AnimeUpdateFromJsonWorker
         # TODO: disable if not production
         u = open(data['poster']) # rubocop:disable Security/Open
         anime.poster.attach(io: u, filename: 'poster.jpg')
-        anime.poster_url = anime.poster_attachment_path
       rescue StandardError
         logger.error 'Uploading new image'
       end
+      anime.poster_url = anime.poster_attachment_path
     end
 
     data['translators'].each do |tr|
