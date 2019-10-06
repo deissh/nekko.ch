@@ -11,6 +11,7 @@ RUN apt-get update -qq && apt-get install -y \
 ENV APP_USER app
 ENV APP_USER_HOME /home/$APP_USER
 ENV APP_HOME /home/www/spreedemo
+ENV TMP_DIR /tmp
 
 # Layer 4. Поскольку по умолчанию Docker запускаем контейнер от имени root пользователя, то настоятельно рекомендуется создать отдельного пользователя c определенными UID и GID и запустить процесс от имени этого пользователя.
 RUN useradd -m -d $APP_USER_HOME $APP_USER
@@ -38,8 +39,9 @@ COPY . .
 # Layer 11. Указываем все команды, которые будут выполняться от имени root пользователя
 USER root
 
-# Layer 12. Даем root пользователем пользователю app права owner'а на WORKDIR
+# Layer 12. Даем root пользователем пользователю app права owner'а на WORKDIR и TEMPDIR
 RUN chown -R $APP_USER:$APP_USER "$APP_HOME/."
+RUN chown -R $APP_USER:$APP_USER "$TMP_DIR/."
 
 # Layer 13. Указываем все команды, которые будут выполняться от имени app пользователя
 USER $APP_USER
