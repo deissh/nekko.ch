@@ -44,8 +44,7 @@ class AnimeUpdateFromJsonWorker
         end
       rescue StandardError => e
         logger.error e.message
-        anime.skip_callback(true)
-        anime.poster_url = data['poster']
+        anime.update_column(:poster_url, data['poster'])
       end
     end
 
