@@ -4,7 +4,7 @@ require 'open-uri'
 class AnimeUpdateFromJsonWorker
   include Sidekiq::Worker
 
-  def perform(data) # rubocop:disable Metrics/AbcSize
+  def perform(data) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/PerceivedComplexity
     data = JSON.parse(data)
 
     # получаем аниме по его названию, если его нет то создаем новый тайтл
@@ -39,8 +39,8 @@ class AnimeUpdateFromJsonWorker
     if anime.poster_url.nil? && !data['poster'].nil?
       begin
         # TODO: disable if not production
-        # u = open(data['poster']) # rubocop:disable Security/Open
-        # anime.poster.attach(io: u, filename: 'poster.jpg')
+        u = open(data['poster']) # rubocop:disable Security/Open
+        anime.poster.attach(io: u, filename: 'poster.jpg')
       rescue StandardError
         logger.error 'Uploading new image'
       end
@@ -57,7 +57,6 @@ class AnimeUpdateFromJsonWorker
 
       ep_count = translator.episodes.count
       new_ep_count = tr['episodes'].length
-      last_ep = translator.episodes.all.last
 
       next unless new_ep_count != ep_count
       new_eps = tr['episodes'].last(new_ep_count - ep_count) rescue [] # rubocop:disable Style/RescueModifier
