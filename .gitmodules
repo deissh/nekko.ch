@@ -1,0 +1,3 @@
+[submodule "moonwalk-api-proxy"]
+	path = moonwalk-api-proxy
+	url = git@github.com:nekko-ru/moonwalk-parser.git

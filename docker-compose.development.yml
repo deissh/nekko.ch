@@ -32,9 +32,9 @@ services:
 
   server_app: &server_app
     image: nekkoru/webserver:${WEBSERVER_TAG:-latest}
-    build: . # В качестве образа будет использоваться Dockerfile в текущей директории
+    build: ./website # В качестве образа будет использоваться Dockerfile в текущей директории
     command: bundle exec rails server -b 0.0.0.0 # переопределяем команду запуска контейнера
-    entrypoint: "./docker-entrypoint.sh" # указываем какую команду нужно запустить перед тем как контейнер запустится
+    entrypoint: "./website/docker-entrypoint.sh" # указываем какую команду нужно запустить перед тем как контейнер запустится
     volumes:
       - .:/home/www/nekko # Указываем, что директория приложения в контейнере будет ссылаться на директорию приложения на Host OS (локальная нода). Таким образом, при изменение файлов из app или других директорий на вашей локальной машине, все изменения так же будут применены и на контейнер с данным сервисом.
 #      - /home/www/nekko/vendor/bundle # Исключаем монтирование установленных гемов в контейнер
@@ -49,9 +49,10 @@ services:
       DB_NAME: nekko_development
       DB_USERNAME: postgres
       DB_PASSWORD: postgres
-      REDIS_DB: "redis://in_memory_store:6379"
+      REDIS_URL: 'redis://in_memory_store/1'
       SECRET_KEY_BASE: STUB
       DEVISE_SECRET_KEY: STUB
+      MOONWALK_PARSER_URL: 'http://moonwalk:8080'
     depends_on: # Указываем список сервисов от которых зависит текущий сервис. Текущий сервис будет запущен только после того как запустятся зависимые сервисы
       - db
       - in_memory_store
@@ -59,3 +60,16 @@ services:
       - 3000:3000 # Указываем что порт из контейнера будет проксироваться на порт HostOS (HostPort:ContainerPort)
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000"]
+
+  # Sidekiq
+  sidekiq:
+    <<: *server_app
+    ports: []
+    command: [sidekiq]
+
+  moonwalk:
+    image: deissh/moonwalk-parser
+    build: ./moonwalk-api-proxy
+    environment:
+      # ho ho its public
+      MOONWALK_API_TOKEN: 6eb82f15e2d7c6cbb2fdcebd05a197a2
