@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'uri'
-
 class Anime < ApplicationRecord
   include PgSearch::Model
   extend FriendlyId
@@ -40,7 +38,7 @@ class Anime < ApplicationRecord
     if poster.attached?
       Rails.configuration.cdn_baseUrl + poster.attachment.key
     else
-      poster_url if poster_url =~ URI::DEFAULT_PARSER.make_regexp
+      poster_url unless poster_url.nil? && poster_url == '-'
       Rails.configuration.cdn_fallbackUrl
     end
   end
