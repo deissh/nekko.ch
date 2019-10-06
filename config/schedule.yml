@@ -1,0 +1,7 @@
+moonwalk_update:
+  cron: "0 */6 * * *" # every 6 house
+  class: "MoonwalkUpdateAllWorker"
+
+moonwalk_fetch_all:
+  cron: "0 6 * * 0,4" # at 6am every Sun and Thu
+  class: "MoonwalkUpdateAllWorker"
