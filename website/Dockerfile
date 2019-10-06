@@ -50,5 +50,7 @@ USER $APP_USER
 RUN npm install --silence
 RUN bin/rails assets:precompile
 
+USER root
+
 # Layer 15. Указываем команду по умолчанию для запуска будущего контейнера. По скольку в `Layer 13` мы переопределили пользователя, то puma сервер будет запущен от имени www-data пользователя.
 CMD bundle exec puma -C config/puma.rb
