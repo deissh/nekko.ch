@@ -46,7 +46,7 @@ class Anime < ApplicationRecord
     if background.attached?
       Rails.configuration.cdn_baseUrl + background.attachment.key
     else
-      poster_attachment_path
+      poster_url
     end
   end
 
