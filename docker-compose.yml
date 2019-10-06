@@ -31,7 +31,7 @@ services:
     image: nekkoru/webserver:${WEBSERVER_TAG:-latest}
     build: ./website
     command: bundle exec rails server -b 0.0.0.0
-    entrypoint: "./docker-entrypoint.sh"
+    entrypoint: "./website/docker-entrypoint.sh"
     restart: on-failure
     environment:
       RAILS_ENV: production

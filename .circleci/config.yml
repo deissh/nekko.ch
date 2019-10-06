@@ -20,14 +20,15 @@ jobs:
             cd website
             gem install bundler
             bundle install --jobs=4 --retry=3 --path vendor/bundle
-            gem install rubocop
 
       - save_cache:
           paths:
             - ./website/vendor/bundle
           key: v1-dependencies-{{ checksum "website/Gemfile.lock" }}
 
-      - run: cd website && rubocop
+      - run: |
+          cd website
+          bundle exec rubocop
 
 workflows:
   version: 2
