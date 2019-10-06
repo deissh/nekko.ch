@@ -4,6 +4,7 @@ AllCops:
     - bin/**/*
     - test/**/*
     - config/**/*
+    - vendor/bundle/**/*
     - Guardfile
   DisplayCopNames: false
   DisplayStyleGuide: true
