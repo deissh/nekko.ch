@@ -42,6 +42,8 @@ services:
       RAILS_LOG_TO_STDOUT: 'true'
       REDIS_URL: 'redis://in_memory_store:6379/1'
       MOONWALK_PARSER_URL: 'http://moonwalk:8080'
+      SELECTEL_S3_ACCESS_KEY: super_mega
+      SELECTEL_S3_SECRET_KEY: secret_keys
     depends_on:
       - db
       - in_memory_store
