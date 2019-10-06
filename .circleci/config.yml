@@ -13,8 +13,7 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_DB: website_test
     steps:
-      - checkout:
-          path: ~/repo
+      - checkout
 
       # Download and cache dependencies
       - restore_cache:
