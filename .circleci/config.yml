@@ -1,7 +1,7 @@
 version: 2
 jobs:
   lint:
-    working_dirictory: ~/repo/website
+    working_dirictory: ~/repo
     docker:
       - image: circleci/ruby:2.6.3-node-browsers
         environment:
@@ -19,24 +19,25 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            - v1-dependencies-{{ checksum "website/Gemfile.lock" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
       - run:
           name: install dependencies
           command: |
+            cd website
             gem install bundler
             bundle install --jobs=4 --retry=3 --path vendor/bundle
+            gem install rubocop
 
       - save_cache:
           paths:
             - ./vendor/bundle
-          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-          
-      - run: gem install rubocop
-      - run: rubocop
-  
+          key: v1-dependencies-{{ checksum "website/Gemfile.lock" }}
+
+      - run: cd website && rubocop
+
 workflows:
   version: 2
   build_test_deploy:
