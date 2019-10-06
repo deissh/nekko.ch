@@ -65,6 +65,7 @@ RailsAdmin.config do |config|
     field :world_art_id
     field :kinopoisk_id
     field :youtube_trailer_url
+    field :hide
 
     field :poster_url
     field :poster, :active_storage do
