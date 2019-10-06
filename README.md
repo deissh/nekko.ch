@@ -5,7 +5,7 @@
 <h1 align="center"></h1>
 
 <p align="center">
-  <a href="https://circleci.com/gh/nekko-ru/website"><img src="https://circleci.com/gh/nekko-ru/website.svg?style=svg"></a>
+  <a href="https://circleci.com/gh/deissh/nekko.ch"><img src="https://circleci.com/gh/deissh/nekko.ch.svg?style=svg"></a>
 <!--   <br />
   <a href="https://github.com/deissh/website/blob/master/README_RU.md">
     Версия на русском
