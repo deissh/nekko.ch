@@ -196,8 +196,6 @@ Style/EmptyLiteral:
   Enabled: true
 Style/EvenOdd:
   Enabled: true
-Layout/FlipFlop:
-  Enabled: true
 Style/IfWithSemicolon:
   Enabled: true
 Style/Lambda:
