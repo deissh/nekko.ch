@@ -58,7 +58,6 @@ services:
 
   moonwalk:
     image: deissh/moonwalk-parser
-    build: ./moonwalk-api-proxy
     environment:
       # ho ho its public
       MOONWALK_API_TOKEN: 6eb82f15e2d7c6cbb2fdcebd05a197a2
