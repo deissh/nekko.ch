@@ -38,8 +38,12 @@ class Anime < ApplicationRecord
     if poster.attached?
       Rails.configuration.cdn_baseUrl + poster.attachment.key
     else
-      poster_url unless poster_url.nil? && poster_url == '-'
-      Rails.configuration.cdn_fallbackUrl
+      uri = URI.parse(poster_url)
+      if uri.kind_of?(URI::HTTP) or uri.kind_of?(URI::HTTPS)
+        poster_url
+      else
+        Rails.configuration.cdn_fallbackUrl
+      end
     end
   end
 
