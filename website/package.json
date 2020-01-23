@@ -4,6 +4,6 @@
   "dependencies": {
     "@nobleclem/jquery-multiselect": "^2.4.16",
     "moment": "^2.24.0",
-    "popper.js": "^1.15.0"
+    "popper.js": "^1.16.1"
   }
 }
